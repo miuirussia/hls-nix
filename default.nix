@@ -1,5 +1,5 @@
 { sources ? import ./sources
-, checkMaterialization ? true
+, checkMaterialization ? false
 , index-state ? "2021-05-22T00:00:00Z"
 , index-sha256 ? "a154e09d3065552f413f83de105a230a3655f7f91058277a87b8d37ac1698587"
 , ghcVersion ? "ghc8104"
@@ -16,7 +16,49 @@ let
     haskell-nix = import sources."haskell.nix" {};
     args = haskell-nix.nixpkgsArgs // {
       config = {};
-      overlays = haskell-nix.overlays;
+      overlays = haskell-nix.overlays ++ [
+        (
+          self: super: {
+            haskell-nix = super.haskell-nix // {
+              compiler = super.haskell-nix.compiler // {
+                ghc865 = super.haskell-nix.compiler.ghc865.overrideAttrs (
+                  prev: {
+                    src = prev.src.overrideAttrs (
+                      prevSrc: {
+                        patches = prevSrc.patches ++ [
+                          ./patches/ac_prog_cc_c99_fix.patch
+                        ];
+                      }
+                    );
+                  }
+                );
+                ghc884 = super.haskell-nix.compiler.ghc884.overrideAttrs (
+                  prev: {
+                    src = prev.src.overrideAttrs (
+                      prevSrc: {
+                        patches = prevSrc.patches ++ [
+                          ./patches/ac_prog_cc_c99_fix.patch
+                        ];
+                      }
+                    );
+                  }
+                );
+                ghc8104 = super.haskell-nix.compiler.ghc8104.overrideAttrs (
+                  prev: {
+                    src = prev.src.overrideAttrs (
+                      prevSrc: {
+                        patches = prevSrc.patches ++ [
+                          ./patches/ac_prog_cc_c99_fix.patch
+                        ];
+                      }
+                    );
+                  }
+                );
+              };
+            };
+          }
+        )
+      ];
     };
   in
     import sources.nixpkgs-unstable args;
@@ -197,18 +239,20 @@ let
   ghc = nixpkgs-unstable.haskell.compiler."${ghcVersion}";
   implicit-hie = nixpkgs-unstable.haskellPackages.implicit-hie;
 in
-  {
-    inherit
-      cabal-install
-      ghc
-      hls
-      hls-renamed
-      hls-wrapper
-      hls-wrapper-nix
-      implicit-hie
-      project
-      stack
-      stack-nix
-      stack-nonix
-      stackNixPackages;
-  }
+{
+  inherit
+    cabal-install
+    ghc
+    hls
+    hls-renamed
+    hls-wrapper
+    hls-wrapper-nix
+    implicit-hie
+    project
+    stack
+    stack-nix
+    stack-nonix
+    stackNixPackages
+    hackage
+    ;
+}
