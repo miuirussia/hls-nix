@@ -1,0 +1,15 @@
+diff --git a/python3/vimspector/gadgets.py b/python3/vimspector/gadgets.py
+index d1b6872..8cd33c5 100644
+--- a/python3/vimspector/gadgets.py
++++ b/python3/vimspector/gadgets.py
+@@ -420,9 +420,7 @@ GADGETS = {
+     'language': 'chrome',
+     'enabled': False,
+     'download': {
+-      'url': 'https://marketplace.visualstudio.com/_apis/public/gallery/'
+-             'publishers/msjsdiag/vsextensions/'
+-             'debugger-for-chrome/${version}/vspackage',
++      'url': 'https://kdevlab.com/marketplace/msjsdiag.debugger-for-chrome-${version}.vsix.gz',
+       'target': 'msjsdiag.debugger-for-chrome-4.12.10.vsix.gz',
+       'format': 'zip.gz',
+     },
