@@ -2,7 +2,7 @@
 , checkMaterialization ? false
 , index-state ? "2021-05-22T00:00:00Z"
 , index-sha256 ? "a154e09d3065552f413f83de105a230a3655f7f91058277a87b8d37ac1698587"
-, ghcVersion ? "ghc8104"
+, ghcVersion ? "ghc865"
 , hackageVersion ? "1.1.0.0"
 }:
 
@@ -235,9 +235,9 @@ let
     in
       builtins.map select packageNames;
 
-  cabal-install = nixpkgs-unstable.cabal-install;
-  ghc = nixpkgs-unstable.haskell.compiler."${ghcVersion}";
-  implicit-hie = nixpkgs-unstable.haskellPackages.implicit-hie;
+  cabal-install = nixpkgs-hn.cabal-install;
+  ghc = nixpkgs-hn.haskell-nix.compiler."${ghcVersion}";
+  implicit-hie = nixpkgs-hn.haskellPackages.implicit-hie;
 in
 {
   inherit
