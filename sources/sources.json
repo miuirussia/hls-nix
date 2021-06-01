@@ -95,6 +95,18 @@
     "url": "https://github.com/input-output-hk/haskell.nix/archive/f752903e10731e65bf9b134896dacd572ed0784f.tar.gz",
     "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
   },
+  "hls-nix": {
+    "branch": "master",
+    "description": null,
+    "homepage": null,
+    "owner": "miuirussia",
+    "repo": "hls-nix",
+    "rev": "3de30fdbe1e1862f0c1b756af0d0ad347b1621f8",
+    "sha256": "1l017703h20fgkyg353f6x28m4hbm70dqv3n3i524m2k83c8chx6",
+    "type": "tarball",
+    "url": "https://github.com/miuirussia/hls-nix/archive/3de30fdbe1e1862f0c1b756af0d0ad347b1621f8.tar.gz",
+    "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+  },
   "hls-stable": {
     "branch": "0.6.0",
     "description": "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all.",
@@ -191,18 +203,6 @@
     "url": "https://github.com/nmattia/niv/archive/1819632b5823e0527da28ad82fecd6be5136c1e9.tar.gz",
     "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
   },
-  "nix-haskell-hls": {
-    "branch": "master",
-    "description": "Nix builds of Haskell Language Server",
-    "homepage": null,
-    "owner": "shajra",
-    "repo": "nix-haskell-hls",
-    "rev": "3ab2de08ff62461ae60c5c0dfedde0d8ee873ed4",
-    "sha256": "1b7bhkjw3s8d5lvzfdb98h0cmx8yi9ddp8v20386glm7xj0lr1fy",
-    "type": "tarball",
-    "url": "https://github.com/shajra/nix-haskell-hls/archive/3ab2de08ff62461ae60c5c0dfedde0d8ee873ed4.tar.gz",
-    "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-  },
   "nix-project": {
     "branch": "master",
     "description": "Tools to manage a Nix-based project",
@@ -257,10 +257,10 @@
     "homepage": "https://github.com/NixOS/nixpkgs",
     "owner": "miuirussia",
     "repo": "nixpkgs",
-    "rev": "b15605474d6b092d06a72c6b6c56566b5a1a0bda",
-    "sha256": "0s054kyqmdn8n0zjvk39qbz7z367w4qfxhv41hwmqfixc38lbbk8",
+    "rev": "286312ae31b0e481c1b063614aeae7803ed7e5a8",
+    "sha256": "0nxl85cbiqqn3wr8xx3l4g7yzpqqy7jb0wvrsahn215y12xf7z1v",
     "type": "tarball",
-    "url": "https://github.com/miuirussia/nixpkgs/archive/b15605474d6b092d06a72c6b6c56566b5a1a0bda.tar.gz",
+    "url": "https://github.com/miuirussia/nixpkgs/archive/286312ae31b0e481c1b063614aeae7803ed7e5a8.tar.gz",
     "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
   },
   "postcss-syntax-vim": {
