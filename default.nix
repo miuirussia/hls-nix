@@ -36,6 +36,14 @@ let
         (
           self: super: {
             haskell-nix = super.haskell-nix // {
+              bootstrap = super.haskell-nix.bootstrap // {
+                compiler = super.haskell-nix.bootstrap.compiler // {
+                  ghc844 = addGhcPatches super.haskell-nix.bootstrap.compiler.ghc844 ghcPatches;
+                  ghc865 = addGhcPatches super.haskell-nix.bootstrap.compiler.ghc865 ghcPatches;
+                  ghc884 = addGhcPatches super.haskell-nix.bootstrap.compiler.ghc884 ghcPatches;
+                  ghc8104 = addGhcPatches super.haskell-nix.bootstrap.compiler.ghc8104 ghcPatches;
+                };
+              };
               compiler = super.haskell-nix.compiler // {
                 ghc844 = addGhcPatches super.haskell-nix.compiler.ghc844 ghcPatches;
                 ghc865 = addGhcPatches super.haskell-nix.compiler.ghc865 ghcPatches;
