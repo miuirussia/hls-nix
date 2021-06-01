@@ -9,7 +9,7 @@ let
   sources = builtins.fromJSON
     (builtins.readFile ./sources.json);
 
-  pkgs = import (import ./sources.nix).nixpkgs {
+  pkgs = import srcs.nixpkgs {
     config = {};
     overlays = [];
   };
@@ -20,14 +20,11 @@ let
       fetchSubmodules = true;
     };
 
-  mkPatchedNixpkgs = { src }:
+  mkPatchedSource = { name, src, patches }:
     pkgs.stdenv.mkDerivation {
-      name = "nixpkgs-${src.branch}-patched";
-      patches = [
-        ./nixpkgs.patch
-      ];
+      name = "${name}-${src.rev}-patched";
 
-      inherit src;
+      inherit patches src;
 
       installPhase = ''
         mkdir -p $out
@@ -41,13 +38,17 @@ let
   nixpkgs-stable =
     if isDarwin
     then srcs // {
-      nixpkgs-stable = mkPatchedNixpkgs {
+      nixpkgs-stable = mkPatchedSource {
+        name = "nixpkgs-stable-darwin";
         src = srcs.nixpkgs-stable-darwin;
+        patches = [ ./nixpkgs.patch ];
       };
     }
     else srcs // {
-      nixpkgs-stable = mkPatchedNixpkgs {
+      nixpkgs-stable = mkPatchedSource {
+        name = "nixpkgs-stable-linux";
         src = srcs.nixpkgs-stable-linux;
+        patches = [ ./nixpkgs.patch ];
       };
     };
 
@@ -63,28 +64,17 @@ let
       in
         fromGitHub s "haskell-hls-${s.branch}-src";
 
-    vimspector =
-      let
-        src = srcs.vimspector;
-      in
-        pkgs.stdenv.mkDerivation {
-          name = "vimspector-src";
+    "haskell.nix" = mkPatchedSource {
+      name = "haskell.nix";
+      src = srcs."haskell.nix";
+      patches = [ ./hnix-build-fix.patch ];
+    };
 
-          inherit src;
-
-          patches = [
-            ./vimspector.patch
-          ];
-
-          installPhase = ''
-            mkdir -p $out
-            cp -r . $out
-          '';
-
-          doCheck = false;
-          dontFixup = true;
-        };
+    vimspector = mkPatchedSource {
+      name = "vimspector";
+      src = srcs.vimspector;
+      patches = [ ./vimspector.patch ];
+    };
   };
-
 in
 nixpkgs-stable // overrides

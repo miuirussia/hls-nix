@@ -1,0 +1,31 @@
+diff --git a/overlays/bootstrap.nix b/overlays/bootstrap.nix
+index a623aafb2..7f206a96f 100644
+--- a/overlays/bootstrap.nix
++++ b/overlays/bootstrap.nix
+@@ -159,6 +159,7 @@ in {
+                 ++ fromUntil "8.10.3" "8.10.5" ./patches/ghc/ghc-8.10.3-rts-make-markLiveObject-thread-safe.patch
+                 ++ final.lib.optional (versionAtLeast "8.10.4" && final.targetPlatform.isWindows) ./patches/ghc/ghc-8.10-z-drive-fix.patch
+                 ++ final.lib.optional (versionAtLeast "8.6.5") ./patches/ghc/ghc-8.10-windows-add-dependent-file.patch
++                ++ until              "8.10.5" ./patches/ghc/AC_PROG_CC_99.patch
+                 ;
+         in ({
+             ghc844 = final.callPackage ../compiler/ghc {
+diff --git a/overlays/patches/ghc/AC_PROG_CC_99.patch b/overlays/patches/ghc/AC_PROG_CC_99.patch
+new file mode 100644
+index 000000000..18bd99275
+--- /dev/null
++++ b/overlays/patches/ghc/AC_PROG_CC_99.patch
+@@ -0,0 +1,13 @@
++diff --git a/aclocal.m4 b/aclocal.m4
++index 259db63dbff84c91934100a0cb8ff19a0562e90f..99f77d910cfc2421acf3a7d9ac123d79d6daa2ff 100644
++--- a/aclocal.m4
+++++ b/aclocal.m4
++@@ -659,7 +659,7 @@ AC_DEFUN([FP_SET_CFLAGS_C99],
++     CPPFLAGS="$$3"
++     unset ac_cv_prog_cc_c99
++     dnl perform detection
++-    _AC_PROG_CC_C99
+++    AC_PROG_CC_C99
++     fp_cc_c99="$ac_cv_prog_cc_c99"
++     case "x$ac_cv_prog_cc_c99" in
++       x)   ;; # noop

@@ -7,9 +7,7 @@
 }:
 
 let
-  ghcPatches = [
-    ./patches/ac_prog_cc_c99_fix.patch
-  ];
+  ghcPatches = [];
 
   addGhcPatches = ghc: patches: ghc.overrideAttrs (
     prev: {
@@ -32,28 +30,7 @@ let
     haskell-nix = import sources."haskell.nix" {};
     args = haskell-nix.nixpkgsArgs // {
       config = {};
-      overlays = haskell-nix.overlays ++ [
-        (
-          self: super: {
-            haskell-nix = super.haskell-nix // {
-              bootstrap = super.haskell-nix.bootstrap // {
-                compiler = super.haskell-nix.bootstrap.compiler // {
-                  ghc844 = addGhcPatches super.haskell-nix.bootstrap.compiler.ghc844 ghcPatches;
-                  ghc865 = addGhcPatches super.haskell-nix.bootstrap.compiler.ghc865 ghcPatches;
-                  ghc884 = addGhcPatches super.haskell-nix.bootstrap.compiler.ghc884 ghcPatches;
-                  ghc8104 = addGhcPatches super.haskell-nix.bootstrap.compiler.ghc8104 ghcPatches;
-                };
-              };
-              compiler = super.haskell-nix.compiler // {
-                ghc844 = addGhcPatches super.haskell-nix.compiler.ghc844 ghcPatches;
-                ghc865 = addGhcPatches super.haskell-nix.compiler.ghc865 ghcPatches;
-                ghc884 = addGhcPatches super.haskell-nix.compiler.ghc884 ghcPatches;
-                ghc8104 = addGhcPatches super.haskell-nix.compiler.ghc8104 ghcPatches;
-              };
-            };
-          }
-        )
-      ];
+      overlays = haskell-nix.overlays;
     };
   in
     import sources.nixpkgs-unstable args;
