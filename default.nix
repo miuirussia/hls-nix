@@ -7,6 +7,22 @@
 }:
 
 let
+  ghcPatches = [
+    ./patches/ac_prog_cc_c99_fix.patch
+  ];
+
+  addGhcPatches = ghc: patches: ghc.overrideAttrs (
+    prev: {
+      patches = prev.patches ++ patches;
+
+      src = prev.src.overrideAttrs (
+        prevSrc: {
+          patches = prevSrc.patches ++ patches;
+        }
+      );
+    }
+  );
+
   nixpkgs-unstable = import sources.nixpkgs-unstable {
     config = {};
     overlays = [];
@@ -21,39 +37,10 @@ let
           self: super: {
             haskell-nix = super.haskell-nix // {
               compiler = super.haskell-nix.compiler // {
-                ghc865 = super.haskell-nix.compiler.ghc865.overrideAttrs (
-                  prev: {
-                    src = prev.src.overrideAttrs (
-                      prevSrc: {
-                        patches = prevSrc.patches ++ [
-                          ./patches/ac_prog_cc_c99_fix.patch
-                        ];
-                      }
-                    );
-                  }
-                );
-                ghc884 = super.haskell-nix.compiler.ghc884.overrideAttrs (
-                  prev: {
-                    src = prev.src.overrideAttrs (
-                      prevSrc: {
-                        patches = prevSrc.patches ++ [
-                          ./patches/ac_prog_cc_c99_fix.patch
-                        ];
-                      }
-                    );
-                  }
-                );
-                ghc8104 = super.haskell-nix.compiler.ghc8104.overrideAttrs (
-                  prev: {
-                    src = prev.src.overrideAttrs (
-                      prevSrc: {
-                        patches = prevSrc.patches ++ [
-                          ./patches/ac_prog_cc_c99_fix.patch
-                        ];
-                      }
-                    );
-                  }
-                );
+                ghc844 = addGhcPatches super.haskell-nix.compiler.ghc844 ghcPatches;
+                ghc865 = addGhcPatches super.haskell-nix.compiler.ghc865 ghcPatches;
+                ghc884 = addGhcPatches super.haskell-nix.compiler.ghc884 ghcPatches;
+                ghc8104 = addGhcPatches super.haskell-nix.compiler.ghc8104 ghcPatches;
               };
             };
           }
