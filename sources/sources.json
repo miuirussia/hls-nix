@@ -125,10 +125,10 @@
     "homepage": null,
     "owner": "haskell",
     "repo": "haskell-language-server",
-    "rev": "41bf8b85ed40499d0a0b524277d51f470ec95e94",
-    "sha256": "0j5cn9cj59hfkzllg11vg0hfhik9rs06l4wqspd9z1nfyvq35il0",
+    "rev": "0b3bb10cd22cb265b7cbab84514178bcf4ae4f92",
+    "sha256": "15ciphgr61kqpvpbmmyxxhvcdyrcy3qjkxvv6660a4m3ap0dvhas",
     "type": "tarball",
-    "url": "https://github.com/haskell/haskell-language-server/archive/41bf8b85ed40499d0a0b524277d51f470ec95e94.tar.gz",
+    "url": "https://github.com/haskell/haskell-language-server/archive/0b3bb10cd22cb265b7cbab84514178bcf4ae4f92.tar.gz",
     "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
   },
   "intero-neovim": {

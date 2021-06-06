@@ -116,6 +116,7 @@
             (hsPkgs."cryptohash-sha1" or (errorHandler.buildDepError "cryptohash-sha1"))
             (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
             (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+            (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
             (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
             (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
             (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
@@ -214,6 +215,7 @@
             "Symbol"
             "TypeDefinition"
             "Test/Hls/Command"
+            "Test/Hls/Flags"
             ];
           hsSourceDirs = [ "test/functional" "test/utils" ];
           mainPath = [ "Main.hs" ];
