@@ -101,6 +101,7 @@ let
     "ghc8102" = "8.10.2";
     "ghc8103" = "8.10.3";
     "ghc8104" = "8.10.4";
+    "ghc8105" = "8.10.5";
     "ghc901" = "9.0.1";
   }."${ghcVersion}" or (throw "unsupported GHC Version: ${ghcVersion}");
 
