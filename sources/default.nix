@@ -64,12 +64,6 @@ let
       in
         fromGitHub s "haskell-hls-${s.branch}-src";
 
-    "haskell.nix" = mkPatchedSource {
-      name = "haskell.nix";
-      src = srcs."haskell.nix";
-      patches = [ ./hnix-build-fix.patch ];
-    };
-
     vimspector = mkPatchedSource {
       name = "vimspector";
       src = srcs.vimspector;

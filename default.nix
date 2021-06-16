@@ -9,6 +9,10 @@
 let
   ghcPatches = [];
 
+  sourcesRepositoryPackage = {
+    "https://github.com/hsyl20/ghc-api-compat"."8fee87eac97a538dbe81ff1ab18cff10f2f9fa15" = "16bibb7f3s2sxdvdy2mq6w1nj1lc8zhms54lwmj17ijhvjys29vg";
+  };
+
   addGhcPatches = ghc: patches: ghc.overrideAttrs (
     prev: {
       patches = prev.patches ++ patches;
@@ -50,7 +54,7 @@ let
           checkMaterialization
           ;
         configureArgs = "--disable-benchmarks";
-        lookupSha256 = { location, ... }: null;
+        lookupSha256 = { location, tag, ... }: sourcesRepositoryPackage."${location}"."${tag}" or null;
         materialized = ./materialized + "-${platformName}/${newName}";
       };
 
