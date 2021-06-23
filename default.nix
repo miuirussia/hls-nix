@@ -64,8 +64,13 @@ let
 
   createProject = name:
     let
+      src = sources."${name}";
+      cabalProject = if ghcVersion == "ghc901" then
+        builtins.readFile "${src}/cabal-ghc901.project"
+      else
+        builtins.readFile "${src}/cabal.project";
       planConfig = planConfigFor name ghcVersion defaultModules // {
-        src = sources."${name}";
+        inherit cabalProject src;
         cabalProjectLocal = ''
           reorder-goals: True
         '';
