@@ -33,7 +33,9 @@
         "test/testdata/*.hs"
         "test/testdata/*.lhs"
         "test/testdata/*.yaml"
-        "test/testdata/cabal.project"
+        "test/info-util/*.cabal"
+        "test/info-util/*.hs"
+        "test/cabal.project"
         ];
       extraTmpFiles = [];
       extraDocFiles = [];

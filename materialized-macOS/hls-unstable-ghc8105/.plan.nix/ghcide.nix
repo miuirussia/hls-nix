@@ -11,7 +11,7 @@
     flags = { ghc-patched-unboxed-bytecode = false; };
     package = {
       specVersion = "2.4";
-      identifier = { name = "ghcide"; version = "1.4.0.1"; };
+      identifier = { name = "ghcide"; version = "1.4.0.2"; };
       license = "Apache-2.0";
       copyright = "Digital Asset and Ghcide contributors 2018-2020";
       maintainer = "Ghcide contributors";

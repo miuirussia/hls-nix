@@ -1,0 +1,23 @@
+Warning: The package list for 'hackage.haskell.org-at-2021-06-22T000000Z' is
+18801 days old.
+Run 'cabal update' to get the latest list of available packages.
+Warning: Requested index-state 2021-06-22T00:00:00Z is newer than
+'hackage.haskell.org-at-2021-06-22T000000Z'! Falling back to older state
+(2021-06-21T23:03:15Z).
+Resolving dependencies...
+cabal: Could not resolve dependencies:
+[__0] trying: ghc-api-compat-8.6.1 (user goal)
+[__1] trying: base-4.15.0.0/installed-4.15.0.0 (dependency of ghc-api-compat)
+[__2] trying: ghcide-1.4.0.2 (user goal)
+[__3] next goal: lsp-types (dependency of ghcide)
+[__3] rejecting: lsp-types-1.2.0.0 (conflict:
+base==4.15.0.0/installed-4.15.0.0, lsp-types => base>=4.11 && <4.15)
+[__3] skipping: lsp-types-1.1.0.0, lsp-types-1.0.0.1, lsp-types-1.0.0.0 (has
+the same characteristics that caused the previous version to fail: excludes
+'base' version 4.15.0.0)
+[__3] fail (backjumping, conflict set: base, ghcide, lsp-types)
+After searching the rest of the dependency tree exhaustively, these were the
+goals I've had most trouble fulfilling: base, ghcide, lsp-types,
+ghc-api-compat
+Try running with --minimize-conflict-set to improve the error message.
+
