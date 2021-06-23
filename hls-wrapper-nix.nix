@@ -152,31 +152,28 @@ integrate_args()
     work_dir="$(pwd)"
     work_dir="$("${coreutils}/bin/readlink" -f "$work_dir")"
 
-    local config=""
+    local config="version: 0"
     if test -r "$DEFAULT_CONFIG" || test -n "$CONFIG"
     then
         local config_file="''${CONFIG:-"$DEFAULT_CONFIG"}"
         log_info "using config file: $config_file"
-        if "${yq-go}/bin/yq" v "$config_file"
-        then config="$("${yq-go}/bin/yq" r "$config_file" ["$work_dir"])"
+        if "${yq-go}/bin/yq" eval 'true' "$config_file" > /dev/null
+        then config="$("${yq-go}/bin/yq" eval ["$work_dir"] "$config_file")"
         else die "config file malformed: $config_file"
         fi
     fi
 
     if [ -z "$SHELL_FILE" ]
-    then SHELL_FILE="$(echo "$config" \
-            | "${yq-go}/bin/yq" r - "[shell_file]")"
+    then SHELL_FILE="$(echo "$config" | "${yq-go}/bin/yq" eval '.shell_file' -)"
     fi
     if [ -n "$SHELL_FILE" ]
     then MODE=shell
     fi
     if [ -z "$MODE" ]
-    then MODE="$(echo "$config" \
-            | "${yq-go}/bin/yq" r - "[mode]" --defaultValue detect)"
+    then MODE="$(echo "$config" | "${yq-go}/bin/yq" eval '.mode // "detect"' -)"
     fi
     if [ -z "$NIX_PURE" ]
-    then NIX_PURE="$(echo "$config" \
-            | "${yq-go}/bin/yq" r - "[pure]" --defaultValue true)"
+    then NIX_PURE="$(echo "$config" | "${yq-go}/bin/yq" eval '.pure // true' -)"
     fi
 }
 
