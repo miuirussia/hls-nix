@@ -1,7 +1,7 @@
 { sources ? import ./sources
 , checkMaterialization ? false
-, index-state ? "2021-06-22T00:00:00Z"
-, index-sha256 ? "91dc1c34af6996d134c07af25396cd171bdf608b26b81117546fe631702ec02f"
+, index-state ? "2021-06-23T00:00:00Z"
+, index-sha256 ? "67225ac4654114b9b05780bfa2516821ec5f644c339f04be43f8bc8e4dd384e4"
 , ghcVersion ? "ghc865"
 , hackageVersion ? "1.1.0.0"
 }:
@@ -10,7 +10,14 @@ let
   ghcPatches = [];
 
   sourcesRepositoryPackage = {
+    "https://github.com/anka-213/HieDb"."a3f7521f6c5af1b977040cce09c8f7354f8984eb" = "0caf4q87bzvc3pzcpzbf91gdj7dvzdahzwxq0ql5dm52s5jmh0in";
+    "https://github.com/anka-213/dependent-sum"."8cf4c7fbc3bfa2be475a17bb7c94a1e1e9a830b5" = "0x3lgd1ckd1666infydx9iijdvllw4kikb8k9fx90kczmc3m7p2s";
+    "https://github.com/anka-213/lsp"."tag-ghc-9.0.1-without-pr-326" = "1xml8c9ccy1362riwnizwnxhxs915gw171p0vg2g4a7g35sc8vwm";
+    "https://github.com/anka-213/th-extras"."57a97b4df128eb7b360e8ab9c5759392de8d1659" = "1yg0ikw63kmgp35kwhdi63sbk4f6g7bdj5app3z442xz0zb5mn22";
     "https://github.com/hsyl20/ghc-api-compat"."8fee87eac97a538dbe81ff1ab18cff10f2f9fa15" = "16bibb7f3s2sxdvdy2mq6w1nj1lc8zhms54lwmj17ijhvjys29vg";
+    "https://github.com/jneira/hie-bios/"."9b1445ab5efcabfad54043fc9b8e50e9d8c5bbf3" = "0jfm7shlkb8vg2srprabvsnhmr77bvp59z771cl81i28gjvppjzi";
+    "https://github.com/jwaldmann/blaze-textual.git"."d8ee6cf80e27f9619d621c936bb4bda4b99a183f" = "0k1xv17f4dk67d6ina3hrljvj009cink4qb9yac1cz5qzv6lhiqb";
+    "https://github.com/mithrandi/czipwith.git"."b6245884ae83e00dd2b5261762549b37390179f8" = "0hapj3n8vnk2xx1vqn6v6g10kzn0cjgcfa8pnnng6kzi58dsir6s";
   };
 
   addGhcPatches = ghc: patches: ghc.overrideAttrs (
