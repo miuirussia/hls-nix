@@ -269,7 +269,7 @@
         "reflection".flags.slow = false;
         "reflection".flags.template-haskell = true;
         "hyphenation".revision = (((hackage."hyphenation")."0.8.1").revisions).default;
-        "hyphenation".flags.embed = false;
+        "hyphenation".flags.embed = true;
         "polyparse".revision = (((hackage."polyparse")."1.13").revisions).default;
         "mwc-random".revision = (((hackage."mwc-random")."0.15.0.1").revisions).default;
         "ghc-paths".revision = (((hackage."ghc-paths")."0.1.0.12").revisions).default;
