@@ -52,23 +52,6 @@ let
       };
     };
 
-  overrides = {
-    hls-stable =
-      let
-        s = sources.hls-stable;
-      in
-        fromGitHub s "haskell-hls-${s.branch}-src";
-    hls-unstable =
-      let
-        s = sources.hls-unstable;
-      in
-        fromGitHub s "haskell-hls-${s.branch}-src";
-
-    vimspector = mkPatchedSource {
-      name = "vimspector";
-      src = srcs.vimspector;
-      patches = [ ./vimspector.patch ];
-    };
-  };
+  overrides = {};
 in
 nixpkgs-stable // overrides
