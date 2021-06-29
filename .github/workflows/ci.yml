@@ -1,0 +1,38 @@
+name: "Update materialization"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 3 * * *"
+jobs:
+  update:
+    name: "Update materialization"
+    runs-on: macos-latest
+    steps:
+      - name: Get current time
+        uses: 1466587594/get-current-time@v2
+        id: current-time
+        with:
+          format: YYYY-MM-DD HH:mm:ss
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install nix
+        uses: cachix/install-nix-action@v12
+        with:
+          nix_path: nixpkgs=channel:nixpkgs-unstable
+      - name: Install niv, jq, nix-prefetch-git, node2nix
+        run: |
+          nix-env -iA niv gnugrep bash -f https://github.com/miuirussia/nixpkgs/tarball/nixpkgs-unstable
+      - name: Update dependencies
+        run: |
+          niv -s sources/sources.json update
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update materialization
+        run: |
+          nix build -j8 -f default.nix project.project.plan-nix.passthru.updateMaterialized --no-link --argstr ghcVersion ghc865 --arg checkMaterialization true 2>&1 | grep -om1 '/nix/store/.*-updateMaterialized' | bash
+          nix build -j8 -f default.nix project.project.plan-nix.passthru.updateMaterialized --no-link --argstr ghcVersion ghc884 --arg checkMaterialization true 2>&1 | grep -om1 '/nix/store/.*-updateMaterialized' | bash
+          nix build -j8 -f default.nix project.project.plan-nix.passthru.updateMaterialized --no-link --argstr ghcVersion ghc8105 --arg checkMaterialization true 2>&1 | grep -om1 '/nix/store/.*-updateMaterialized' | bash
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+           commit_message: Automatic materialization update – ${{ steps.current-time.outputs.formattedTime }}
