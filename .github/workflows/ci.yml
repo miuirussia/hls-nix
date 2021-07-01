@@ -30,9 +30,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update materialization
         run: |
-          nix build -j8 -f default.nix project.project.plan-nix.passthru.updateMaterialized --no-link --argstr ghcVersion ghc865 --arg checkMaterialization true 2>&1 | grep -om1 '/nix/store/.*-updateMaterialized' | bash
-          nix build -j8 -f default.nix project.project.plan-nix.passthru.updateMaterialized --no-link --argstr ghcVersion ghc884 --arg checkMaterialization true 2>&1 | grep -om1 '/nix/store/.*-updateMaterialized' | bash
-          nix build -j8 -f default.nix project.project.plan-nix.passthru.updateMaterialized --no-link --argstr ghcVersion ghc8105 --arg checkMaterialization true 2>&1 | grep -om1 '/nix/store/.*-updateMaterialized' | bash
+          ./update.sh
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
