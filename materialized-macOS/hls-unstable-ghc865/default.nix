@@ -47,6 +47,7 @@
         "ghc-check".revision = (((hackage."ghc-check")."0.5.0.5").revisions).default;
         "ghc-check".flags.ghc-check-use-package-abis = true;
         "Boolean".revision = (((hackage."Boolean")."0.2.4").revisions).default;
+        "terminal-size".revision = (((hackage."terminal-size")."0.3.2.1").revisions).default;
         "monad-dijkstra".revision = (((hackage."monad-dijkstra")."0.1.1.3").revisions).default;
         "lsp-test".revision = (((hackage."lsp-test")."0.14.0.0").revisions).default;
         "Only".revision = (((hackage."Only")."0.1").revisions).default;
@@ -178,7 +179,7 @@
         "alex".flags.small_base = true;
         "diagrams-core".revision = (((hackage."diagrams-core")."1.4.2").revisions).default;
         "tasty-hunit".revision = (((hackage."tasty-hunit")."0.10.0.3").revisions).default;
-        "githash".revision = (((hackage."githash")."0.1.6.0").revisions).default;
+        "githash".revision = (((hackage."githash")."0.1.6.1").revisions).default;
         "megaparsec".revision = (((hackage."megaparsec")."9.0.1").revisions).default;
         "megaparsec".flags.dev = false;
         "primes".revision = (((hackage."primes")."0.2.1.0").revisions).default;
@@ -215,7 +216,7 @@
         "cmdargs".revision = (((hackage."cmdargs")."0.10.21").revisions).default;
         "cmdargs".flags.testprog = false;
         "cmdargs".flags.quotation = true;
-        "optparse-simple".revision = (((hackage."optparse-simple")."0.1.1.3").revisions).default;
+        "optparse-simple".revision = (((hackage."optparse-simple")."0.1.1.4").revisions).default;
         "optparse-simple".flags.build-example = false;
         "rts".revision = (((hackage."rts")."1.0").revisions).default;
         "text".revision = (((hackage."text")."1.2.3.1").revisions).default;
@@ -268,7 +269,7 @@
         "reflection".revision = (((hackage."reflection")."2.1.6").revisions).default;
         "reflection".flags.slow = false;
         "reflection".flags.template-haskell = true;
-        "hyphenation".revision = (((hackage."hyphenation")."0.8.1").revisions).default;
+        "hyphenation".revision = (((hackage."hyphenation")."0.8.2").revisions).default;
         "hyphenation".flags.embed = true;
         "polyparse".revision = (((hackage."polyparse")."1.13").revisions).default;
         "mwc-random".revision = (((hackage."mwc-random")."0.15.0.1").revisions).default;
@@ -464,10 +465,10 @@
         "zlib".flags.bundled-c-zlib = false;
         "zlib".flags.pkg-config = false;
         "MonadRandom".revision = (((hackage."MonadRandom")."0.5.3").revisions).default;
-        "ghc-trace-events".revision = (((hackage."ghc-trace-events")."0.1.2.2").revisions).default;
+        "ghc-trace-events".revision = (((hackage."ghc-trace-events")."0.1.2.3").revisions).default;
         "indexed-traversable-instances".revision = (((hackage."indexed-traversable-instances")."0.1").revisions).default;
         "data-default-instances-dlist".revision = (((hackage."data-default-instances-dlist")."0.0.1").revisions).default;
-        "hiedb".revision = (((hackage."hiedb")."0.3.0.1").revisions).default;
+        "hiedb".revision = (((hackage."hiedb")."0.4.0.0").revisions).default;
         "monoid-extras".revision = (((hackage."monoid-extras")."0.5.1").revisions).default;
         "force-layout".revision = (((hackage."force-layout")."0.4.0.6").revisions).default;
         "base-compat-batteries".revision = (((hackage."base-compat-batteries")."0.11.2").revisions).default;
