@@ -31,7 +31,9 @@ jobs:
       - name: Update materialization
         run: |
           ./update.sh
+          git status
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
            commit_message: Automatic materialization update – ${{ steps.current-time.outputs.formattedTime }}
+           status_options: '--untracked-files=all'

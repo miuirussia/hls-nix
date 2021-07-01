@@ -229,6 +229,7 @@ let
   implicit-hie = nixpkgs-hn.haskellPackages.implicit-hie;
 in
 {
+
   inherit
     cabal-install
     ghc
@@ -237,11 +238,12 @@ in
     hls-wrapper
     hls-wrapper-nix
     implicit-hie
-    project
     stack
     stack-nix
     stack-nonix
     stackNixPackages
     hackage
     ;
+
+  project = project.project;
 }
