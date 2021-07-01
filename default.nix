@@ -1,7 +1,7 @@
 { sources ? import ./sources
 , checkMaterialization ? false
-, index-state ? "2021-06-23T00:00:00Z"
-, index-sha256 ? "67225ac4654114b9b05780bfa2516821ec5f644c339f04be43f8bc8e4dd384e4"
+, index-state ? "2021-07-01T00:00:00Z"
+, index-sha256 ? "62164d266fe01cb4090e376305949f25c1e76648f419350716aa3657afa2198c"
 , ghcVersion ? "ghc865"
 , hackageVersion ? "1.1.0.0"
 }:
