@@ -52,6 +52,12 @@ let
       };
     };
 
-  overrides = {};
+  overrides = {
+    "haskell.nix" = mkPatchedSource {
+      name = "haskell.nix";
+      src = srcs."haskell.nix";
+      patches = [ ./hnix_sphinx_fix.patch ];
+    };
+  };
 in
 nixpkgs-stable // overrides
