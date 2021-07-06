@@ -42,6 +42,7 @@
       "library" = {
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+          (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
@@ -210,7 +211,6 @@
             (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
             ];
           buildable = true;
           modules = [ "Arguments" "Paths_ghcide" ];
