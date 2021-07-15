@@ -228,11 +228,6 @@ let
   ghc = nixpkgs-hn.haskell-nix.compiler."${ghcVersion}";
   implicit-hie = nixpkgs-hn.haskellPackages.implicit-hie;
   project = hls-project.project;
-
-  updateMaterialized = nixpkgs-hn.writeShellScriptBin "updateMaterialized" ''
-    # This runs the 'updateMaterialize' script in all platform combinations we care about.
-    ${project.plan-nix.passthru.updateMaterialized}
-  '';
 in
 {
 
@@ -250,6 +245,5 @@ in
     stackNixPackages
     hackage
     project
-    updateMaterialized
     ;
 }

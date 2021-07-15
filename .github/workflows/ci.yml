@@ -22,6 +22,10 @@ jobs:
           extra_nix_config: |
             trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= s3.kdevlab.com:PhuKrzVfCsS0T1R4FnslJy2qUBul9oQ2CTSO/fg/llM= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
             substituters = https://hydra.iohk.io https://nix-cache.s3.kdevlab.com https://cache.nixos.org/
+      - uses: cachix/cachix-action@v10
+        with:
+          name: kdevlab
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - name: Install niv, jq, nix-prefetch-git, node2nix
         run: |
           nix-env -iA niv gnugrep bash -f https://github.com/miuirussia/nixpkgs/tarball/nixpkgs-unstable
@@ -32,8 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update materialization
         run: |
-          rm -rf ./materialized-*
-          ./update.sh
+          nix-shell --run "updateMaterialized"
           git status
           git add materialized-*
       - name: Commit changes
