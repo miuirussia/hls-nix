@@ -32,9 +32,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update materialization
         run: |
+          rm -rf ./materialized-*
           ./update.sh
           git status
-          git add .
+          git add materialized-*
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
