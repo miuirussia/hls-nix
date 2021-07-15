@@ -99,7 +99,7 @@ let
     in
       allExes hls;
 
-  project = createProject "hls-unstable";
+  hls-project = createProject "hls-unstable";
   build = fromSource "hls-unstable";
   hackage = fromHackage "haskell-language-server";
 
@@ -227,6 +227,12 @@ let
   cabal-install = nixpkgs-hn.cabal-install;
   ghc = nixpkgs-hn.haskell-nix.compiler."${ghcVersion}";
   implicit-hie = nixpkgs-hn.haskellPackages.implicit-hie;
+  project = hls-project.project;
+
+  updateMaterialized = nixpkgs-hn.writeShellScriptBin "updateMaterialized" ''
+    # This runs the 'updateMaterialize' script in all platform combinations we care about.
+    ${project.plan-nix.passthru.updateMaterialized}
+  '';
 in
 {
 
@@ -243,7 +249,7 @@ in
     stack-nonix
     stackNixPackages
     hackage
+    project
+    updateMaterialized
     ;
-
-  project = project.project;
 }
