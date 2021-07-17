@@ -423,7 +423,7 @@
         "hashable".revision = (((hackage."hashable")."1.3.2.0").revisions).default;
         "hashable".flags.integer-gmp = true;
         "hashable".flags.random-initial-seed = false;
-        "refinery".revision = (((hackage."refinery")."0.3.0.0").revisions).default;
+        "refinery".revision = (((hackage."refinery")."0.4.0.0").revisions).default;
         "clock".revision = (((hackage."clock")."0.8.2").revisions).default;
         "clock".flags.llvm = false;
         "diagrams-solve".revision = (((hackage."diagrams-solve")."0.1.3").revisions).default;
