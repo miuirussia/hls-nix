@@ -5,10 +5,10 @@
         "homepage": "https://input-output-hk.github.io/haskell.nix",
         "owner": "input-output-hk",
         "repo": "haskell.nix",
-        "rev": "8e1084c2ceb578e56102d0dabfbd23009de963b5",
-        "sha256": "00b7x451b23id8j7l2q594b58nf88x5kkig7ps4hjkqwim6f9wvj",
+        "rev": "755f3cd8484de242532f8f84b01b1d576565b243",
+        "sha256": "15isqmad3s3aw7wc823zar60cj0vgfwfn982vqgyk7181k1x60s1",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/haskell.nix/archive/8e1084c2ceb578e56102d0dabfbd23009de963b5.tar.gz",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/755f3cd8484de242532f8f84b01b1d576565b243.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hls-stable": {
@@ -29,10 +29,10 @@
         "homepage": null,
         "owner": "haskell",
         "repo": "haskell-language-server",
-        "rev": "78381b8135811618101a9177ffd32102dac56b68",
-        "sha256": "0dxzfx9q6bwh79qmqrsx9c17v74a2y5z2r9pwsxbz7im5k7k32v9",
+        "rev": "f9042bf625e66a7cca86fab5d2b9ca14f75e8849",
+        "sha256": "1ymdl2vzr7vfj22p6j5bbkfjfqzqh2wnpf4g63csq9px2b7pirsw",
         "type": "tarball",
-        "url": "https://github.com/haskell/haskell-language-server/archive/78381b8135811618101a9177ffd32102dac56b68.tar.gz",
+        "url": "https://github.com/haskell/haskell-language-server/archive/f9042bf625e66a7cca86fab5d2b9ca14f75e8849.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nix-project": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "shajra",
         "repo": "nix-project",
-        "rev": "ed43ed14ff15be1ecbbc69627507ff978122e836",
-        "sha256": "1yzw6pb2b1r6h2g2ac8rxhyqaf23939n0av1kszw90b9pv8bc8p9",
+        "rev": "160d4f561e53438537a318721db5a1062fdc04b7",
+        "sha256": "0xfbqfs8kwxy3ixqld7h8bkb80pv8b8qmd8zsrpsyjj132pxkdsy",
         "type": "tarball",
-        "url": "https://github.com/shajra/nix-project/archive/ed43ed14ff15be1ecbbc69627507ff978122e836.tar.gz",
+        "url": "https://github.com/shajra/nix-project/archive/160d4f561e53438537a318721db5a1062fdc04b7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {

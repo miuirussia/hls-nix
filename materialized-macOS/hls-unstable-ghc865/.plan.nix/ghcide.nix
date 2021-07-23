@@ -227,7 +227,9 @@
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
+            (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
@@ -239,8 +241,12 @@
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
             ];
           buildable = true;
-          modules = [ "Experiments" "Experiments/Types" ];
-          hsSourceDirs = [ "bench/lib" "bench/exe" ];
+          modules = [
+            "Development/IDE/Test/Diagnostic"
+            "Experiments"
+            "Experiments/Types"
+            ];
+          hsSourceDirs = [ "bench/lib" "bench/exe" "test/src" ];
           mainPath = [ "Main.hs" ];
           };
         };
@@ -296,6 +302,7 @@
           buildable = true;
           modules = [
             "Development/IDE/Test"
+            "Development/IDE/Test/Diagnostic"
             "Development/IDE/Test/Runfiles"
             "Experiments"
             "Experiments/Types"
