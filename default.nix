@@ -18,6 +18,7 @@ let
     "https://github.com/jneira/hie-bios/"."9b1445ab5efcabfad54043fc9b8e50e9d8c5bbf3" = "0jfm7shlkb8vg2srprabvsnhmr77bvp59z771cl81i28gjvppjzi";
     "https://github.com/jwaldmann/blaze-textual.git"."d8ee6cf80e27f9619d621c936bb4bda4b99a183f" = "0k1xv17f4dk67d6ina3hrljvj009cink4qb9yac1cz5qzv6lhiqb";
     "https://github.com/mithrandi/czipwith.git"."b6245884ae83e00dd2b5261762549b37390179f8" = "0hapj3n8vnk2xx1vqn6v6g10kzn0cjgcfa8pnnng6kzi58dsir6s";
+    "https://github.com/haskell/lsp.git"."ef59c28b41ed4c5775f0ab0c1e985839359cec96" = "1whcgw4hhn2aplrpy9w8q6rafwy7znnp0rczgr6py15fqyw2fwb5";
   };
 
   addGhcPatches = ghc: patches: ghc.overrideAttrs (
