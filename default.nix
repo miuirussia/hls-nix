@@ -1,7 +1,7 @@
 { sources ? import ./sources
 , checkMaterialization ? false
-, index-state ? "2021-07-15T00:00:00Z"
-, index-sha256 ? "2f1f39319f0375a2ed18970214b782fee1f9cadc0ec507431a3da35558038565"
+, index-state ? "2021-08-02T00:00:00Z"
+, index-sha256 ? "88f287e2adfd999bcfdee213f578b0db7a9d85bcbcbf6f65791461457f4c6ca0"
 , ghcVersion ? "ghc865"
 , hackageVersion ? "1.1.0.0"
 }:
@@ -39,7 +39,11 @@ let
   };
 
   nixpkgs-hn = let
-    haskell-nix = import sources."haskell.nix" {};
+    haskell-nix = import sources."haskell.nix" {
+      sourcesOverride = {
+        hackage = sources."hackage.nix";
+      };
+    };
     args = haskell-nix.nixpkgsArgs // {
       config = {};
       overlays = haskell-nix.overlays;
