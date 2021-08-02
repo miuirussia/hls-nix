@@ -5,6 +5,8 @@
         "butcher".revision = (((hackage."butcher")."1.3.3.2").revisions).default;
         "these".revision = (((hackage."these")."1.1.1.1").revisions).default;
         "these".flags.assoc = true;
+        "lsp".revision = (((hackage."lsp")."1.2.0.1").revisions).default;
+        "lsp".flags.demo = false;
         "hlint".revision = (((hackage."hlint")."3.2.7").revisions).default;
         "hlint".flags.threaded = true;
         "hlint".flags.ghc-lib = false;
@@ -31,7 +33,7 @@
         "JuicyPixels".flags.mmap = false;
         "regex-tdfa".revision = (((hackage."regex-tdfa")."1.3.1.1").revisions).default;
         "regex-tdfa".flags.force-o2 = false;
-        "monoid-subclasses".revision = (((hackage."monoid-subclasses")."1.1").revisions).default;
+        "monoid-subclasses".revision = (((hackage."monoid-subclasses")."1.1.1").revisions).default;
         "hashtables".revision = (((hackage."hashtables")."1.2.4.1").revisions).default;
         "hashtables".flags.portable = false;
         "hashtables".flags.detailed-profiling = false;
@@ -47,6 +49,7 @@
         "Boolean".revision = (((hackage."Boolean")."0.2.4").revisions).default;
         "terminal-size".revision = (((hackage."terminal-size")."0.3.2.1").revisions).default;
         "monad-dijkstra".revision = (((hackage."monad-dijkstra")."0.1.1.3").revisions).default;
+        "lsp-test".revision = (((hackage."lsp-test")."0.14.0.1").revisions).default;
         "Only".revision = (((hackage."Only")."0.1").revisions).default;
         "blaze-builder".revision = (((hackage."blaze-builder")."0.4.2.1").revisions).default;
         "void".revision = (((hackage."void")."0.7.3").revisions).default;
@@ -145,7 +148,7 @@
         "newtype-generics".revision = (((hackage."newtype-generics")."0.5.4").revisions).default;
         "ghc-tcplugins-extra".revision = (((hackage."ghc-tcplugins-extra")."0.4.2").revisions).default;
         "ghc-tcplugins-extra".flags.deverror = false;
-        "monad-control".revision = (((hackage."monad-control")."1.0.2.3").revisions).default;
+        "monad-control".revision = (((hackage."monad-control")."1.0.3").revisions).default;
         "random".revision = (((hackage."random")."1.2.0").revisions).default;
         "unix-compat".revision = (((hackage."unix-compat")."0.5.3").revisions).default;
         "unix-compat".flags.old-time = false;
@@ -182,7 +185,7 @@
         "distributive".revision = (((hackage."distributive")."0.6.2.1").revisions).default;
         "distributive".flags.tagged = true;
         "distributive".flags.semigroups = true;
-        "transformers-base".revision = (((hackage."transformers-base")."0.4.5.2").revisions).default;
+        "transformers-base".revision = (((hackage."transformers-base")."0.4.6").revisions).default;
         "transformers-base".flags.orphaninstances = true;
         "base16-bytestring".revision = (((hackage."base16-bytestring")."1.0.1.0").revisions).default;
         "tasty-rerun".revision = (((hackage."tasty-rerun")."1.1.18").revisions).default;
@@ -237,12 +240,12 @@
         "charset".revision = (((hackage."charset")."0.3.8").revisions).default;
         "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
         "dependent-sum-template".revision = (((hackage."dependent-sum-template")."0.1.0.3").revisions).default;
-        "data-fix".revision = (((hackage."data-fix")."0.3.1").revisions).default;
+        "data-fix".revision = (((hackage."data-fix")."0.3.2").revisions).default;
         "typed-process".revision = (((hackage."typed-process")."0.2.6.0").revisions).default;
         "czipwith".revision = (((hackage."czipwith")."1.0.1.3").revisions).default;
         "SVGFonts".revision = (((hackage."SVGFonts")."1.7.0.1").revisions).default;
         "logict".revision = (((hackage."logict")."0.7.0.3").revisions).default;
-        "contravariant".revision = (((hackage."contravariant")."1.5.3").revisions).default;
+        "contravariant".revision = (((hackage."contravariant")."1.5.5").revisions).default;
         "contravariant".flags.tagged = true;
         "contravariant".flags.semigroups = true;
         "contravariant".flags.statevar = true;
@@ -251,7 +254,7 @@
         "constraints-extras".revision = (((hackage."constraints-extras")."0.3.1.0").revisions).default;
         "constraints-extras".flags.build-readme = true;
         "unsafe".revision = (((hackage."unsafe")."0.0").revisions).default;
-        "unliftio".revision = (((hackage."unliftio")."0.2.18").revisions).default;
+        "unliftio".revision = (((hackage."unliftio")."0.2.19").revisions).default;
         "wcwidth".revision = (((hackage."wcwidth")."0.0.2").revisions).default;
         "wcwidth".flags.split-base = true;
         "wcwidth".flags.cli = false;
@@ -324,6 +327,7 @@
         "directory".revision = (((hackage."directory")."1.3.6.0").revisions).default;
         "HsYAML-aeson".revision = (((hackage."HsYAML-aeson")."0.2.0.0").revisions).default;
         "random-shuffle".revision = (((hackage."random-shuffle")."0.0.4").revisions).default;
+        "lsp-types".revision = (((hackage."lsp-types")."1.3.0.0").revisions).default;
         "transformers-compat".revision = (((hackage."transformers-compat")."0.6.6").revisions).default;
         "transformers-compat".flags.two = false;
         "transformers-compat".flags.five = false;
@@ -390,7 +394,7 @@
         "tasty".flags.unix = true;
         "tasty".flags.clock = true;
         "deepseq".revision = (((hackage."deepseq")."1.4.4.0").revisions).default;
-        "kan-extensions".revision = (((hackage."kan-extensions")."5.2.2").revisions).default;
+        "kan-extensions".revision = (((hackage."kan-extensions")."5.2.3").revisions).default;
         "indexed-profunctors".revision = (((hackage."indexed-profunctors")."0.1.1").revisions).default;
         "strict".revision = (((hackage."strict")."0.4.0.1").revisions).default;
         "strict".flags.assoc = true;
@@ -448,7 +452,7 @@
         "ghc-source-gen".revision = (((hackage."ghc-source-gen")."0.4.1.0").revisions).default;
         "network-info".revision = (((hackage."network-info")."0.2.0.10").revisions).default;
         "th-compat".revision = (((hackage."th-compat")."0.1.2").revisions).default;
-        "mmorph".revision = (((hackage."mmorph")."1.1.5").revisions).default;
+        "mmorph".revision = (((hackage."mmorph")."1.2.0").revisions).default;
         "indexed-traversable".revision = (((hackage."indexed-traversable")."0.1.1").revisions).default;
         "zlib".revision = (((hackage."zlib")."0.6.2.3").revisions).default;
         "zlib".flags.non-blocking-ffi = false;
@@ -465,7 +469,7 @@
         "extra".revision = (((hackage."extra")."1.7.9").revisions).default;
         "old-locale".revision = (((hackage."old-locale")."1.0.0.7").revisions).default;
         "split".revision = (((hackage."split")."0.2.3.4").revisions).default;
-        "StateVar".revision = (((hackage."StateVar")."1.2.1").revisions).default;
+        "StateVar".revision = (((hackage."StateVar")."1.2.2").revisions).default;
         "HsYAML".revision = (((hackage."HsYAML")."0.2.1.0").revisions).default;
         "HsYAML".flags.exe = false;
         "stm".revision = (((hackage."stm")."2.5.0.1").revisions).default;
@@ -511,8 +515,6 @@
     {
       packages = {
         hls-stylish-haskell-plugin = ./.plan.nix/hls-stylish-haskell-plugin.nix;
-        lsp-test = ./.plan.nix/lsp-test.nix;
-        lsp-types = ./.plan.nix/lsp-types.nix;
         hls-brittany-plugin = ./.plan.nix/hls-brittany-plugin.nix;
         hls-graph = ./.plan.nix/hls-graph.nix;
         hls-refine-imports-plugin = ./.plan.nix/hls-refine-imports-plugin.nix;
@@ -523,7 +525,6 @@
         hls-eval-plugin = ./.plan.nix/hls-eval-plugin.nix;
         hls-tactics-plugin = ./.plan.nix/hls-tactics-plugin.nix;
         hls-pragmas-plugin = ./.plan.nix/hls-pragmas-plugin.nix;
-        lsp = ./.plan.nix/lsp.nix;
         ghcide = ./.plan.nix/ghcide.nix;
         hls-hlint-plugin = ./.plan.nix/hls-hlint-plugin.nix;
         hls-test-utils = ./.plan.nix/hls-test-utils.nix;
@@ -545,8 +546,6 @@
       {
         packages = {
           "hls-stylish-haskell-plugin" = { flags = {}; };
-          "lsp-test" = { flags = {}; };
-          "lsp-types" = { flags = {}; };
           "hls-brittany-plugin" = { flags = {}; };
           "hls-graph" = { flags = { "pedantic" = lib.mkOverride 900 false; }; };
           "hls-refine-imports-plugin" = { flags = {}; };
@@ -563,7 +562,6 @@
             flags = { "pedantic" = lib.mkOverride 900 false; };
             };
           "hls-pragmas-plugin" = { flags = {}; };
-          "lsp" = { flags = { "demo" = lib.mkOverride 900 false; }; };
           "ghcide" = {
             flags = {
               "ghc-patched-unboxed-bytecode" = lib.mkOverride 900 false;
