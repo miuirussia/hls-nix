@@ -137,6 +137,7 @@
             "CodeAction/DestructPunSpec"
             "CodeAction/DestructSpec"
             "CodeAction/IntrosSpec"
+            "CodeAction/IntroDestructSpec"
             "CodeAction/RefineSpec"
             "CodeAction/RunMetaprogramSpec"
             "CodeAction/UseDataConSpec"
