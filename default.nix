@@ -33,30 +33,22 @@ let
     }
   );
 
-  nixpkgs-unstable = import sources.nixpkgs-unstable {
-    config = {};
-    overlays = [];
-  };
+  nixpkgs-unstable = import sources.nixpkgs-unstable { };
 
-  nixpkgs-hn = let
+  hpkgs = let
     haskell-nix = import sources."haskell.nix" {
       sourcesOverride = {
         hackage = sources."hackage.nix";
       };
     };
-    args = haskell-nix.nixpkgsArgs // {
-      config = {};
-      overlays = haskell-nix.overlays;
-    };
   in
-    import sources.nixpkgs-unstable args;
+    import sources.nixpkgs-unstable haskell-nix.nixpkgsArgs;
 
-  haskell-nix = nixpkgs-hn.haskell-nix;
+  haskell-nix = hpkgs.haskell-nix;
 
   planConfigFor = name: compiler-nix-name: modules:
     let
-      isDarwin = builtins.elem builtins.currentSystem
-        nixpkgs-unstable.lib.systems.doubles.darwin;
+      isDarwin = builtins.elem builtins.currentSystem hpkgs.lib.systems.doubles.darwin;
       platformName = if isDarwin then "macOS" else "linux";
       needsNewName = name == "hls-unstable";
       newName = if needsNewName then "${name}-${ghcVersion}" else name;
@@ -155,11 +147,11 @@ let
     }
   );
 
-  hls-renamed = nixpkgs-hn.stdenv.mkDerivation {
+  hls-renamed = hpkgs.stdenv.mkDerivation {
     name = "haskell-language-server-${ghcVersion}-renamed";
     version = hls.version;
     phases = [ "installPhase" ];
-    nativeBuildInputs = [ nixpkgs-hn.makeWrapper ];
+    nativeBuildInputs = [ hpkgs.makeWrapper ];
     installPhase = ''
       mkdir --parents $out/bin
       makeWrapper \
@@ -229,9 +221,9 @@ let
     in
       builtins.map select packageNames;
 
-  cabal-install = nixpkgs-hn.cabal-install;
-  ghc = nixpkgs-hn.haskell-nix.compiler."${ghcVersion}";
-  implicit-hie = nixpkgs-hn.haskellPackages.implicit-hie;
+  cabal-install = hpkgs.cabal-install;
+  ghc = hpkgs.haskell-nix.compiler."${ghcVersion}";
+  implicit-hie = hpkgs.haskellPackages.implicit-hie;
   project = hls-project.project;
 in
 {
