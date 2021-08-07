@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "miuirussia",
         "repo": "hackage.nix",
-        "rev": "f35f4a28f5ee712b201e6fb6f8d521e46b0efbd6",
-        "sha256": "0m9kn2d58f8hcqv94867bjzcb1gnrkl4myv9ym14ic4pcksh5gqw",
+        "rev": "7ca9d9e9bb02704ea9ec7ec828f02d75b32a840a",
+        "sha256": "1ay4hbnw1rbhn26np7lx50vx2d86cac8p0a94sk67krfsn67g0f8",
         "type": "tarball",
-        "url": "https://github.com/miuirussia/hackage.nix/archive/f35f4a28f5ee712b201e6fb6f8d521e46b0efbd6.tar.gz",
+        "url": "https://github.com/miuirussia/hackage.nix/archive/7ca9d9e9bb02704ea9ec7ec828f02d75b32a840a.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell.nix": {
@@ -41,10 +41,10 @@
         "homepage": null,
         "owner": "haskell",
         "repo": "haskell-language-server",
-        "rev": "8d5e34706c6be18746297d8a7b47d5ab51915cbe",
-        "sha256": "1fmg0hyr7qcy5san7acvxsd8hkwz5b2zb7rigzi4vxqvv9ncsyfq",
+        "rev": "dab8d009b25c07e84024ec4d339c6237a741b87b",
+        "sha256": "1km53m30j5ys795716rwj9msikwlzsp4jnyqhwwnxp05628gwd4h",
         "type": "tarball",
-        "url": "https://github.com/haskell/haskell-language-server/archive/8d5e34706c6be18746297d8a7b47d5ab51915cbe.tar.gz",
+        "url": "https://github.com/haskell/haskell-language-server/archive/dab8d009b25c07e84024ec4d339c6237a741b87b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nix-project": {
@@ -101,10 +101,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "miuirussia",
         "repo": "nixpkgs",
-        "rev": "93e0a21372461b1f61ff2c22e2df5def133fc73f",
-        "sha256": "1f65smcxryrrbw7gff9irv30wqfyxixif3lihmzn31r80l902946",
+        "rev": "a8b262b12980ff482acba963c2facb6a1e7c1f67",
+        "sha256": "0s9k95pmiypwrcqx1qi7c1nbdfzizfgi709d1x2hpbcbs987fqzx",
         "type": "tarball",
-        "url": "https://github.com/miuirussia/nixpkgs/archive/93e0a21372461b1f61ff2c22e2df5def133fc73f.tar.gz",
+        "url": "https://github.com/miuirussia/nixpkgs/archive/a8b262b12980ff482acba963c2facb6a1e7c1f67.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
