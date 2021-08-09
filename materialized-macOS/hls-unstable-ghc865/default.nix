@@ -149,7 +149,7 @@
         "newtype-generics".revision = (((hackage."newtype-generics")."0.5.4").revisions).default;
         "ghc-tcplugins-extra".revision = (((hackage."ghc-tcplugins-extra")."0.4.2").revisions).default;
         "ghc-tcplugins-extra".flags.deverror = false;
-        "monad-control".revision = (((hackage."monad-control")."1.0.3").revisions).default;
+        "monad-control".revision = (((hackage."monad-control")."1.0.3.1").revisions).default;
         "random".revision = (((hackage."random")."1.2.0").revisions).default;
         "unix-compat".revision = (((hackage."unix-compat")."0.5.3").revisions).default;
         "unix-compat".flags.old-time = false;
@@ -323,12 +323,12 @@
         "base-orphans".revision = (((hackage."base-orphans")."0.8.4").revisions).default;
         "diagrams-svg".revision = (((hackage."diagrams-svg")."1.4.3").revisions).default;
         "prettyprinter-ansi-terminal".revision = (((hackage."prettyprinter-ansi-terminal")."1.1.2").revisions).default;
-        "primitive".revision = (((hackage."primitive")."0.7.1.0").revisions).default;
+        "primitive".revision = (((hackage."primitive")."0.7.2.0").revisions).default;
         "smallcheck".revision = (((hackage."smallcheck")."1.2.1").revisions).default;
         "directory".revision = (((hackage."directory")."1.3.3.0").revisions).default;
         "HsYAML-aeson".revision = (((hackage."HsYAML-aeson")."0.2.0.0").revisions).default;
         "random-shuffle".revision = (((hackage."random-shuffle")."0.0.4").revisions).default;
-        "lsp-types".revision = (((hackage."lsp-types")."1.3.0.0").revisions).default;
+        "lsp-types".revision = (((hackage."lsp-types")."1.3.0.1").revisions).default;
         "transformers-compat".revision = (((hackage."transformers-compat")."0.6.6").revisions).default;
         "transformers-compat".flags.two = false;
         "transformers-compat".flags.five = false;
@@ -344,7 +344,7 @@
         "js-dgtable".revision = (((hackage."js-dgtable")."0.5.2").revisions).default;
         "microlens".revision = (((hackage."microlens")."0.4.12.0").revisions).default;
         "microlens-mtl".revision = (((hackage."microlens-mtl")."0.2.0.1").revisions).default;
-        "resourcet".revision = (((hackage."resourcet")."1.2.4.2").revisions).default;
+        "resourcet".revision = (((hackage."resourcet")."1.2.4.3").revisions).default;
         "aeson".revision = (((hackage."aeson")."1.5.6.0").revisions).default;
         "aeson".flags.developer = false;
         "aeson".flags.bytestring-builder = false;

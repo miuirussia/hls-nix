@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "miuirussia",
         "repo": "hackage.nix",
-        "rev": "91f1ba732576d1f8575747e73ee32eba092a6978",
-        "sha256": "15ydmljwc45r490f6hccdqyqy2zm59n6c24a8icj9wxs5b1gp4gk",
+        "rev": "4a5a0fe7deef221f6acfc6d9b3d7357c9b133573",
+        "sha256": "09qbp3f4cg51iimryqji1m410ng6z1ryynkn66qw2v6pff2yimx8",
         "type": "tarball",
-        "url": "https://github.com/miuirussia/hackage.nix/archive/91f1ba732576d1f8575747e73ee32eba092a6978.tar.gz",
+        "url": "https://github.com/miuirussia/hackage.nix/archive/4a5a0fe7deef221f6acfc6d9b3d7357c9b133573.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell.nix": {
