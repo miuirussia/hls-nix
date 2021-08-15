@@ -71,6 +71,9 @@
         buildable = true;
         modules = [
           "Ide/Plugin/Tactic"
+          "Wingman/AbstractLSP"
+          "Wingman/AbstractLSP/TacticActions"
+          "Wingman/AbstractLSP/Types"
           "Wingman/Auto"
           "Wingman/CaseSplit"
           "Wingman/CodeGen"
