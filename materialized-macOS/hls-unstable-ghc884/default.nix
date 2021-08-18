@@ -234,7 +234,7 @@
         "unix".revision = (((hackage."unix")."2.7.2.2").revisions).default;
         "dependent-sum-template".revision = (((hackage."dependent-sum-template")."0.1.0.3").revisions).default;
         "data-fix".revision = (((hackage."data-fix")."0.3.2").revisions).default;
-        "typed-process".revision = (((hackage."typed-process")."0.2.6.0").revisions).default;
+        "typed-process".revision = (((hackage."typed-process")."0.2.6.1").revisions).default;
         "czipwith".revision = (((hackage."czipwith")."1.0.1.3").revisions).default;
         "SVGFonts".revision = (((hackage."SVGFonts")."1.7.0.1").revisions).default;
         "logict".revision = (((hackage."logict")."0.7.0.3").revisions).default;
@@ -296,7 +296,7 @@
         "haddock-library".revision = (((hackage."haddock-library")."1.10.0").revisions).default;
         "Chart".revision = (((hackage."Chart")."1.9.3").revisions).default;
         "tf-random".revision = (((hackage."tf-random")."0.5").revisions).default;
-        "some".revision = (((hackage."some")."1.0.3").revisions).default;
+        "some".revision = (((hackage."some")."1.0.2").revisions).default;
         "some".flags.newtype-unsafe = true;
         "shake".revision = (((hackage."shake")."0.19.5").revisions).default;
         "shake".flags.cloud = false;
@@ -434,7 +434,7 @@
         "assoc".revision = (((hackage."assoc")."1.0.2").revisions).default;
         "fast-math".revision = (((hackage."fast-math")."1.0.2").revisions).default;
         "sqlite-simple".revision = (((hackage."sqlite-simple")."0.4.18.0").revisions).default;
-        "base64-bytestring".revision = (((hackage."base64-bytestring")."1.2.0.1").revisions).default;
+        "base64-bytestring".revision = (((hackage."base64-bytestring")."1.2.1.0").revisions).default;
         "regex-base".revision = (((hackage."regex-base")."0.94.0.1").revisions).default;
         "tasty-quickcheck".revision = (((hackage."tasty-quickcheck")."0.10.1.2").revisions).default;
         "fourmolu".revision = (((hackage."fourmolu")."0.3.0.0").revisions).default;
