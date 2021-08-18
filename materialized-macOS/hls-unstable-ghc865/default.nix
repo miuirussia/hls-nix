@@ -21,7 +21,7 @@
         "streaming-commons".revision = (((hackage."streaming-commons")."0.2.2.1").revisions).default;
         "streaming-commons".flags.use-bytestring-builder = false;
         "old-time".revision = (((hackage."old-time")."1.1.0.3").revisions).default;
-        "dual-tree".revision = (((hackage."dual-tree")."0.2.2.1").revisions).default;
+        "dual-tree".revision = (((hackage."dual-tree")."0.2.3.0").revisions).default;
         "hslogger".revision = (((hackage."hslogger")."1.3.1.0").revisions).default;
         "hslogger".flags.network--gt-3_0_0 = true;
         "bifunctors".revision = (((hackage."bifunctors")."5.5.11").revisions).default;
@@ -61,7 +61,7 @@
         "base-compat".revision = (((hackage."base-compat")."0.11.2").revisions).default;
         "NumInstances".revision = (((hackage."NumInstances")."1.4").revisions).default;
         "diagrams-contrib".revision = (((hackage."diagrams-contrib")."1.4.4").revisions).default;
-        "diagrams-lib".revision = (((hackage."diagrams-lib")."1.4.3").revisions).default;
+        "diagrams-lib".revision = (((hackage."diagrams-lib")."1.4.4").revisions).default;
         "ansi-terminal".revision = (((hackage."ansi-terminal")."0.10.3").revisions).default;
         "ansi-terminal".flags.example = false;
         "js-jquery".revision = (((hackage."js-jquery")."3.3.1").revisions).default;
@@ -132,21 +132,13 @@
         "monad-memo".revision = (((hackage."monad-memo")."0.5.3").revisions).default;
         "dlist".revision = (((hackage."dlist")."1.0").revisions).default;
         "dlist".flags.werror = false;
-        "diagrams".revision = (((hackage."diagrams")."1.4").revisions).default;
-        "diagrams".flags.postscript = false;
-        "diagrams".flags.rasterific = false;
-        "diagrams".flags.cairo = false;
-        "diagrams".flags.gtk = false;
-        "diagrams".flags.svg = true;
-        "diagrams".flags.ps = false;
-        "diagrams".flags.canvas = false;
         "pretty".revision = (((hackage."pretty")."1.1.3.6").revisions).default;
         "ghc-typelits-knownnat".revision = (((hackage."ghc-typelits-knownnat")."0.7.6").revisions).default;
         "ghc-typelits-knownnat".flags.deverror = false;
         "async".revision = (((hackage."async")."2.2.3").revisions).default;
         "async".flags.bench = false;
         "process".revision = (((hackage."process")."1.6.5.0").revisions).default;
-        "newtype-generics".revision = (((hackage."newtype-generics")."0.5.4").revisions).default;
+        "newtype-generics".revision = (((hackage."newtype-generics")."0.6").revisions).default;
         "ghc-tcplugins-extra".revision = (((hackage."ghc-tcplugins-extra")."0.4.2").revisions).default;
         "ghc-tcplugins-extra".flags.deverror = false;
         "monad-control".revision = (((hackage."monad-control")."1.0.3.1").revisions).default;
@@ -177,7 +169,7 @@
         "quickcheck-io".revision = (((hackage."quickcheck-io")."0.2.0").revisions).default;
         "alex".revision = (((hackage."alex")."3.2.6").revisions).default;
         "alex".flags.small_base = true;
-        "diagrams-core".revision = (((hackage."diagrams-core")."1.4.2").revisions).default;
+        "diagrams-core".revision = (((hackage."diagrams-core")."1.5.0").revisions).default;
         "tasty-hunit".revision = (((hackage."tasty-hunit")."0.10.0.3").revisions).default;
         "githash".revision = (((hackage."githash")."0.1.6.1").revisions).default;
         "megaparsec".revision = (((hackage."megaparsec")."9.0.1").revisions).default;
@@ -465,7 +457,7 @@
         "indexed-traversable-instances".revision = (((hackage."indexed-traversable-instances")."0.1").revisions).default;
         "data-default-instances-dlist".revision = (((hackage."data-default-instances-dlist")."0.0.1").revisions).default;
         "hiedb".revision = (((hackage."hiedb")."0.4.0.0").revisions).default;
-        "monoid-extras".revision = (((hackage."monoid-extras")."0.5.1").revisions).default;
+        "monoid-extras".revision = (((hackage."monoid-extras")."0.6").revisions).default;
         "force-layout".revision = (((hackage."force-layout")."0.4.0.6").revisions).default;
         "base-compat-batteries".revision = (((hackage."base-compat-batteries")."0.11.2").revisions).default;
         "extra".revision = (((hackage."extra")."1.7.9").revisions).default;
@@ -791,7 +783,6 @@
           "dlist".components.library.planned = lib.mkOverride 900 true;
           "fsnotify".components.library.planned = lib.mkOverride 900 true;
           "monad-memo".components.library.planned = lib.mkOverride 900 true;
-          "diagrams".components.library.planned = lib.mkOverride 900 true;
           "pretty".components.library.planned = lib.mkOverride 900 true;
           "HUnit".components.library.planned = lib.mkOverride 900 true;
           "vector".components.library.planned = lib.mkOverride 900 true;
