@@ -510,6 +510,7 @@
         hls-stylish-haskell-plugin = ./.plan.nix/hls-stylish-haskell-plugin.nix;
         hls-brittany-plugin = ./.plan.nix/hls-brittany-plugin.nix;
         hls-graph = ./.plan.nix/hls-graph.nix;
+        hls-rename-plugin = ./.plan.nix/hls-rename-plugin.nix;
         hls-refine-imports-plugin = ./.plan.nix/hls-refine-imports-plugin.nix;
         hls-floskell-plugin = ./.plan.nix/hls-floskell-plugin.nix;
         hls-module-name-plugin = ./.plan.nix/hls-module-name-plugin.nix;
@@ -541,6 +542,7 @@
           "hls-stylish-haskell-plugin" = { flags = {}; };
           "hls-brittany-plugin" = { flags = {}; };
           "hls-graph" = { flags = { "pedantic" = lib.mkOverride 900 false; }; };
+          "hls-rename-plugin" = { flags = {}; };
           "hls-refine-imports-plugin" = { flags = {}; };
           "hls-floskell-plugin" = { flags = {}; };
           "hls-module-name-plugin" = { flags = {}; };
@@ -592,6 +594,7 @@
               "all-plugins" = lib.mkOverride 900 false;
               "pragmas" = lib.mkOverride 900 true;
               "pedantic" = lib.mkOverride 900 false;
+              "rename" = lib.mkOverride 900 false;
               "floskell" = lib.mkOverride 900 true;
               "tactic" = lib.mkOverride 900 true;
               "modulename" = lib.mkOverride 900 true;
@@ -771,6 +774,7 @@
           "circle-packing".components.library.planned = lib.mkOverride 900 true;
           "Glob".components.library.planned = lib.mkOverride 900 true;
           "hls-graph".components.library.planned = lib.mkOverride 900 true;
+          "hls-rename-plugin".components.library.planned = lib.mkOverride 900 true;
           "conduit".components.library.planned = lib.mkOverride 900 true;
           "data-default-instances-old-locale".components.library.planned = lib.mkOverride 900 true;
           "hls-refine-imports-plugin".components.library.planned = lib.mkOverride 900 true;
@@ -850,6 +854,7 @@
           "brittany".components.library.planned = lib.mkOverride 900 true;
           "ghc-paths".components.library.planned = lib.mkOverride 900 true;
           "hls-stylish-haskell-plugin".components.library.planned = lib.mkOverride 900 true;
+          "hls-rename-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "ormolu".components.exes."ormolu".planned = lib.mkOverride 900 true;
           "fuzzy".components.library.planned = lib.mkOverride 900 true;
           "contravariant".components.library.planned = lib.mkOverride 900 true;
