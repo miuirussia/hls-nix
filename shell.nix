@@ -11,6 +11,7 @@ let
     ${mkHlsMaterialization "ghc884"}
     ${mkHlsMaterialization "ghc8104"}
     ${mkHlsMaterialization "ghc8105"}
+    ${mkHlsMaterialization "ghc901"}
   '';
 in
 pkgs.mkShell {
