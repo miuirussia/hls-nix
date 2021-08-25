@@ -10,7 +10,7 @@ let
     ${mkHlsMaterialization "ghc865"}
     ${mkHlsMaterialization "ghc884"}
     ${mkHlsMaterialization "ghc8104"}
-    ${mkHlsMaterialization "ghc8105"}
+    ${mkHlsMaterialization "ghc8106"}
     ${mkHlsMaterialization "ghc901"}
   '';
 in
