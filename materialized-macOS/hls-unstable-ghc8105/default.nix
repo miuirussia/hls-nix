@@ -442,6 +442,8 @@
         "Cabal".revision = (((hackage."Cabal")."3.2.1.0").revisions).default;
         "hspec".revision = (((hackage."hspec")."2.7.10").revisions).default;
         "ghc-source-gen".revision = (((hackage."ghc-source-gen")."0.4.1.0").revisions).default;
+        "unagi-chan".revision = (((hackage."unagi-chan")."0.4.1.3").revisions).default;
+        "unagi-chan".flags.compare-benchmarks = false;
         "network-info".revision = (((hackage."network-info")."0.2.0.10").revisions).default;
         "th-compat".revision = (((hackage."th-compat")."0.1.2").revisions).default;
         "mmorph".revision = (((hackage."mmorph")."1.2.0").revisions).default;
@@ -464,6 +466,8 @@
         "StateVar".revision = (((hackage."StateVar")."1.2.2").revisions).default;
         "HsYAML".revision = (((hackage."HsYAML")."0.2.1.0").revisions).default;
         "HsYAML".flags.exe = false;
+        "atomic-primops".revision = (((hackage."atomic-primops")."0.8.4").revisions).default;
+        "atomic-primops".flags.debug = false;
         "stm".revision = (((hackage."stm")."2.5.0.1").revisions).default;
         };
       compiler = {
@@ -664,6 +668,7 @@
           "HsYAML".components.library.planned = lib.mkOverride 900 true;
           "haskell-language-server".components.tests."func-test".planned = lib.mkOverride 900 true;
           "shake".components.exes."shake".planned = lib.mkOverride 900 true;
+          "atomic-primops".components.library.planned = lib.mkOverride 900 true;
           "stm".components.library.planned = lib.mkOverride 900 true;
           "haskell-language-server".components.exes."haskell-language-server".planned = lib.mkOverride 900 true;
           "hiedb".components.exes."hiedb".planned = lib.mkOverride 900 true;
@@ -705,6 +710,7 @@
           "hls-pragmas-plugin".components.library.planned = lib.mkOverride 900 true;
           "linear".components.library.planned = lib.mkOverride 900 true;
           "comonad".components.library.planned = lib.mkOverride 900 true;
+          "unagi-chan".components.library.planned = lib.mkOverride 900 true;
           "hspec".components.library.planned = lib.mkOverride 900 true;
           "ghc-source-gen".components.library.planned = lib.mkOverride 900 true;
           "network-info".components.library.planned = lib.mkOverride 900 true;
