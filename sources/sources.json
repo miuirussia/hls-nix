@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "miuirussia",
         "repo": "hackage.nix",
-        "rev": "c8d784a367ad429e367547f4e9315d59a46a444f",
-        "sha256": "0w8hf7s1763z3sa208c098mkbgqzzmalfz5dnv06adibpfvy1ap9",
+        "rev": "544a3c0c08b1745ac81ad2ecbedbca1813a5d9f1",
+        "sha256": "1aj1v6bi6hapwdia23kxq4r0lkikdmrlghj01rs6kdnnqgpzivdd",
         "type": "tarball",
-        "url": "https://github.com/miuirussia/hackage.nix/archive/c8d784a367ad429e367547f4e9315d59a46a444f.tar.gz",
+        "url": "https://github.com/miuirussia/hackage.nix/archive/544a3c0c08b1745ac81ad2ecbedbca1813a5d9f1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell.nix": {
@@ -17,10 +17,10 @@
         "homepage": "https://input-output-hk.github.io/haskell.nix",
         "owner": "miuirussia",
         "repo": "haskell.nix",
-        "rev": "e96db0d716174c8eddc9510d41e269a447f677b4",
-        "sha256": "185d3717vngj0w4ry3xgh7x8g14zsck8ki58r9acvykj0617aayw",
+        "rev": "7d16cd072a61a7e358379db7f01a876b0e163b19",
+        "sha256": "0mj1zyjacv0dy7csw687wgmm5vr0fbagci2pkclx6ddpk2qkzpkd",
         "type": "tarball",
-        "url": "https://github.com/miuirussia/haskell.nix/archive/e96db0d716174c8eddc9510d41e269a447f677b4.tar.gz",
+        "url": "https://github.com/miuirussia/haskell.nix/archive/7d16cd072a61a7e358379db7f01a876b0e163b19.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "hls-stable": {
@@ -41,10 +41,10 @@
         "homepage": null,
         "owner": "haskell",
         "repo": "haskell-language-server",
-        "rev": "d7a745e9b5ae76a4bf4ee79a9fdf41cf6f1662bf",
-        "sha256": "0rxnkijdvglhamqfn8krsnnpj3s7kz2v5n5ndy37a41l161jqczx",
+        "rev": "32cd57df639d67ac0cf29882839e00532fd30c84",
+        "sha256": "0m14hrcxn28bg5i30x1zgpmw0l761a9xdcwjw8rlxgizgm99bhml",
         "type": "tarball",
-        "url": "https://github.com/haskell/haskell-language-server/archive/d7a745e9b5ae76a4bf4ee79a9fdf41cf6f1662bf.tar.gz",
+        "url": "https://github.com/haskell/haskell-language-server/archive/32cd57df639d67ac0cf29882839e00532fd30c84.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nix-project": {
