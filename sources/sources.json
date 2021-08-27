@@ -41,10 +41,10 @@
         "homepage": null,
         "owner": "haskell",
         "repo": "haskell-language-server",
-        "rev": "32cd57df639d67ac0cf29882839e00532fd30c84",
-        "sha256": "0m14hrcxn28bg5i30x1zgpmw0l761a9xdcwjw8rlxgizgm99bhml",
+        "rev": "6fa3e640b6ffac4ee9ffbd051b8d01fd220a7378",
+        "sha256": "1vp7v9vn0g6kglyckd9l15awscw4il1fxidbkvnjdybcqgvb17vn",
         "type": "tarball",
-        "url": "https://github.com/haskell/haskell-language-server/archive/32cd57df639d67ac0cf29882839e00532fd30c84.tar.gz",
+        "url": "https://github.com/haskell/haskell-language-server/archive/6fa3e640b6ffac4ee9ffbd051b8d01fd220a7378.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nix-project": {
