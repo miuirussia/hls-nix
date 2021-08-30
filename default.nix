@@ -39,6 +39,7 @@ let
     haskell-nix = import sources."haskell.nix" {
       sourcesOverride = {
         hackage = sources."hackage.nix";
+        stackage = sources."stackage.nix";
       };
     };
   in

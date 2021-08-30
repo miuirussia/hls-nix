@@ -106,5 +106,17 @@
         "type": "tarball",
         "url": "https://github.com/miuirussia/nixpkgs/archive/8127ec98e468fc2c44e4ca2c22821fa82f0c731e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "stackage.nix": {
+        "branch": "master",
+        "description": "Automatically generated Nix expressions of Stackage snapshots",
+        "homepage": "",
+        "owner": "input-output-hk",
+        "repo": "stackage.nix",
+        "rev": "b9d5092644fda4c0311675e19d0b533808610dd4",
+        "sha256": "1p3bgvdz2cw8fmidmfvy8y1s773gw4l2rwi14hahcrkasj0xpxhb",
+        "type": "tarball",
+        "url": "https://github.com/input-output-hk/stackage.nix/archive/b9d5092644fda4c0311675e19d0b533808610dd4.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
