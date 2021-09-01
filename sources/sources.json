@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "miuirussia",
         "repo": "hackage.nix",
-        "rev": "8b0dc0a77e3bee78565ed225b8cfec075ecc5925",
-        "sha256": "0vjly9vfsdvnk4sd2bqvqd4cqsdagn4wliiivd4g04zxj5zc07dy",
+        "rev": "75a2b3446b8b3bc8366afb7d9cae27eae0ee9568",
+        "sha256": "0kkgj290asjxy9mzfbn8jcsinfy8g75r1lk39xalh83kgi50cmkn",
         "type": "tarball",
-        "url": "https://github.com/miuirussia/hackage.nix/archive/8b0dc0a77e3bee78565ed225b8cfec075ecc5925.tar.gz",
+        "url": "https://github.com/miuirussia/hackage.nix/archive/75a2b3446b8b3bc8366afb7d9cae27eae0ee9568.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell.nix": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "shajra",
         "repo": "nix-project",
-        "rev": "6365bda5db789ca6fc42114dde3a82c16d0b3afd",
-        "sha256": "0m2dmx8251qm7mghhjb4rv2zcc0nsdq9f0hv7q0ls2d56iqqb9b4",
+        "rev": "546f682bdb18e19c2dd35aac953c0848b5fd295d",
+        "sha256": "1anwdb0njcvg20nlahhihnkjfk2h2jckbqdv1dhd9knw2c4mmazi",
         "type": "tarball",
-        "url": "https://github.com/shajra/nix-project/archive/6365bda5db789ca6fc42114dde3a82c16d0b3afd.tar.gz",
+        "url": "https://github.com/shajra/nix-project/archive/546f682bdb18e19c2dd35aac953c0848b5fd295d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
