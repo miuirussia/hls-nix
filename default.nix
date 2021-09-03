@@ -1,7 +1,7 @@
 { sources ? import ./sources
 , checkMaterialization ? false
-, index-state ? "2021-08-13T00:00:00Z"
-, index-sha256 ? "59f54b47d287099e14bd521e95ac8dc9c3c0791d325045714329ca9f33b43335"
+, index-state ? "2021-08-31T00:00:00Z"
+, index-sha256 ? "d3d601734d4525368971218844d14bd55ace8115aef3b441cef89a22cd333d46"
 , ghcVersion ? "ghc865"
 , hackageVersion ? "1.2.0.0"
 }:
@@ -19,6 +19,7 @@ let
     "https://github.com/jwaldmann/blaze-textual.git"."d8ee6cf80e27f9619d621c936bb4bda4b99a183f" = "0k1xv17f4dk67d6ina3hrljvj009cink4qb9yac1cz5qzv6lhiqb";
     "https://github.com/mithrandi/czipwith.git"."b6245884ae83e00dd2b5261762549b37390179f8" = "0hapj3n8vnk2xx1vqn6v6g10kzn0cjgcfa8pnnng6kzi58dsir6s";
     "https://github.com/haskell/lsp.git"."ef59c28b41ed4c5775f0ab0c1e985839359cec96" = "1whcgw4hhn2aplrpy9w8q6rafwy7znnp0rczgr6py15fqyw2fwb5";
+    "https://github.com/HeinrichApfelmus/operational"."16e19aaf34e286f3d27b3988c61040823ec66537" = "1831g81pnx8sn0w1j9srs37bmai2wv521dvmjqjdy21a8xqairiz";
   };
 
   addGhcPatches = ghc: patches: ghc.overrideAttrs (
