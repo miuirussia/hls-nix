@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "miuirussia",
         "repo": "hackage.nix",
-        "rev": "b5d2eb055b9314a5bdf99e1244399b72612a3091",
-        "sha256": "1c2i7kikwq416avq2v0sql5j9dcn46xlby4kj9nprllfxlwqyskm",
+        "rev": "9c428f68201330ddb32aa97555ba10b62fd25374",
+        "sha256": "13w91296b98yq68rnnqsd5q0bkwsdihz5g9alwm7d91rn61darin",
         "type": "tarball",
-        "url": "https://github.com/miuirussia/hackage.nix/archive/b5d2eb055b9314a5bdf99e1244399b72612a3091.tar.gz",
+        "url": "https://github.com/miuirussia/hackage.nix/archive/9c428f68201330ddb32aa97555ba10b62fd25374.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell.nix": {
@@ -41,10 +41,10 @@
         "homepage": null,
         "owner": "haskell",
         "repo": "haskell-language-server",
-        "rev": "1cf1ae663db67041f23179a9f73d6bd55ee41eb3",
-        "sha256": "0z1xlwjd74y54xd1fz7lazm0lil027px9933fdl7hq9lwrkijbj3",
+        "rev": "235836283ccc80048dc54633bfae6e3625a9d2f9",
+        "sha256": "116mswq32rz9li472msjbixlzsm63a1svxmv0k69fa4y454x301p",
         "type": "tarball",
-        "url": "https://github.com/haskell/haskell-language-server/archive/1cf1ae663db67041f23179a9f73d6bd55ee41eb3.tar.gz",
+        "url": "https://github.com/haskell/haskell-language-server/archive/235836283ccc80048dc54633bfae6e3625a9d2f9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nix-project": {
