@@ -1,21 +1,15 @@
-{ pkgs ? import <nixpkgs> {} }:
-
-let
-
-  mkHlsMaterialization = ghcVersion: let
-    hls = import ./default.nix { inherit ghcVersion; };
-  in hls.project.plan-nix.passthru.updateMaterialized;
-  updateMaterialized = pkgs.writeShellScriptBin "updateMaterialized" ''
-    # This runs the 'updateMaterialize' script in all platform combinations we care about.
-    ${mkHlsMaterialization "ghc865"}
-    ${mkHlsMaterialization "ghc884"}
-    ${mkHlsMaterialization "ghc8104"}
-    ${mkHlsMaterialization "ghc8105"}
-    ${mkHlsMaterialization "ghc8106"}
-    ${mkHlsMaterialization "ghc8107"}
-    ${mkHlsMaterialization "ghc901"}
-  '';
-in
-pkgs.mkShell {
-  nativeBuildInputs = [ updateMaterialized ];
-}
+(
+  import
+    (
+      let
+        lock = builtins.fromJSON (builtins.readFile ./flake.lock);
+      in
+        fetchTarball {
+          url = "https://github.com/${lock.nodes.flake-compat.locked.owner}/${lock.nodes.flake-compat.locked.repo}/archive/${lock.nodes.flake-compat.locked.rev}.tar.gz";
+          sha256 = lock.nodes.flake-compat.locked.narHash;
+        }
+    )
+    {
+      src = ./.;
+    }
+).shellNix
