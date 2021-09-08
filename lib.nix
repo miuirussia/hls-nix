@@ -2,6 +2,7 @@
 , pkgs
 , system
 , checkMaterialization ? false
+, disableMaterialization ? false
 , index-state ? "2021-09-07T00:00:00Z"
 , index-sha256 ? "e8def78fac297272d6a07ef5bcc00cc5d1001ebfcb2a77072447c385cfc8f3f3"
 , ghcVersion ? "ghc865"
@@ -51,7 +52,7 @@ let
           ;
         configureArgs = "--disable-benchmarks";
         lookupSha256 = { location, tag, ... }: sourcesRepositoryPackage."${location}"."${tag}" or null;
-        materialized = ./materialized + "-${platformName}/${newName}";
+        materialized = if disableMaterialization then null else ./materialized + "-${platformName}/${newName}";
       };
 
   allExes = pkg: pkg.components.exes;
