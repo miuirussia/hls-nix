@@ -2,8 +2,8 @@
 , pkgs
 , system
 , checkMaterialization ? false
-, index-state ? "2021-08-31T00:00:00Z"
-, index-sha256 ? "d3d601734d4525368971218844d14bd55ace8115aef3b441cef89a22cd333d46"
+, index-state ? "2021-09-07T00:00:00Z"
+, index-sha256 ? "e8def78fac297272d6a07ef5bcc00cc5d1001ebfcb2a77072447c385cfc8f3f3"
 , ghcVersion ? "ghc865"
 , hackageVersion ? "1.2.0.0"
 }:
