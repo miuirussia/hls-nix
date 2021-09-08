@@ -32,9 +32,6 @@ jobs:
       - name: Check flakes
         run: |
           nix flake show
-      - name: Install niv, jq, nix-prefetch-git, node2nix
-        run: |
-          nix-env -iA niv gnugrep bash -f https://github.com/miuirussia/nixpkgs/tarball/nixpkgs-unstable
       - name: Update dependencies
         run: |
           nix flake update
@@ -42,7 +39,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update materialization
         run: |
-          nix run .#updateMaterialized
+          nix run .#updateMaterialized -- $(pwd)/materialized-macOS
           git status
           git add materialized-*
       - name: Commit changes

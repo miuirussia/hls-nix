@@ -82,16 +82,16 @@
                 overlays = [ haskell-nix.overlay ];
                 inherit system;
               };
-              mkHlsMaterialization = ghcVersion: (library { inherit pkgs system ghcVersion inputs; }).project.plan-nix.passthru.updateMaterialized;
+              mkHlsMaterialization = ghcVersion: (library { inherit pkgs system ghcVersion inputs; }).project.plan-nix.passthru.generateMaterialized;
               updateMaterializedBin = pkgs.writeShellScriptBin "updateMaterialized" ''
                 # This runs the 'updateMaterialize' script in all platform combinations we care about.
-                ${mkHlsMaterialization "ghc865"}
-                ${mkHlsMaterialization "ghc884"}
-                ${mkHlsMaterialization "ghc8104"}
-                ${mkHlsMaterialization "ghc8105"}
-                ${mkHlsMaterialization "ghc8106"}
-                ${mkHlsMaterialization "ghc8107"}
-                ${mkHlsMaterialization "ghc901"}
+                ${mkHlsMaterialization "ghc865"} $1/hls-unstable-ghc865
+                ${mkHlsMaterialization "ghc884"} $1/hls-unstable-ghc884
+                ${mkHlsMaterialization "ghc8104"} $1/hls-unstable-ghc8104
+                ${mkHlsMaterialization "ghc8105"} $1/hls-unstable-ghc8105
+                ${mkHlsMaterialization "ghc8106"} $1/hls-unstable-ghc8106
+                ${mkHlsMaterialization "ghc8107"} $1/hls-unstable-ghc8107
+                ${mkHlsMaterialization "ghc901"}  $1/hls-unstable-ghc901
               '';
             in {
               updateMaterialized = {
