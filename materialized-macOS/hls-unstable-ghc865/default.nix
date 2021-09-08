@@ -380,7 +380,7 @@
         "gitrev".revision = (((hackage."gitrev")."1.3.1").revisions).default;
         "hspec-core".revision = (((hackage."hspec-core")."2.7.10").revisions).default;
         "filepath".revision = (((hackage."filepath")."1.4.2.1").revisions).default;
-        "record-dot-preprocessor".revision = (((hackage."record-dot-preprocessor")."0.2.11").revisions).default;
+        "record-dot-preprocessor".revision = (((hackage."record-dot-preprocessor")."0.2.12").revisions).default;
         "temporary".revision = (((hackage."temporary")."1.3").revisions).default;
         "opentelemetry".revision = (((hackage."opentelemetry")."0.7.0").revisions).default;
         "unbounded-delays".revision = (((hackage."unbounded-delays")."0.1.1.1").revisions).default;
