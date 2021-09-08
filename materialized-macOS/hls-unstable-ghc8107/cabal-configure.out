@@ -1,0 +1,19 @@
+Warning: The package list for 'hackage.haskell.org-at-2021-08-31T000000Z' is
+18878 days old.
+Run 'cabal update' to get the latest list of available packages.
+Warning: Requested index-state 2021-08-31T00:00:00Z is newer than
+'hackage.haskell.org-at-2021-08-31T000000Z'! Falling back to older state
+(2021-08-30T23:52:47Z).
+Resolving dependencies...
+cabal: Could not resolve dependencies:
+[__0] trying: ghcide-1.4.1.0 (user goal)
+[__1] next goal: ghc-api-compat (dependency of ghcide)
+[__1] rejecting: ghc-api-compat-8.10.6 (conflict: ghcide =>
+ghc-api-compat==8.10.7)
+[__1] skipping: ghc-api-compat-8.10.5, ghc-api-compat-8.6 (has the same
+characteristics that caused the previous version to fail: excluded by
+constraint '==8.10.7' from 'ghcide')
+[__1] fail (backjumping, conflict set: ghc-api-compat, ghcide)
+After searching the rest of the dependency tree exhaustively, these were the
+goals I've had most trouble fulfilling: ghcide, ghc-api-compat
+

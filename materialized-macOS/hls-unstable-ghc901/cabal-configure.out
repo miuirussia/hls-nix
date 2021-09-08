@@ -1,0 +1,31 @@
+Cloning into '/private/tmp/nix-build-hls-unstable-plan-to-nix-pkgs.drv-0/tmp.vZf4DeJkBv/dist-newstyle/src/h3kcql3dj_-8aae0fc6967b00d1'...
+HEAD is now at ac51d55 Minimal Repo For Haskell.Nix
+Your branch is up to date with 'origin/minimal'.
+Cloning into '/private/tmp/nix-build-hls-unstable-plan-to-nix-pkgs.drv-0/tmp.vZf4DeJkBv/dist-newstyle/src/w1b8338l4_-f0056d4d9900e54'...
+HEAD is now at ac0aaa8 Minimal Repo For Haskell.Nix
+Your branch is up to date with 'origin/minimal'.
+Cloning into '/private/tmp/nix-build-hls-unstable-plan-to-nix-pkgs.drv-0/tmp.vZf4DeJkBv/dist-newstyle/src/wy2ihf3fn_-5ccdaf4706396e26'...
+HEAD is now at 6436971 Minimal Repo For Haskell.Nix
+Your branch is up to date with 'origin/minimal'.
+Cloning into '/private/tmp/nix-build-hls-unstable-plan-to-nix-pkgs.drv-0/tmp.vZf4DeJkBv/dist-newstyle/src/z55j0vfq8_-a3a2a63282f6b3df'...
+HEAD is now at b3c441e Minimal Repo For Haskell.Nix
+Your branch is up to date with 'origin/minimal'.
+Warning: The package list for 'hackage.haskell.org-at-2021-08-31T000000Z' is
+18878 days old.
+Run 'cabal update' to get the latest list of available packages.
+Warning: Requested index-state 2021-08-31T00:00:00Z is newer than
+'hackage.haskell.org-at-2021-08-31T000000Z'! Falling back to older state
+(2021-08-30T23:52:47Z).
+Resolving dependencies...
+cabal: Could not resolve dependencies:
+[__0] trying: ghcide-1.4.1.0 (user goal)
+[__1] next goal: ghc-api-compat (dependency of ghcide)
+[__1] rejecting: ghc-api-compat-8.10.6 (conflict: ghcide =>
+ghc-api-compat==9.0.1)
+[__1] skipping: ghc-api-compat-8.10.5, ghc-api-compat-8.6 (has the same
+characteristics that caused the previous version to fail: excluded by
+constraint '==9.0.1' from 'ghcide')
+[__1] fail (backjumping, conflict set: ghc-api-compat, ghcide)
+After searching the rest of the dependency tree exhaustively, these were the
+goals I've had most trouble fulfilling: ghcide, ghc-api-compat
+

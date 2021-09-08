@@ -412,6 +412,7 @@
         "invariant".revision = (((hackage."invariant")."0.5.4").revisions).default;
         "mfsolve".revision = (((hackage."mfsolve")."0.3.2.0").revisions).default;
         "dependent-map".revision = (((hackage."dependent-map")."0.4.0.0").revisions).default;
+        "ghc-api-compat".revision = (((hackage."ghc-api-compat")."8.6").revisions).default;
         "hashable".revision = (((hackage."hashable")."1.3.3.0").revisions).default;
         "hashable".flags.integer-gmp = true;
         "hashable".flags.random-initial-seed = false;
@@ -533,7 +534,6 @@
         hls-explicit-imports-plugin = ./.plan.nix/hls-explicit-imports-plugin.nix;
         haskell-language-server = ./.plan.nix/haskell-language-server.nix;
         hls-fourmolu-plugin = ./.plan.nix/hls-fourmolu-plugin.nix;
-        ghc-api-compat = ./.plan.nix/ghc-api-compat.nix;
         hls-ormolu-plugin = ./.plan.nix/hls-ormolu-plugin.nix;
         hls-haddock-comments-plugin = ./.plan.nix/hls-haddock-comments-plugin.nix;
         hie-compat = ./.plan.nix/hie-compat.nix;
@@ -607,7 +607,6 @@
               };
             };
           "hls-fourmolu-plugin" = { flags = {}; };
-          "ghc-api-compat" = { flags = {}; };
           "hls-ormolu-plugin" = { flags = {}; };
           "hls-haddock-comments-plugin" = { flags = {}; };
           "hie-compat" = { flags = { "ghc-lib" = lib.mkOverride 900 false; }; };

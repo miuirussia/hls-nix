@@ -39,7 +39,6 @@
           (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
-          (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hiedb" or (errorHandler.buildDepError "hiedb"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
@@ -48,7 +47,23 @@
           (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ];
+          ] ++ (if compiler.isGhc && (compiler.version).lt "8.10.5"
+          then [
+            (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
+            ]
+          else if compiler.isGhc && (compiler.version).eq "8.10.5"
+            then [
+              (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
+              ]
+            else if compiler.isGhc && (compiler.version).eq "8.10.6"
+              then [
+                (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
+                ]
+              else if compiler.isGhc && (compiler.version).eq "8.10.7"
+                then [
+                  (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
+                  ]
+                else (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "9.0.1") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat")));
         buildable = true;
         modules = [
           "Ide/Plugin/CallHierarchy/Internal"
