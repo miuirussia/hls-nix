@@ -10,7 +10,7 @@
     stackage.url = "github:input-output-hk/stackage.nix";
     stackage.flake = false;
 
-    haskell-nix.url = "github:miuirussia/haskell.nix";
+    haskell-nix.url = "github:input-output-hk/haskell.nix";
     haskell-nix.inputs.nixpkgs.follows = "nixpkgs";
     haskell-nix.inputs.hackage.follows = "hackage";
     haskell-nix.inputs.stackage.follows = "stackage";
@@ -83,20 +83,27 @@
                 inherit system;
               };
               mkHlsMaterialization = ghcVersion: (library { inherit pkgs system ghcVersion inputs; }).project.plan-nix.passthru.generateMaterialized;
-              updateMaterializedBin = pkgs.writeShellScriptBin "updateMaterialized" ''
+              generateMaterializationBin = pkgs.writeShellScriptBin "generateMaterialization" ''
                 # This runs the 'updateMaterialize' script in all platform combinations we care about.
+                echo "Generating materialization for $1/hls-unstable-ghc865..."
                 ${mkHlsMaterialization "ghc865"} $1/hls-unstable-ghc865
+                echo "Generating materialization for $1/hls-unstable-ghc884..."
                 ${mkHlsMaterialization "ghc884"} $1/hls-unstable-ghc884
+                echo "Generating materialization for $1/hls-unstable-ghc8104..."
                 ${mkHlsMaterialization "ghc8104"} $1/hls-unstable-ghc8104
+                echo "Generating materialization for $1/hls-unstable-ghc8105..."
                 ${mkHlsMaterialization "ghc8105"} $1/hls-unstable-ghc8105
+                echo "Generating materialization for $1/hls-unstable-ghc8106..."
                 ${mkHlsMaterialization "ghc8106"} $1/hls-unstable-ghc8106
+                echo "Generating materialization for $1/hls-unstable-ghc8107..."
                 ${mkHlsMaterialization "ghc8107"} $1/hls-unstable-ghc8107
+                echo "Generating materialization for $1/hls-unstable-ghc901..."
                 ${mkHlsMaterialization "ghc901"}  $1/hls-unstable-ghc901
               '';
             in {
-              updateMaterialized = {
+              generateMaterialization = {
                 type = "app";
-                program = "${updateMaterializedBin}/bin/updateMaterialized";
+                program = "${generateMaterializationBin}/bin/generateMaterialization";
               };
             }
         );

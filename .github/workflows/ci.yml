@@ -39,7 +39,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Update materialization
         run: |
-          nix run .#updateMaterialized -- $(pwd)/materialized-macOS
+          nix run .#generateMaterialization -- $(pwd)/materialized-macOS
           git status
           git add materialized-*
       - name: Commit changes
