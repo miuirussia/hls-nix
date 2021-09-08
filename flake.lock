@@ -204,11 +204,11 @@
     "hls-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1631107355,
-        "narHash": "sha256-U3k0bs21Z6vDrD36IAbHYhssY7vT419AJy4CJ9ksFWI=",
+        "lastModified": 1631144363,
+        "narHash": "sha256-e9hN40cTAOMm+rxOroK4Ot+idhr4pjqjvC8JbKpsJFo=",
         "owner": "haskell",
         "repo": "haskell-language-server",
-        "rev": "baaee98c22060b24c655a223f632c6f72cd39dce",
+        "rev": "d1d7ce04cbbc08fc63ee7d440d447b4525e518de",
         "type": "github"
       },
       "original": {
@@ -348,11 +348,11 @@
     "old-ghc-nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1630986160,
-        "narHash": "sha256-u5kdTaWX4jF7Y5wQRHuuLoN1BPunXMXoEcJDzej7j40=",
+        "lastModified": 1631092763,
+        "narHash": "sha256-sIKgO+z7tj4lw3u6oBZxqIhDrzSkvpHtv0Kki+lh9Fg=",
         "owner": "angerman",
         "repo": "old-ghc-nix",
-        "rev": "583c835473590a112e1e5e7aa7de3a01ebb64ef6",
+        "rev": "af48a7a7353e418119b6dfe3cd1463a657f342b8",
         "type": "github"
       },
       "original": {
