@@ -91,17 +91,17 @@
               ''
                 # This runs the 'updateMaterialize' script in all platform combinations we care about.
                 mkdir -p "$1"
-              ''
-            ) + (
-              builtins.concatStringsSep "\n" (
-                builtins.map (
-                  ghc: ''
-                    echo "Generating materialization for $1/hls-unstable-${ghc}..."
-                    rm -rf "$1/hls-unstable-${ghc}"
-                    cp -r ${mkHlsMaterialization ghc} "$1/hls-unstable-${ghc}"
-                    chmod -R +w "$1/hls-unstable-${ghc}"
-                  ''
-                ) materializableGhcVersions
+              '' + (
+                builtins.concatStringsSep "\n" (
+                  builtins.map (
+                    ghc: ''
+                      echo "Generating materialization for $1/hls-unstable-${ghc}..."
+                      rm -rf "$1/hls-unstable-${ghc}"
+                      cp -r ${mkHlsMaterialization ghc} "$1/hls-unstable-${ghc}"
+                      chmod -R +w "$1/hls-unstable-${ghc}"
+                    ''
+                  ) materializableGhcVersions
+                )
               )
             );
           in
