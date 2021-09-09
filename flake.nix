@@ -53,6 +53,16 @@
         "ghc901"
       ];
 
+      materializableGhcVersions = [
+        "ghc865"
+        "ghc884"
+        "ghc8104"
+        "ghc8105"
+        "ghc8106"
+        "ghc8107"
+        "ghc901"
+      ];
+
       forAllGhcs = f: nixpkgs.lib.genAttrs supportedGhcVersions (ghc: f ghc);
 
       library = import ./lib.nix;
@@ -77,44 +87,21 @@
               inherit system;
             };
             mkHlsMaterialization = ghcVersion: (library { inherit pkgs system ghcVersion inputs; disableMaterialization = true; }).project.plan-nix;
-            generateMaterializationBin = pkgs.writeShellScriptBin "generateMaterialization" ''
-              # This runs the 'updateMaterialize' script in all platform combinations we care about.
-              echo "Generating materialization for $1/hls-unstable-ghc865..."
-              rm -rf $1/hls-unstable-ghc865
-              mkdir -p $1/hls-unstable-ghc865
-              cp -r ${mkHlsMaterialization "ghc865"} $1/hls-unstable-ghc865
-              chmod -R +w $1/hls-unstable-ghc865
-              echo "Generating materialization for $1/hls-unstable-ghc884..."
-              rm -rf $1/hls-unstable-ghc884
-              mkdir -p $1/hls-unstable-ghc884
-              cp -r ${mkHlsMaterialization "ghc884"} $1/hls-unstable-ghc884
-              chmod -R +w $1/hls-unstable-ghc884
-              echo "Generating materialization for $1/hls-unstable-ghc8104..."
-              rm -rf $1/hls-unstable-ghc8104
-              mkdir -p $1/hls-unstable-ghc8104
-              cp -r ${mkHlsMaterialization "ghc8104"} $1/hls-unstable-ghc8104
-              chmod -R +w $1/hls-unstable-ghc8104
-              echo "Generating materialization for $1/hls-unstable-ghc8105..."
-              rm -rf $1/hls-unstable-ghc8105
-              mkdir -p $1/hls-unstable-ghc8105
-              cp -r ${mkHlsMaterialization "ghc8105"} $1/hls-unstable-ghc8105
-              chmod -R +w $1/hls-unstable-ghc8105
-              echo "Generating materialization for $1/hls-unstable-ghc8106..."
-              rm -rf $1/hls-unstable-ghc8106
-              mkdir -p $1/hls-unstable-ghc8106
-              cp -r ${mkHlsMaterialization "ghc8106"} $1/hls-unstable-ghc8106
-              chmod -R +w $1/hls-unstable-ghc8106
-              echo "Generating materialization for $1/hls-unstable-ghc8107..."
-              rm -rf $1/hls-unstable-ghc8107
-              mkdir -p $1/hls-unstable-ghc8107
-              cp -r ${mkHlsMaterialization "ghc8107"} $1/hls-unstable-ghc8107
-              chmod -R +w $1/hls-unstable-ghc8107
-              echo "Generating materialization for $1/hls-unstable-ghc901..."
-              rm -rf $1/hls-unstable-ghc901
-              mkdir -p $1/hls-unstable-ghc901
-              cp -r ${mkHlsMaterialization "ghc901"} $1/hls-unstable-ghc901
-              chmod -R +w $1/hls-unstable-ghc901
-            '';
+            generateMaterializationBin = pkgs.writeShellScriptBin "generateMaterialization" (
+              ''
+                # This runs the 'updateMaterialize' script in all platform combinations we care about.
+                mkdir -p "$1"
+              ''
+            ) ++ builtins.concatStringsSep "\n" (
+              builtins.map (
+                ghc: ''
+                  echo "Generating materialization for $1/hls-unstable-${ghc}..."
+                  rm -rf "$1/hls-unstable-${ghc}"
+                  cp -r ${mkHlsMaterialization ghc} "$1/hls-unstable-${ghc}"
+                  chmod -R +w "$1/hls-unstable-${ghc}"
+                ''
+              ) materializableGhcVersions
+            );
           in
             {
               generateMaterialization = {
