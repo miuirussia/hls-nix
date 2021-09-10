@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Retrie integration plugin for Haskell Language Server";
-      description = "";
+      description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
       isLocal = true;
       detailLevel = "FullDetails";

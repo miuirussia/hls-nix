@@ -19,7 +19,7 @@
       homepage = "";
       url = "";
       synopsis = "Call hierarchy plugin for Haskell Language Server";
-      description = "";
+      description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server/tree/master/plugins/hls-call-hierarchy-plugin#readme>";
       buildType = "Simple";
       isLocal = true;
       detailLevel = "FullDetails";

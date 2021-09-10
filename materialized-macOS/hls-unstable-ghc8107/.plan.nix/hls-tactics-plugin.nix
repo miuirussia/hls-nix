@@ -19,7 +19,7 @@
       homepage = "https://haskellwingman.dev";
       url = "";
       synopsis = "Wingman plugin for Haskell Language Server";
-      description = "Please see README.md";
+      description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
       isLocal = true;
       detailLevel = "FullDetails";
