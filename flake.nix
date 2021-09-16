@@ -60,6 +60,7 @@
         "ghc8105"
         "ghc8106"
         "ghc8107"
+        "ghc901"
       ];
 
       forAllGhcs = f: nixpkgs.lib.genAttrs supportedGhcVersions (ghc: f ghc);
