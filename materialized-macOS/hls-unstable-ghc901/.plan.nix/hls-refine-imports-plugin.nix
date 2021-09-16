@@ -11,14 +11,14 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-pragmas-plugin"; version = "1.0.1.0"; };
+      identifier = { name = "hls-refine-imports-plugin"; version = "1.0.0.1"; };
       license = "Apache-2.0";
-      copyright = "The Haskell IDE Team";
-      maintainer = "alan.zimm@gmail.com";
-      author = "The Haskell IDE Team";
+      copyright = "";
+      maintainer = "mnf.shih@gmail.com";
+      author = "rayshih";
       homepage = "";
       url = "";
-      synopsis = "Pragmas plugin for Haskell Language Server";
+      synopsis = "Refine imports plugin for Haskell Language Server";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
       isLocal = true;
@@ -33,19 +33,21 @@
     components = {
       "library" = {
         depends = [
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
+          (hsPkgs."hls-explicit-imports-plugin" or (errorHandler.buildDepError "hls-explicit-imports-plugin"))
+          (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
-          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
         buildable = true;
-        modules = [ "Ide/Plugin/Pragmas" ];
+        modules = [ "Ide/Plugin/RefineImports" ];
         hsSourceDirs = [ "src" ];
         };
       tests = {
@@ -53,10 +55,8 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."hls-pragmas-plugin" or (errorHandler.buildDepError "hls-pragmas-plugin"))
+            (hsPkgs."hls-refine-imports-plugin" or (errorHandler.buildDepError "hls-refine-imports-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
-            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
@@ -65,4 +65,6 @@
           };
         };
       };
-    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-pragmas-plugin; }
+    } // rec {
+    src = (pkgs.lib).mkDefault .././plugins/hls-refine-imports-plugin;
+    }

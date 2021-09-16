@@ -191,6 +191,7 @@
         "base".revision = (((hackage."base")."4.15.0.0").revisions).default;
         "blaze-markup".revision = (((hackage."blaze-markup")."0.8.2.8").revisions).default;
         "network-uri".revision = (((hackage."network-uri")."2.6.4.1").revisions).default;
+        "foldl".revision = (((hackage."foldl")."1.4.12").revisions).default;
         "cubicbezier".revision = (((hackage."cubicbezier")."0.6.0.6").revisions).default;
         "cubicbezier".flags.debug = false;
         "Diff".revision = (((hackage."Diff")."0.4.0").revisions).default;
@@ -382,7 +383,6 @@
         "invariant".revision = (((hackage."invariant")."0.5.4").revisions).default;
         "mfsolve".revision = (((hackage."mfsolve")."0.3.2.0").revisions).default;
         "dependent-map".revision = (((hackage."dependent-map")."0.4.0.0").revisions).default;
-        "ghc-api-compat".revision = (((hackage."ghc-api-compat")."9.0.1").revisions).default;
         "hashable".revision = (((hackage."hashable")."1.3.3.0").revisions).default;
         "hashable".flags.integer-gmp = true;
         "hashable".flags.random-initial-seed = false;
@@ -423,7 +423,7 @@
         "ghc-trace-events".revision = (((hackage."ghc-trace-events")."0.1.2.3").revisions).default;
         "indexed-traversable-instances".revision = (((hackage."indexed-traversable-instances")."0.1").revisions).default;
         "data-default-instances-dlist".revision = (((hackage."data-default-instances-dlist")."0.0.1").revisions).default;
-        "hiedb".revision = (((hackage."hiedb")."0.4.0.0").revisions).default;
+        "hiedb".revision = (((hackage."hiedb")."0.4.1.0").revisions).default;
         "monoid-extras".revision = (((hackage."monoid-extras")."0.6").revisions).default;
         "force-layout".revision = (((hackage."force-layout")."0.4.0.6").revisions).default;
         "base-compat-batteries".revision = (((hackage."base-compat-batteries")."0.12.0").revisions).default;
@@ -476,6 +476,7 @@
       packages = {
         hls-graph = ./.plan.nix/hls-graph.nix;
         hls-rename-plugin = ./.plan.nix/hls-rename-plugin.nix;
+        hls-refine-imports-plugin = ./.plan.nix/hls-refine-imports-plugin.nix;
         hls-floskell-plugin = ./.plan.nix/hls-floskell-plugin.nix;
         hls-module-name-plugin = ./.plan.nix/hls-module-name-plugin.nix;
         hls-plugin-api = ./.plan.nix/hls-plugin-api.nix;
@@ -489,6 +490,7 @@
         hls-hlint-plugin = ./.plan.nix/hls-hlint-plugin.nix;
         hls-test-utils = ./.plan.nix/hls-test-utils.nix;
         hls-call-hierarchy-plugin = ./.plan.nix/hls-call-hierarchy-plugin.nix;
+        hls-splice-plugin = ./.plan.nix/hls-splice-plugin.nix;
         shake-bench = ./.plan.nix/shake-bench.nix;
         hls-retrie-plugin = ./.plan.nix/hls-retrie-plugin.nix;
         hls-explicit-imports-plugin = ./.plan.nix/hls-explicit-imports-plugin.nix;
@@ -504,6 +506,7 @@
         packages = {
           "hls-graph" = { flags = { "pedantic" = lib.mkOverride 900 false; }; };
           "hls-rename-plugin" = { flags = {}; };
+          "hls-refine-imports-plugin" = { flags = {}; };
           "hls-floskell-plugin" = { flags = {}; };
           "hls-module-name-plugin" = { flags = {}; };
           "hls-plugin-api" = {
@@ -535,6 +538,7 @@
             flags = { "pedantic" = lib.mkOverride 900 false; };
             };
           "hls-call-hierarchy-plugin" = { flags = {}; };
+          "hls-splice-plugin" = { flags = {}; };
           "shake-bench" = { flags = {}; };
           "hls-retrie-plugin" = { flags = {}; };
           "hls-explicit-imports-plugin" = { flags = {}; };
@@ -544,7 +548,7 @@
               "stylishhaskell" = lib.mkOverride 900 false;
               "importlens" = lib.mkOverride 900 true;
               "ormolu" = lib.mkOverride 900 true;
-              "splice" = lib.mkOverride 900 false;
+              "splice" = lib.mkOverride 900 true;
               "retrie" = lib.mkOverride 900 true;
               "fourmolu" = lib.mkOverride 900 false;
               "all-formatters" = lib.mkOverride 900 false;
@@ -560,7 +564,7 @@
               "tactic" = lib.mkOverride 900 false;
               "modulename" = lib.mkOverride 900 true;
               "callhierarchy" = lib.mkOverride 900 true;
-              "refineimports" = lib.mkOverride 900 false;
+              "refineimports" = lib.mkOverride 900 true;
               };
             };
           "hls-ormolu-plugin" = { flags = {}; };
@@ -596,6 +600,7 @@
           "streaming-commons".components.library.planned = lib.mkOverride 900 true;
           "old-time".components.library.planned = lib.mkOverride 900 true;
           "dual-tree".components.library.planned = lib.mkOverride 900 true;
+          "hls-splice-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "haskell-language-server".components.tests."wrapper-test".planned = lib.mkOverride 900 true;
           "dependent-sum".components.library.planned = lib.mkOverride 900 true;
           "ghc-boot".components.library.planned = lib.mkOverride 900 true;
@@ -666,7 +671,6 @@
           "diagrams-solve".components.library.planned = lib.mkOverride 900 true;
           "adjunctions".components.library.planned = lib.mkOverride 900 true;
           "clock".components.library.planned = lib.mkOverride 900 true;
-          "ghc-api-compat".components.library.planned = lib.mkOverride 900 true;
           "hashable".components.library.planned = lib.mkOverride 900 true;
           "attoparsec".components.library.planned = lib.mkOverride 900 true;
           "MemoTrie".components.library.planned = lib.mkOverride 900 true;
@@ -717,6 +721,7 @@
           "hls-rename-plugin".components.library.planned = lib.mkOverride 900 true;
           "conduit".components.library.planned = lib.mkOverride 900 true;
           "data-default-instances-old-locale".components.library.planned = lib.mkOverride 900 true;
+          "hls-refine-imports-plugin".components.library.planned = lib.mkOverride 900 true;
           "algebraic-graphs".components.library.planned = lib.mkOverride 900 true;
           "integration".components.library.planned = lib.mkOverride 900 true;
           "hls-plugin-api".components.library.planned = lib.mkOverride 900 true;
@@ -772,6 +777,7 @@
           "exceptions".components.library.planned = lib.mkOverride 900 true;
           "blaze-builder".components.library.planned = lib.mkOverride 900 true;
           "void".components.library.planned = lib.mkOverride 900 true;
+          "hls-refine-imports-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "setenv".components.library.planned = lib.mkOverride 900 true;
           "integer-logarithms".components.library.planned = lib.mkOverride 900 true;
           "hls-module-name-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
@@ -818,6 +824,7 @@
           "unordered-containers".components.library.planned = lib.mkOverride 900 true;
           "uuid".components.library.planned = lib.mkOverride 900 true;
           "network-uri".components.library.planned = lib.mkOverride 900 true;
+          "foldl".components.library.planned = lib.mkOverride 900 true;
           "cubicbezier".components.library.planned = lib.mkOverride 900 true;
           "tasty-golden".components.library.planned = lib.mkOverride 900 true;
           "data-default-class".components.library.planned = lib.mkOverride 900 true;
@@ -876,6 +883,7 @@
           "parsec".components.library.planned = lib.mkOverride 900 true;
           "ghc-boot-th".components.library.planned = lib.mkOverride 900 true;
           "hls-call-hierarchy-plugin".components.library.planned = lib.mkOverride 900 true;
+          "hls-splice-plugin".components.library.planned = lib.mkOverride 900 true;
           "hie-bios".components.library.planned = lib.mkOverride 900 true;
           "data-default".components.library.planned = lib.mkOverride 900 true;
           "libyaml".components.library.planned = lib.mkOverride 900 true;

@@ -11,14 +11,14 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-pragmas-plugin"; version = "1.0.1.0"; };
+      identifier = { name = "hls-splice-plugin"; version = "1.0.0.4"; };
       license = "Apache-2.0";
-      copyright = "The Haskell IDE Team";
-      maintainer = "alan.zimm@gmail.com";
-      author = "The Haskell IDE Team";
+      copyright = "";
+      maintainer = "https://github.com/haskell/haskell-language-server/contributors";
+      author = "https://github.com/haskell/haskell-language-server/contributors";
       homepage = "";
       url = "";
-      synopsis = "Pragmas plugin for Haskell Language Server";
+      synopsis = "HLS Plugin to expand TemplateHaskell Splices and QuasiQuotes";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
       isLocal = true;
@@ -33,19 +33,27 @@
     components = {
       "library" = {
         depends = [
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
+          (hsPkgs."foldl" or (errorHandler.buildDepError "foldl"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
+          (hsPkgs."retrie" or (errorHandler.buildDepError "retrie"))
+          (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
+          (hsPkgs."unliftio-core" or (errorHandler.buildDepError "unliftio-core"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
         buildable = true;
-        modules = [ "Ide/Plugin/Pragmas" ];
+        modules = [ "Ide/Plugin/Splice" "Ide/Plugin/Splice/Types" ];
         hsSourceDirs = [ "src" ];
         };
       tests = {
@@ -53,10 +61,8 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."hls-pragmas-plugin" or (errorHandler.buildDepError "hls-pragmas-plugin"))
+            (hsPkgs."hls-splice-plugin" or (errorHandler.buildDepError "hls-splice-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
-            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
-            (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           buildable = true;
@@ -65,4 +71,4 @@
           };
         };
       };
-    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-pragmas-plugin; }
+    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-splice-plugin; }
