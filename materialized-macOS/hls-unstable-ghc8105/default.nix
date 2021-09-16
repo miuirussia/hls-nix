@@ -410,7 +410,6 @@
         "invariant".revision = (((hackage."invariant")."0.5.4").revisions).default;
         "mfsolve".revision = (((hackage."mfsolve")."0.3.2.0").revisions).default;
         "dependent-map".revision = (((hackage."dependent-map")."0.4.0.0").revisions).default;
-        "ghc-api-compat".revision = (((hackage."ghc-api-compat")."8.10.5").revisions).default;
         "hashable".revision = (((hackage."hashable")."1.3.3.0").revisions).default;
         "hashable".flags.integer-gmp = true;
         "hashable".flags.random-initial-seed = false;
@@ -457,7 +456,7 @@
         "ghc-trace-events".revision = (((hackage."ghc-trace-events")."0.1.2.3").revisions).default;
         "indexed-traversable-instances".revision = (((hackage."indexed-traversable-instances")."0.1").revisions).default;
         "data-default-instances-dlist".revision = (((hackage."data-default-instances-dlist")."0.0.1").revisions).default;
-        "hiedb".revision = (((hackage."hiedb")."0.4.0.0").revisions).default;
+        "hiedb".revision = (((hackage."hiedb")."0.4.1.0").revisions).default;
         "monoid-extras".revision = (((hackage."monoid-extras")."0.6").revisions).default;
         "force-layout".revision = (((hackage."force-layout")."0.4.0.6").revisions).default;
         "base-compat-batteries".revision = (((hackage."base-compat-batteries")."0.12.0").revisions).default;
@@ -724,7 +723,6 @@
           "adjunctions".components.library.planned = lib.mkOverride 900 true;
           "deque".components.library.planned = lib.mkOverride 900 true;
           "clock".components.library.planned = lib.mkOverride 900 true;
-          "ghc-api-compat".components.library.planned = lib.mkOverride 900 true;
           "hashable".components.library.planned = lib.mkOverride 900 true;
           "refinery".components.library.planned = lib.mkOverride 900 true;
           "attoparsec".components.library.planned = lib.mkOverride 900 true;

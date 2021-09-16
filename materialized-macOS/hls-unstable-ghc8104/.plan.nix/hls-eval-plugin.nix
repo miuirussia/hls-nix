@@ -73,23 +73,7 @@
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (if compiler.isGhc && (compiler.version).lt "8.10.5"
-          then [
-            (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-            ]
-          else if compiler.isGhc && (compiler.version).eq "8.10.5"
-            then [
-              (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-              ]
-            else if compiler.isGhc && (compiler.version).eq "8.10.6"
-              then [
-                (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                ]
-              else if compiler.isGhc && (compiler.version).eq "8.10.7"
-                then [
-                  (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                  ]
-                else (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "9.0.1") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat")));
+          ];
         buildable = true;
         modules = [
           "Ide/Plugin/Eval/Code"

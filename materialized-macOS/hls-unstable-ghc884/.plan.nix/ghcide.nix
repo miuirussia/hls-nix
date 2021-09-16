@@ -11,7 +11,7 @@
     flags = { ghc-patched-unboxed-bytecode = false; };
     package = {
       specVersion = "2.4";
-      identifier = { name = "ghcide"; version = "1.4.1.0"; };
+      identifier = { name = "ghcide"; version = "1.4.2.0"; };
       license = "Apache-2.0";
       copyright = "Digital Asset and Ghcide contributors 2018-2020";
       maintainer = "Ghcide contributors";
@@ -40,7 +40,7 @@
       };
     components = {
       "library" = {
-        depends = ([
+        depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."aeson-pretty" or (errorHandler.buildDepError "aeson-pretty"))
           (hsPkgs."array" or (errorHandler.buildDepError "array"))
@@ -112,25 +112,7 @@
           (hsPkgs."base16-bytestring" or (errorHandler.buildDepError "base16-bytestring"))
           ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]
-          else [
-            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
-            ])) ++ (if compiler.isGhc && (compiler.version).lt "8.10.5"
-          then [
-            (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-            ]
-          else if compiler.isGhc && (compiler.version).eq "8.10.5"
-            then [
-              (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-              ]
-            else if compiler.isGhc && (compiler.version).eq "8.10.6"
-              then [
-                (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                ]
-              else if compiler.isGhc && (compiler.version).eq "8.10.7"
-                then [
-                  (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                  ]
-                else (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "9.0.1") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat")));
+          else [ (hsPkgs."unix" or (errorHandler.buildDepError "unix")) ]);
         buildable = true;
         modules = [
           "Development/IDE/Core/FileExists"
@@ -161,6 +143,15 @@
           "Development/IDE/Core/Tracing"
           "Development/IDE/Core/UseStale"
           "Development/IDE/GHC/Compat"
+          "Development/IDE/GHC/Compat/Core"
+          "Development/IDE/GHC/Compat/Env"
+          "Development/IDE/GHC/Compat/Iface"
+          "Development/IDE/GHC/Compat/Logger"
+          "Development/IDE/GHC/Compat/Outputable"
+          "Development/IDE/GHC/Compat/Parser"
+          "Development/IDE/GHC/Compat/Plugins"
+          "Development/IDE/GHC/Compat/Units"
+          "Development/IDE/GHC/Compat/Util"
           "Development/IDE/Core/Compile"
           "Development/IDE/GHC/Error"
           "Development/IDE/GHC/ExactPrint"
@@ -194,7 +185,7 @@
           "Development/IDE/Plugin/HLS/GhcIde"
           "Development/IDE/Plugin/Test"
           "Development/IDE/Plugin/TypeLenses"
-          ];
+          ] ++ (pkgs.lib).optional (compiler.isGhc && (compiler.version).lt "8.10") "Development/IDE/GHC/Compat/CPP";
         hsSourceDirs = [ "src" "session-loader" ];
         };
       exes = {

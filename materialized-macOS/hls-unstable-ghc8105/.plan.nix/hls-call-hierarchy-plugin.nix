@@ -11,7 +11,7 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-call-hierarchy-plugin"; version = "1.0.0.2"; };
+      identifier = { name = "hls-call-hierarchy-plugin"; version = "1.0.1.0"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "julytreee@gmail.com";
@@ -47,23 +47,7 @@
           (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-          ] ++ (if compiler.isGhc && (compiler.version).lt "8.10.5"
-          then [
-            (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-            ]
-          else if compiler.isGhc && (compiler.version).eq "8.10.5"
-            then [
-              (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-              ]
-            else if compiler.isGhc && (compiler.version).eq "8.10.6"
-              then [
-                (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                ]
-              else if compiler.isGhc && (compiler.version).eq "8.10.7"
-                then [
-                  (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat"))
-                  ]
-                else (pkgs.lib).optional (compiler.isGhc && (compiler.version).eq "9.0.1") (hsPkgs."ghc-api-compat" or (errorHandler.buildDepError "ghc-api-compat")));
+          ];
         buildable = true;
         modules = [
           "Ide/Plugin/CallHierarchy/Internal"
