@@ -15,6 +15,7 @@ let
   sourcesRepositoryPackage = {
     "https://github.com/anka-213/HieDb"."a3f7521f6c5af1b977040cce09c8f7354f8984eb" = "0caf4q87bzvc3pzcpzbf91gdj7dvzdahzwxq0ql5dm52s5jmh0in";
     "https://github.com/anka-213/dependent-sum"."8cf4c7fbc3bfa2be475a17bb7c94a1e1e9a830b5" = "0x3lgd1ckd1666infydx9iijdvllw4kikb8k9fx90kczmc3m7p2s";
+    "https://github.com/fendor/dependent-sum"."5de03c38b0de4945f4e9bce1b026110e69dc8118" = "1k7hfwaghc5i78rmqndzss40zhqq51zy2glczz0fbljvnfzz8pwm";
     "https://github.com/anka-213/lsp"."tag-ghc-9.0.1-without-pr-326" = "1xml8c9ccy1362riwnizwnxhxs915gw171p0vg2g4a7g35sc8vwm";
     "https://github.com/anka-213/th-extras"."57a97b4df128eb7b360e8ab9c5759392de8d1659" = "1yg0ikw63kmgp35kwhdi63sbk4f6g7bdj5app3z442xz0zb5mn22";
     "https://github.com/hsyl20/ghc-api-compat"."8fee87eac97a538dbe81ff1ab18cff10f2f9fa15" = "16bibb7f3s2sxdvdy2mq6w1nj1lc8zhms54lwmj17ijhvjys29vg";
