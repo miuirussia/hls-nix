@@ -66,7 +66,7 @@
         "ansi-terminal".flags.example = false;
         "js-jquery".revision = (((hackage."js-jquery")."3.3.1").revisions).default;
         "unliftio-core".revision = (((hackage."unliftio-core")."0.2.0.1").revisions).default;
-        "strict-list".revision = (((hackage."strict-list")."0.1.5").revisions).default;
+        "strict-list".revision = (((hackage."strict-list")."0.1.6").revisions).default;
         "free".revision = (((hackage."free")."5.1.7").revisions).default;
         "intervals".revision = (((hackage."intervals")."0.9.2").revisions).default;
         "intervals".flags.herbie = false;
@@ -161,8 +161,9 @@
         "entropy".flags.halvm = false;
         "hpc".revision = (((hackage."hpc")."0.6.0.3").revisions).default;
         "binary-orphans".revision = (((hackage."binary-orphans")."1.0.1").revisions).default;
-        "prettyprinter".revision = (((hackage."prettyprinter")."1.7.0").revisions).default;
+        "prettyprinter".revision = (((hackage."prettyprinter")."1.7.1").revisions).default;
         "prettyprinter".flags.buildreadme = false;
+        "prettyprinter".flags.text = true;
         "th-extras".revision = (((hackage."th-extras")."0.0.0.4").revisions).default;
         "th-extras".flags.base4 = true;
         "cereal-vector".revision = (((hackage."cereal-vector")."0.2.0.1").revisions).default;
@@ -298,7 +299,7 @@
         "tf-random".revision = (((hackage."tf-random")."0.5").revisions).default;
         "some".revision = (((hackage."some")."1.0.2").revisions).default;
         "some".flags.newtype-unsafe = true;
-        "shake".revision = (((hackage."shake")."0.19.5").revisions).default;
+        "shake".revision = (((hackage."shake")."0.19.6").revisions).default;
         "shake".flags.cloud = false;
         "shake".flags.portable = false;
         "shake".flags.embed-files = false;
@@ -314,7 +315,7 @@
         "ghc-lib-parser-ex".flags.no-ghc-lib = false;
         "base-orphans".revision = (((hackage."base-orphans")."0.8.5").revisions).default;
         "diagrams-svg".revision = (((hackage."diagrams-svg")."1.4.3").revisions).default;
-        "prettyprinter-ansi-terminal".revision = (((hackage."prettyprinter-ansi-terminal")."1.1.2").revisions).default;
+        "prettyprinter-ansi-terminal".revision = (((hackage."prettyprinter-ansi-terminal")."1.1.3").revisions).default;
         "primitive".revision = (((hackage."primitive")."0.7.2.0").revisions).default;
         "smallcheck".revision = (((hackage."smallcheck")."1.2.1").revisions).default;
         "directory".revision = (((hackage."directory")."1.3.3.0").revisions).default;
@@ -331,7 +332,7 @@
         "transformers-compat".flags.mtl = true;
         "profunctors".revision = (((hackage."profunctors")."5.6.2").revisions).default;
         "bytes".revision = (((hackage."bytes")."0.17.1").revisions).default;
-        "stylish-haskell".revision = (((hackage."stylish-haskell")."0.12.2.0").revisions).default;
+        "stylish-haskell".revision = (((hackage."stylish-haskell")."0.13.0.0").revisions).default;
         "th-abstraction".revision = (((hackage."th-abstraction")."0.4.3.0").revisions).default;
         "js-dgtable".revision = (((hackage."js-dgtable")."0.5.2").revisions).default;
         "microlens".revision = (((hackage."microlens")."0.4.12.0").revisions).default;
@@ -392,7 +393,7 @@
         "indexed-profunctors".revision = (((hackage."indexed-profunctors")."0.1.1").revisions).default;
         "strict".revision = (((hackage."strict")."0.4.0.1").revisions).default;
         "strict".flags.assoc = true;
-        "deque".revision = (((hackage."deque")."0.4.3").revisions).default;
+        "deque".revision = (((hackage."deque")."0.4.4").revisions).default;
         "MemoTrie".revision = (((hackage."MemoTrie")."0.6.10").revisions).default;
         "MemoTrie".flags.examples = false;
         "attoparsec".revision = (((hackage."attoparsec")."0.13.2.5").revisions).default;

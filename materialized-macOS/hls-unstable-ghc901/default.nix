@@ -89,7 +89,7 @@
         "hspec-expectations".revision = (((hackage."hspec-expectations")."0.8.2").revisions).default;
         "integer-gmp".revision = (((hackage."integer-gmp")."1.1").revisions).default;
         "psqueues".revision = (((hackage."psqueues")."0.2.7.2").revisions).default;
-        "mono-traversable".revision = (((hackage."mono-traversable")."1.0.15.1").revisions).default;
+        "mono-traversable".revision = (((hackage."mono-traversable")."1.0.15.2").revisions).default;
         "conduit-extra".revision = (((hackage."conduit-extra")."1.3.5").revisions).default;
         "call-stack".revision = (((hackage."call-stack")."0.4.0").revisions).default;
         "bytestring-encoding".revision = (((hackage."bytestring-encoding")."0.1.1.0").revisions).default;
@@ -110,7 +110,7 @@
         "network".revision = (((hackage."network")."3.1.2.2").revisions).default;
         "network".flags.devel = false;
         "HUnit".revision = (((hackage."HUnit")."1.6.2.0").revisions).default;
-        "ormolu".revision = (((hackage."ormolu")."0.2.0.0").revisions).default;
+        "ormolu".revision = (((hackage."ormolu")."0.3.0.0").revisions).default;
         "ormolu".flags.dev = false;
         "circle-packing".revision = (((hackage."circle-packing")."0.1.0.6").revisions).default;
         "Glob".revision = (((hackage."Glob")."0.10.1").revisions).default;
@@ -155,8 +155,9 @@
         "entropy".flags.halvm = false;
         "hpc".revision = (((hackage."hpc")."0.6.1.0").revisions).default;
         "binary-orphans".revision = (((hackage."binary-orphans")."1.0.1").revisions).default;
-        "prettyprinter".revision = (((hackage."prettyprinter")."1.7.0").revisions).default;
+        "prettyprinter".revision = (((hackage."prettyprinter")."1.7.1").revisions).default;
         "prettyprinter".flags.buildreadme = false;
+        "prettyprinter".flags.text = true;
         "cereal-vector".revision = (((hackage."cereal-vector")."0.2.0.1").revisions).default;
         "quickcheck-io".revision = (((hackage."quickcheck-io")."0.2.0").revisions).default;
         "alex".revision = (((hackage."alex")."3.2.6").revisions).default;
@@ -278,7 +279,7 @@
         "tf-random".revision = (((hackage."tf-random")."0.5").revisions).default;
         "some".revision = (((hackage."some")."1.0.2").revisions).default;
         "some".flags.newtype-unsafe = true;
-        "shake".revision = (((hackage."shake")."0.19.5").revisions).default;
+        "shake".revision = (((hackage."shake")."0.19.6").revisions).default;
         "shake".flags.cloud = false;
         "shake".flags.portable = false;
         "shake".flags.embed-files = false;
@@ -294,7 +295,7 @@
         "ghc-lib-parser-ex".flags.no-ghc-lib = false;
         "base-orphans".revision = (((hackage."base-orphans")."0.8.5").revisions).default;
         "diagrams-svg".revision = (((hackage."diagrams-svg")."1.4.3").revisions).default;
-        "prettyprinter-ansi-terminal".revision = (((hackage."prettyprinter-ansi-terminal")."1.1.2").revisions).default;
+        "prettyprinter-ansi-terminal".revision = (((hackage."prettyprinter-ansi-terminal")."1.1.3").revisions).default;
         "primitive".revision = (((hackage."primitive")."0.7.2.0").revisions).default;
         "directory".revision = (((hackage."directory")."1.3.6.1").revisions).default;
         "random-shuffle".revision = (((hackage."random-shuffle")."0.0.4").revisions).default;
