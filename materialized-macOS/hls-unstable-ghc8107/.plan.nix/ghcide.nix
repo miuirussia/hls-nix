@@ -8,7 +8,12 @@
   , config
   , ... }:
   {
-    flags = { ghc-patched-unboxed-bytecode = false; };
+    flags = {
+      ghc-patched-unboxed-bytecode = false;
+      test-exe = true;
+      executable = true;
+      bench-exe = true;
+      };
     package = {
       specVersion = "2.4";
       identifier = { name = "ghcide"; version = "1.4.2.0"; };
@@ -191,9 +196,9 @@
       exes = {
         "ghcide-test-preprocessor" = {
           depends = [ (hsPkgs."base" or (errorHandler.buildDepError "base")) ];
-          buildable = true;
+          buildable = if !flags.test-exe then false else true;
           hsSourceDirs = [ "test/preprocessor" ];
-          mainPath = [ "Main.hs" ];
+          mainPath = [ "Main.hs" ] ++ (pkgs.lib).optional (!flags.test-exe) "";
           };
         "ghcide" = {
           depends = [
@@ -220,10 +225,12 @@
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
             ];
-          buildable = true;
+          buildable = if !flags.executable then false else true;
           modules = [ "Arguments" "Paths_ghcide" ];
           hsSourceDirs = [ "exe" ];
-          mainPath = [ "Main.hs" ];
+          mainPath = [
+            "Main.hs"
+            ] ++ (pkgs.lib).optional (!flags.executable) "";
           };
         "ghcide-bench" = {
           depends = [
@@ -248,14 +255,14 @@
           build-tools = [
             (hsPkgs.buildPackages.ghcide.components.exes.ghcide or (pkgs.buildPackages.ghcide or (errorHandler.buildToolDepError "ghcide:ghcide")))
             ];
-          buildable = true;
+          buildable = if !flags.bench-exe then false else true;
           modules = [
             "Development/IDE/Test/Diagnostic"
             "Experiments"
             "Experiments/Types"
             ];
           hsSourceDirs = [ "bench/lib" "bench/exe" "test/src" ];
-          mainPath = [ "Main.hs" ];
+          mainPath = [ "Main.hs" ] ++ (pkgs.lib).optional (!flags.bench-exe) "";
           };
         };
       tests = {

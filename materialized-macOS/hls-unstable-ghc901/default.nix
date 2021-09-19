@@ -525,7 +525,10 @@
           "czipwith" = { flags = {}; };
           "ghcide" = {
             flags = {
+              "bench-exe" = lib.mkOverride 900 true;
               "ghc-patched-unboxed-bytecode" = lib.mkOverride 900 false;
+              "executable" = lib.mkOverride 900 true;
+              "test-exe" = lib.mkOverride 900 true;
               };
             };
           "hls-hlint-plugin" = {
