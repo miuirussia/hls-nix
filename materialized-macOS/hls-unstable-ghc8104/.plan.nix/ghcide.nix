@@ -16,7 +16,7 @@
       };
     package = {
       specVersion = "2.4";
-      identifier = { name = "ghcide"; version = "1.4.2.0"; };
+      identifier = { name = "ghcide"; version = "1.4.2.1"; };
       license = "Apache-2.0";
       copyright = "Digital Asset and Ghcide contributors 2018-2020";
       maintainer = "Ghcide contributors";
@@ -62,7 +62,6 @@
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
-          (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
           (hsPkgs."fingertree" or (errorHandler.buildDepError "fingertree"))
           (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
@@ -76,6 +75,7 @@
           (hsPkgs."hiedb" or (errorHandler.buildDepError "hiedb"))
           (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
+          (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
@@ -129,6 +129,7 @@
           "Development/IDE/Plugin/Completions/Logic"
           "Development/IDE/Session/VersionCheck"
           "Development/IDE/Types/Action"
+          "Text/Fuzzy"
           "Control/Concurrent/Strict"
           "Generics/SYB/GHC"
           "Development/IDE"
