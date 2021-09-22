@@ -177,6 +177,20 @@ let
     }
   );
 
+  mkHlsWrapper = injectPackages: pkgs.stdenv.mkDerivation {
+    name = "haskell-language-server-wrapper-with-pkgs";
+    version = hls.version;
+    phases = [ "installPhase" ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    installPhase = ''
+      mkdir --parents $out/bin
+      makeWrapper \
+        "${build.haskell-language-server-wrapper}/bin/haskell-language-server-wrapper" \
+        "$out/bin/haskell-language-server-wrapper" \
+        --prefix PATH : ${pkgs.lib.makeBinPath injectPackages}
+    '';
+  };
+
   hls-wrapper-nix = pkgs.callPackage ./hls-wrapper-nix.nix {
     inherit hls-wrapper;
     nix-project-lib = (import inputs.nix-project).nix-project-lib;
@@ -231,6 +245,7 @@ in
     hls-renamed
     hls-wrapper
     hls-wrapper-nix
+    mkHlsWrapper
     implicit-hie
     stack
     stack-nix
