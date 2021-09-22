@@ -42,7 +42,7 @@ jobs:
           RELEASE_ID: v0.1.${{ steps.date.outputs.date }}
         run: |
           echo $RELEASE_ID > version
-          git add flake.lock overlays version
+          git add flake.lock version
           git commit -m "Release $RELEASE_ID"
           git push origin HEAD:update/"$RELEASE_ID"
           git tag "$RELEASE_ID"
@@ -140,7 +140,7 @@ jobs:
         env:
           RELEASE_ID: ${{ needs.update-dependencies.outputs.release_id }}
         run: |
-          git cherry-pick origin/update/"$RELEASE_ID"
+          git merge origin/update/"$RELEASE_ID"
           git push origin "$GITHUB_REF"
           git tag -f "$RELEASE_ID"
           git push -f origin "$RELEASE_ID"
