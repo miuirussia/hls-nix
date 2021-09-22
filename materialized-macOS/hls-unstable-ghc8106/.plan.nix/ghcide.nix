@@ -76,6 +76,7 @@
           (hsPkgs."hiedb" or (errorHandler.buildDepError "hiedb"))
           (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
+          (hsPkgs."monoid-subclasses" or (errorHandler.buildDepError "monoid-subclasses"))
           (hsPkgs."mtl" or (errorHandler.buildDepError "mtl"))
           (hsPkgs."network-uri" or (errorHandler.buildDepError "network-uri"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
@@ -98,6 +99,7 @@
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           (hsPkgs."utf8-string" or (errorHandler.buildDepError "utf8-string"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
+          (hsPkgs."vector-algorithms" or (errorHandler.buildDepError "vector-algorithms"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
@@ -129,6 +131,7 @@
           "Development/IDE/Plugin/Completions/Logic"
           "Development/IDE/Session/VersionCheck"
           "Development/IDE/Types/Action"
+          "Text/Fuzzy/Parallel"
           "Control/Concurrent/Strict"
           "Generics/SYB/GHC"
           "Development/IDE"
