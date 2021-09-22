@@ -56,11 +56,8 @@
       materializableGhcVersions = [
         "ghc865"
         "ghc884"
-        "ghc8104"
-        "ghc8105"
         "ghc8106"
         "ghc8107"
-        "ghc901"
       ];
 
       forAllGhcs = f: nixpkgs.lib.genAttrs supportedGhcVersions (ghc: f ghc);
@@ -68,49 +65,54 @@
       library = import ./lib.nix;
     in
       flake-utils.lib.eachSystem supportedSystem (
-        system: {
-          lib = forAllGhcs (
-            ghcVersion: let
+        system: let
+          pkgs = import nixpkgs {
+            config.allowUnfree = true;
+            overlays = [ haskell-nix.overlay ];
+            inherit system;
+          };
+        in
+          {
+            lib = forAllGhcs (
+              ghcVersion: library { inherit pkgs system ghcVersion inputs; }
+            );
+
+            materialization = forAllGhcs (
+              ghcVersion:
+                (library { inherit pkgs system ghcVersion inputs; disableMaterialization = true; }).project.plan-nix
+            );
+
+            apps = let
               pkgs = import nixpkgs {
                 config.allowUnfree = true;
                 overlays = [ haskell-nix.overlay ];
                 inherit system;
               };
-            in
-              library { inherit pkgs system ghcVersion inputs; }
-          );
-
-          apps = let
-            pkgs = import nixpkgs {
-              config.allowUnfree = true;
-              overlays = [ haskell-nix.overlay ];
-              inherit system;
-            };
-            mkHlsMaterialization = ghcVersion: (library { inherit pkgs system ghcVersion inputs; disableMaterialization = true; }).project.plan-nix;
-            generateMaterializationBin = pkgs.writeShellScriptBin "generateMaterialization" (
-              ''
-                # This runs the 'updateMaterialize' script in all platform combinations we care about.
-                mkdir -p "$1"
-              '' + (
-                builtins.concatStringsSep "\n" (
-                  builtins.map (
-                    ghc: ''
-                      echo "Generating materialization for $1/hls-unstable-${ghc}..."
-                      rm -rf "$1/hls-unstable-${ghc}"
-                      cp -r ${mkHlsMaterialization ghc} "$1/hls-unstable-${ghc}"
-                      chmod -R +w "$1/hls-unstable-${ghc}"
-                    ''
-                  ) materializableGhcVersions
+              mkHlsMaterialization = ghcVersion: (library { inherit pkgs system ghcVersion inputs; disableMaterialization = true; }).project.plan-nix;
+              generateMaterializationBin = pkgs.writeShellScriptBin "generateMaterialization" (
+                ''
+                  # This runs the 'updateMaterialize' script in all platform combinations we care about.
+                  mkdir -p "$1"
+                '' + (
+                  builtins.concatStringsSep "\n" (
+                    builtins.map (
+                      ghc: ''
+                        echo "Generating materialization for $1/hls-unstable-${ghc}..."
+                        rm -rf "$1/hls-unstable-${ghc}"
+                        cp -r ${mkHlsMaterialization ghc} "$1/hls-unstable-${ghc}"
+                        chmod -R +w "$1/hls-unstable-${ghc}"
+                      ''
+                    ) materializableGhcVersions
+                  )
                 )
-              )
-            );
-          in
-            {
-              generateMaterialization = {
-                type = "app";
-                program = "${generateMaterializationBin}/bin/generateMaterialization";
+              );
+            in
+              {
+                generateMaterialization = {
+                  type = "app";
+                  program = "${generateMaterializationBin}/bin/generateMaterialization";
+                };
               };
-            };
-        }
+          }
       );
 }

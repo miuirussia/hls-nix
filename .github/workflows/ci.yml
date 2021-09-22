@@ -4,8 +4,36 @@ on:
   schedule:
     - cron: "0 3 * * *"
 jobs:
+  build-materialization:
+    strategy:
+      matrix:
+        ghc: ['865', '884', '8106', '8107']
+    name: "Build materialization on ghc${{ matrix.ghc }}"
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install nix
+        uses: cachix/install-nix-action@v13
+        with:
+          nix_path: nixpkgs=channel:nixpkgs-unstable
+          install_url: https://github.com/miuirussia/nix-unstable-installer/releases/latest/download/install
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            trusted-public-keys = hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ= s3.kdevlab.com:PhuKrzVfCsS0T1R4FnslJy2qUBul9oQ2CTSO/fg/llM= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=
+            substituters = https://hydra.iohk.io https://nix-cache.s3.kdevlab.com https://cache.nixos.org/
+      - uses: cachix/cachix-action@v10
+        with:
+          name: kdevlab
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - name: Build materialization
+        run: |
+          nix build --print-build-logs --no-link .#materialization.x86_64-darwin.ghc${{ matrix.ghc }}
+
   update:
     name: "Update materialization"
+    needs: build-materialization
     runs-on: macos-latest
     steps:
       - name: Get current time
@@ -19,7 +47,7 @@ jobs:
         uses: cachix/install-nix-action@v13
         with:
           nix_path: nixpkgs=channel:nixpkgs-unstable
-          install_url: https://github.com/numtide/nix-unstable-installer/releases/download/nix-2.4pre20210823_af94b54/install
+          install_url: https://github.com/miuirussia/nix-unstable-installer/releases/latest/download/install
           extra_nix_config: |
             experimental-features = nix-command flakes
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
