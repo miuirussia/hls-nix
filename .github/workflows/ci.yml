@@ -120,6 +120,8 @@ jobs:
         env:
           RELEASE_ID: ${{ needs.update-dependencies.outputs.release_id }}
         run: |
+          echo $RELEASE_ID > materialization
+          git add materialization
           git commit -m "Update materialization $RELEASE_ID"
           git push origin HEAD:update/"$RELEASE_ID"
 
