@@ -546,7 +546,12 @@
         packages = {
           "hls-stylish-haskell-plugin" = { flags = {}; };
           "hls-brittany-plugin" = { flags = {}; };
-          "hls-graph" = { flags = { "pedantic" = lib.mkOverride 900 false; }; };
+          "hls-graph" = {
+            flags = {
+              "embed-files" = lib.mkOverride 900 false;
+              "pedantic" = lib.mkOverride 900 false;
+              };
+            };
           "hls-rename-plugin" = { flags = {}; };
           "hls-refine-imports-plugin" = { flags = {}; };
           "hls-floskell-plugin" = { flags = {}; };

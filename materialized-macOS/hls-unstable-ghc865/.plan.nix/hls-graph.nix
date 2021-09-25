@@ -8,10 +8,10 @@
   , config
   , ... }:
   {
-    flags = { pedantic = false; };
+    flags = { pedantic = false; embed-files = false; };
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-graph"; version = "1.4.0.0"; };
+      identifier = { name = "hls-graph"; version = "1.5.0.0"; };
       license = "Apache-2.0";
       copyright = "The Haskell IDE Team";
       maintainer = "alan.zimm@gmail.com";
@@ -25,7 +25,7 @@
       detailLevel = "FullDetails";
       licenseFiles = [ "LICENSE" ];
       dataDir = ".";
-      dataFiles = [];
+      dataFiles = [ "html/profile.html" "html/shake.js" ];
       extraSrcFiles = [];
       extraTmpFiles = [];
       extraDocFiles = [];
@@ -33,16 +33,39 @@
     components = {
       "library" = {
         depends = [
+          (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
-          (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
+          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
+          (hsPkgs."js-dgtable" or (errorHandler.buildDepError "js-dgtable"))
+          (hsPkgs."js-flot" or (errorHandler.buildDepError "js-flot"))
+          (hsPkgs."js-jquery" or (errorHandler.buildDepError "js-jquery"))
+          (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."time" or (errorHandler.buildDepError "time"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          ] ++ (pkgs.lib).optionals (flags.embed-files) [
+          (hsPkgs."file-embed" or (errorHandler.buildDepError "file-embed"))
+          (hsPkgs."template-haskell" or (errorHandler.buildDepError "template-haskell"))
           ];
         buildable = true;
         modules = [
           "Development/IDE/Graph/Internal/Action"
           "Development/IDE/Graph/Internal/Options"
           "Development/IDE/Graph/Internal/Rules"
+          "Development/IDE/Graph/Internal/Database"
+          "Development/IDE/Graph/Internal/Ids"
+          "Development/IDE/Graph/Internal/Intern"
+          "Development/IDE/Graph/Internal/Paths"
+          "Development/IDE/Graph/Internal/Profile"
+          "Development/IDE/Graph/Internal/Types"
+          "Paths_hls_graph"
           "Development/IDE/Graph"
           "Development/IDE/Graph/Classes"
           "Development/IDE/Graph/Database"
