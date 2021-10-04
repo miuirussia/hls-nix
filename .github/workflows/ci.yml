@@ -15,7 +15,7 @@ jobs:
         run: echo "::set-output name=date::$(date +%s)"
       - uses: actions/checkout@v2
       - name: Install nix
-        uses: cachix/install-nix-action@v14
+        uses: miuirussia/install-nix-action@master
         with:
           nix_path: nixpkgs=channel:nixpkgs-unstable
           install_url: https://github.com/miuirussia/nix-unstable-installer/releases/latest/download/install
@@ -62,7 +62,7 @@ jobs:
         with:
           ref: update/${{ needs.update-dependencies.outputs.release_id }}
       - name: Install nix
-        uses: cachix/install-nix-action@v13
+        uses: miuirussia/install-nix-action@master
         with:
           nix_path: nixpkgs=channel:nixpkgs-unstable
           install_url: https://github.com/miuirussia/nix-unstable-installer/releases/latest/download/install
@@ -98,7 +98,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
       - name: Install nix
-        uses: cachix/install-nix-action@v13
+        uses: miuirussia/install-nix-action@master
         with:
           nix_path: nixpkgs=channel:nixpkgs-unstable
           install_url: https://github.com/miuirussia/nix-unstable-installer/releases/latest/download/install
