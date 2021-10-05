@@ -16,7 +16,7 @@
       };
     package = {
       specVersion = "2.4";
-      identifier = { name = "ghcide"; version = "1.4.2.2"; };
+      identifier = { name = "ghcide"; version = "1.4.2.3"; };
       license = "Apache-2.0";
       copyright = "Digital Asset and Ghcide contributors 2018-2020";
       maintainer = "Ghcide contributors";
