@@ -10,11 +10,11 @@
   {
     flags = { pedantic = false; ghc-lib = false; hlint33 = true; };
     package = {
-      specVersion = "2.2";
+      specVersion = "2.4";
       identifier = { name = "hls-hlint-plugin"; version = "1.0.1.1"; };
       license = "Apache-2.0";
       copyright = "The Haskell IDE Team";
-      maintainer = "alan.zimm@gmail.com";
+      maintainer = "atreyu.bbb@gmail.com";
       author = "The Haskell IDE Team";
       homepage = "";
       url = "";
@@ -26,7 +26,13 @@
       licenseFiles = [ "LICENSE" ];
       dataDir = ".";
       dataFiles = [];
-      extraSrcFiles = [];
+      extraSrcFiles = [
+        "LICENSE"
+        "test/testdata/**/*.yaml"
+        "test/testdata/ignore/.hlint.yaml"
+        "test/testdata/**/*.hs"
+        "test/testdata/**/*.h"
+        ];
       extraTmpFiles = [];
       extraDocFiles = [];
       };
@@ -80,6 +86,25 @@
         buildable = true;
         modules = [ "Ide/Plugin/Hlint" ];
         hsSourceDirs = [ "src" ];
+        };
+      tests = {
+        "tests" = {
+          depends = [
+            (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hls-hlint-plugin" or (errorHandler.buildDepError "hls-hlint-plugin"))
+            (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
+            (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            ];
+          buildable = true;
+          hsSourceDirs = [ "test" ];
+          mainPath = [ "Main.hs" ];
+          };
         };
       };
     } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-hlint-plugin; }

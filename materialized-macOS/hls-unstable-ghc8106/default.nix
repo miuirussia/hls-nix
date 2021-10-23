@@ -736,6 +736,7 @@
           "hashable".components.library.planned = lib.mkOverride 900 true;
           "refinery".components.library.planned = lib.mkOverride 900 true;
           "attoparsec".components.library.planned = lib.mkOverride 900 true;
+          "hls-hlint-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "MemoTrie".components.library.planned = lib.mkOverride 900 true;
           "generic-lens".components.library.planned = lib.mkOverride 900 true;
           "floskell".components.library.planned = lib.mkOverride 900 true;

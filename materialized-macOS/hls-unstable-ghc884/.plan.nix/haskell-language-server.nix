@@ -54,8 +54,6 @@
         "test/testdata/**/*.project"
         "test/testdata/**/*.cabal"
         "test/testdata/**/*.yaml"
-        "test/testdata/hlint/ignore/.hlint.yaml"
-        "test/testdata/**/*.h"
         "test/testdata/**/*.hs"
         ];
       extraTmpFiles = [];
