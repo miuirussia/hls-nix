@@ -598,12 +598,10 @@
               "splice" = lib.mkOverride 900 true;
               "retrie" = lib.mkOverride 900 true;
               "fourmolu" = lib.mkOverride 900 true;
-              "all-formatters" = lib.mkOverride 900 false;
               "hlint" = lib.mkOverride 900 true;
               "eval" = lib.mkOverride 900 true;
               "class" = lib.mkOverride 900 true;
               "haddockcomments" = lib.mkOverride 900 true;
-              "all-plugins" = lib.mkOverride 900 false;
               "pragmas" = lib.mkOverride 900 true;
               "pedantic" = lib.mkOverride 900 false;
               "rename" = lib.mkOverride 900 false;
@@ -612,6 +610,7 @@
               "modulename" = lib.mkOverride 900 true;
               "callhierarchy" = lib.mkOverride 900 true;
               "refineimports" = lib.mkOverride 900 true;
+              "ignore-plugins-ghc-bounds" = lib.mkOverride 900 false;
               };
             };
           "hls-fourmolu-plugin" = { flags = {}; };
