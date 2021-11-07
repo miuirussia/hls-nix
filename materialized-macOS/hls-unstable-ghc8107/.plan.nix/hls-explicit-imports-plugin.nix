@@ -52,6 +52,20 @@
         modules = [ "Ide/Plugin/ExplicitImports" ];
         hsSourceDirs = [ "src" ];
         };
+      tests = {
+        "tests" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+            (hsPkgs."hls-explicit-imports-plugin" or (errorHandler.buildDepError "hls-explicit-imports-plugin"))
+            (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
+            ];
+          buildable = true;
+          hsSourceDirs = [ "test" ];
+          mainPath = [ "Main.hs" ];
+          };
+        };
       };
     } // rec {
     src = (pkgs.lib).mkDefault .././plugins/hls-explicit-imports-plugin;

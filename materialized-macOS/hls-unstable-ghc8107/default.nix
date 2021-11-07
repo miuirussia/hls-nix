@@ -688,6 +688,7 @@
           "hsc2hs".components.exes."hsc2hs".planned = lib.mkOverride 900 true;
           "retrie".components.exes."retrie".planned = lib.mkOverride 900 true;
           "hlint".components.exes."hlint".planned = lib.mkOverride 900 true;
+          "hls-explicit-imports-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "force-layout".components.library.planned = lib.mkOverride 900 true;
           "fourmolu".components.exes."fourmolu".planned = lib.mkOverride 900 true;
           "stylish-haskell".components.exes."stylish-haskell".planned = lib.mkOverride 900 true;
