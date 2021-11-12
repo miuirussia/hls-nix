@@ -33,6 +33,7 @@
     components = {
       "library" = {
         depends = [
+          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."async" or (errorHandler.buildDepError "async"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
@@ -56,6 +57,10 @@
           ];
         buildable = true;
         modules = [
+          "Development/IDE/Graph"
+          "Development/IDE/Graph/Classes"
+          "Development/IDE/Graph/Database"
+          "Development/IDE/Graph/Rule"
           "Development/IDE/Graph/Internal/Action"
           "Development/IDE/Graph/Internal/Options"
           "Development/IDE/Graph/Internal/Rules"
@@ -66,10 +71,6 @@
           "Development/IDE/Graph/Internal/Profile"
           "Development/IDE/Graph/Internal/Types"
           "Paths_hls_graph"
-          "Development/IDE/Graph"
-          "Development/IDE/Graph/Classes"
-          "Development/IDE/Graph/Database"
-          "Development/IDE/Graph/Rule"
           ];
         hsSourceDirs = [ "src" ];
         };

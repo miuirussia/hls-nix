@@ -246,6 +246,7 @@
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
+            (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lsp-test" or (errorHandler.buildDepError "lsp-test"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
@@ -254,6 +255,7 @@
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             ];
           build-tools = [
@@ -261,6 +263,7 @@
             ];
           buildable = if !flags.bench-exe then false else true;
           modules = [
+            "Development/IDE/Test"
             "Development/IDE/Test/Diagnostic"
             "Experiments"
             "Experiments/Types"
