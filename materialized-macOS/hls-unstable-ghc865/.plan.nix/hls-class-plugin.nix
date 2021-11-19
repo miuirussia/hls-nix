@@ -11,7 +11,7 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-class-plugin"; version = "1.0.1.0"; };
+      identifier = { name = "hls-class-plugin"; version = "1.0.1.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "jjc9310@gmail.com";
