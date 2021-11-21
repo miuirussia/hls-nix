@@ -26,7 +26,11 @@
       licenseFiles = [ "LICENSE" ];
       dataDir = ".";
       dataFiles = [];
-      extraSrcFiles = [ "LICENSE" "test/testdata/*.hs" "test/testdata/*.yaml" ];
+      extraSrcFiles = [
+        "LICENSE"
+        "test/testdata/**/*.yaml"
+        "test/testdata/**/*.hs"
+        ];
       extraTmpFiles = [];
       extraDocFiles = [];
       };
