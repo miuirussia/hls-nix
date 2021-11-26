@@ -11,7 +11,7 @@
     flags = { pedantic = false; embed-files = false; };
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-graph"; version = "1.5.1.0"; };
+      identifier = { name = "hls-graph"; version = "1.5.1.1"; };
       license = "Apache-2.0";
       copyright = "The Haskell IDE Team";
       maintainer = "alan.zimm@gmail.com";
