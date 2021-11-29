@@ -32,7 +32,7 @@
       };
     package = {
       specVersion = "2.4";
-      identifier = { name = "haskell-language-server"; version = "1.5.0.0"; };
+      identifier = { name = "haskell-language-server"; version = "1.5.1.0"; };
       license = "Apache-2.0";
       copyright = "The Haskell IDE Team";
       maintainer = "alan.zimm@gmail.com";

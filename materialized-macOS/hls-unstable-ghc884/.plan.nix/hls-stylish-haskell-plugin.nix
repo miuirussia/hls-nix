@@ -13,7 +13,7 @@
       specVersion = "2.4";
       identifier = {
         name = "hls-stylish-haskell-plugin";
-        version = "1.0.0.3";
+        version = "1.0.0.4";
         };
       license = "Apache-2.0";
       copyright = "The Haskell IDE Team";
