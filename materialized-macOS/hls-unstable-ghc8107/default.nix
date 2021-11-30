@@ -517,6 +517,7 @@
     {
       packages = {
         hls-stylish-haskell-plugin = ./.plan.nix/hls-stylish-haskell-plugin.nix;
+        hls-qualify-imported-names-plugin = ./.plan.nix/hls-qualify-imported-names-plugin.nix;
         hls-retrie-plugin = ./.plan.nix/hls-retrie-plugin.nix;
         hls-graph = ./.plan.nix/hls-graph.nix;
         hls-hlint-plugin = ./.plan.nix/hls-hlint-plugin.nix;
@@ -548,6 +549,7 @@
       {
         packages = {
           "hls-stylish-haskell-plugin" = { flags = {}; };
+          "hls-qualify-imported-names-plugin" = { flags = {}; };
           "hls-retrie-plugin" = { flags = {}; };
           "hls-graph" = {
             flags = {
@@ -597,6 +599,7 @@
               "pragmas" = lib.mkOverride 900 true;
               "splice" = lib.mkOverride 900 true;
               "callhierarchy" = lib.mkOverride 900 true;
+              "qualifyimportednames" = lib.mkOverride 900 true;
               "hlint" = lib.mkOverride 900 true;
               "modulename" = lib.mkOverride 900 true;
               "brittany" = lib.mkOverride 900 true;
@@ -886,6 +889,7 @@
           "OneTuple".components.library.planned = lib.mkOverride 900 true;
           "type-equality".components.library.planned = lib.mkOverride 900 true;
           "directory".components.library.planned = lib.mkOverride 900 true;
+          "hls-qualify-imported-names-plugin".components.library.planned = lib.mkOverride 900 true;
           "circle-packing".components.library.planned = lib.mkOverride 900 true;
           "primitive".components.library.planned = lib.mkOverride 900 true;
           "hls-plugin-api".components.library.planned = lib.mkOverride 900 true;
@@ -967,6 +971,7 @@
           "js-dgtable".components.library.planned = lib.mkOverride 900 true;
           "hls-fourmolu-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "optparse-applicative".components.library.planned = lib.mkOverride 900 true;
+          "hls-qualify-imported-names-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "conduit-parse".components.library.planned = lib.mkOverride 900 true;
           "sorted-list".components.library.planned = lib.mkOverride 900 true;
           "hls-eval-plugin".components.library.planned = lib.mkOverride 900 true;

@@ -19,14 +19,14 @@
       homepage = "https://github.com/haskell/haskell-language-server#readme";
       url = "";
       synopsis = "Haskell Language Server internal graph API";
-      description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
+      description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server/tree/master/hls-graph#readme>";
       buildType = "Simple";
       isLocal = true;
       detailLevel = "FullDetails";
       licenseFiles = [ "LICENSE" ];
       dataDir = ".";
       dataFiles = [ "html/profile.html" "html/shake.js" ];
-      extraSrcFiles = [];
+      extraSrcFiles = [ "README.md" ];
       extraTmpFiles = [];
       extraDocFiles = [];
       };

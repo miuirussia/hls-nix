@@ -242,6 +242,7 @@
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."bytestring" or (errorHandler.buildDepError "bytestring"))
             (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+            (hsPkgs."data-default" or (errorHandler.buildDepError "data-default"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
