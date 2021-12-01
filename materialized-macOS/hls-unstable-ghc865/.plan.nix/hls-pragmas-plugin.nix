@@ -36,6 +36,7 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."fuzzy" or (errorHandler.buildDepError "fuzzy"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
@@ -43,6 +44,7 @@
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
           ];
         buildable = true;
         modules = [ "Ide/Plugin/Pragmas" ];

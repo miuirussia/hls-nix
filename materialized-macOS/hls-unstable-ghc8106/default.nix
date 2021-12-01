@@ -14,6 +14,8 @@
         "tasty-smallcheck".revision = (((hackage."tasty-smallcheck")."0.8.2").revisions).default;
         "ghc-boot".revision = (((hackage."ghc-boot")."8.10.6").revisions).default;
         "svg-builder".revision = (((hackage."svg-builder")."0.1.1").revisions).default;
+        "stm-hamt".revision = (((hackage."stm-hamt")."1.2.0.6").revisions).default;
+        "primitive-unlifted".revision = (((hackage."primitive-unlifted")."1.0.0.0").revisions).default;
         "filepattern".revision = (((hackage."filepattern")."0.1.2").revisions).default;
         "tf-random".revision = (((hackage."tf-random")."0.5").revisions).default;
         "hslogger".revision = (((hackage."hslogger")."1.3.1.0").revisions).default;
@@ -106,6 +108,7 @@
         "fsnotify".revision = (((hackage."fsnotify")."0.3.0.1").revisions).default;
         "entropy".revision = (((hackage."entropy")."0.4.1.7").revisions).default;
         "entropy".flags.halvm = false;
+        "deferred-folds".revision = (((hackage."deferred-folds")."0.9.17").revisions).default;
         "megaparsec".revision = (((hackage."megaparsec")."9.2.0").revisions).default;
         "megaparsec".flags.dev = false;
         "hyphenation".revision = (((hackage."hyphenation")."0.8.2").revisions).default;
@@ -230,6 +233,7 @@
         "tasty-quickcheck".revision = (((hackage."tasty-quickcheck")."0.10.1.2").revisions).default;
         "typed-process".revision = (((hackage."typed-process")."0.2.7.0").revisions).default;
         "mfsolve".revision = (((hackage."mfsolve")."0.3.2.0").revisions).default;
+        "primitive-extras".revision = (((hackage."primitive-extras")."0.10.1.1").revisions).default;
         "base-compat-batteries".revision = (((hackage."base-compat-batteries")."0.12.1").revisions).default;
         "pretty-simple".revision = (((hackage."pretty-simple")."4.0.0.0").revisions).default;
         "pretty-simple".flags.buildexe = false;
@@ -319,6 +323,7 @@
         "tasty-rerun".revision = (((hackage."tasty-rerun")."1.1.18").revisions).default;
         "aeson-pretty".revision = (((hackage."aeson-pretty")."0.8.9").revisions).default;
         "aeson-pretty".flags.lib-only = false;
+        "list-t".revision = (((hackage."list-t")."1.0.5").revisions).default;
         "aeson".revision = (((hackage."aeson")."1.5.6.0").revisions).default;
         "aeson".flags.cffi = false;
         "aeson".flags.fast = false;
@@ -335,6 +340,7 @@
         "direct-sqlite".flags.fulltextsearch = true;
         "direct-sqlite".flags.json1 = true;
         "ghci".revision = (((hackage."ghci")."8.10.6").revisions).default;
+        "stm-containers".revision = (((hackage."stm-containers")."1.2").revisions).default;
         "syb".revision = (((hackage."syb")."0.7.2.1").revisions).default;
         "operational".revision = (((hackage."operational")."0.2.4.1").revisions).default;
         "operational".flags.buildexamples = true;
@@ -390,6 +396,7 @@
         "terminal-size".revision = (((hackage."terminal-size")."0.3.2.1").revisions).default;
         "th-extras".revision = (((hackage."th-extras")."0.0.0.4").revisions).default;
         "th-extras".flags.base4 = true;
+        "focus".revision = (((hackage."focus")."1.0.3").revisions).default;
         "stm".revision = (((hackage."stm")."2.5.0.1").revisions).default;
         "floskell".revision = (((hackage."floskell")."0.10.5").revisions).default;
         "js-flot".revision = (((hackage."js-flot")."0.8.3").revisions).default;
@@ -646,7 +653,9 @@
           "yaml".components.library.planned = lib.mkOverride 900 true;
           "diagrams-svg".components.library.planned = lib.mkOverride 900 true;
           "unliftio-core".components.library.planned = lib.mkOverride 900 true;
+          "focus".components.library.planned = lib.mkOverride 900 true;
           "integration".components.library.planned = lib.mkOverride 900 true;
+          "primitive-extras".components.library.planned = lib.mkOverride 900 true;
           "hspec-core".components.library.planned = lib.mkOverride 900 true;
           "HsYAML-aeson".components.library.planned = lib.mkOverride 900 true;
           "ansi-terminal".components.library.planned = lib.mkOverride 900 true;
@@ -664,6 +673,7 @@
           "heaps".components.library.planned = lib.mkOverride 900 true;
           "cereal".components.library.planned = lib.mkOverride 900 true;
           "groups".components.library.planned = lib.mkOverride 900 true;
+          "deferred-folds".components.library.planned = lib.mkOverride 900 true;
           "these".components.library.planned = lib.mkOverride 900 true;
           "hls-haddock-comments-plugin".components.library.planned = lib.mkOverride 900 true;
           "cubicbezier".components.library.planned = lib.mkOverride 900 true;
@@ -721,6 +731,7 @@
           "binary-orphans".components.library.planned = lib.mkOverride 900 true;
           "prettyprinter".components.library.planned = lib.mkOverride 900 true;
           "gitrev".components.library.planned = lib.mkOverride 900 true;
+          "stm-containers".components.library.planned = lib.mkOverride 900 true;
           "zlib".components.library.planned = lib.mkOverride 900 true;
           "cereal-vector".components.library.planned = lib.mkOverride 900 true;
           "libyaml".components.library.planned = lib.mkOverride 900 true;
@@ -730,6 +741,7 @@
           "template-haskell".components.library.planned = lib.mkOverride 900 true;
           "fingertree".components.library.planned = lib.mkOverride 900 true;
           "deque".components.library.planned = lib.mkOverride 900 true;
+          "list-t".components.library.planned = lib.mkOverride 900 true;
           "tasty-golden".components.library.planned = lib.mkOverride 900 true;
           "blaze-markup".components.library.planned = lib.mkOverride 900 true;
           "stm".components.library.planned = lib.mkOverride 900 true;
@@ -776,6 +788,8 @@
           "ghc-typelits-knownnat".components.library.planned = lib.mkOverride 900 true;
           "ghc-prim".components.library.planned = lib.mkOverride 900 true;
           "tasty-smallcheck".components.library.planned = lib.mkOverride 900 true;
+          "primitive-unlifted".components.library.planned = lib.mkOverride 900 true;
+          "stm-hamt".components.library.planned = lib.mkOverride 900 true;
           "mmorph".components.library.planned = lib.mkOverride 900 true;
           "hls-explicit-imports-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "retrie".components.library.planned = lib.mkOverride 900 true;

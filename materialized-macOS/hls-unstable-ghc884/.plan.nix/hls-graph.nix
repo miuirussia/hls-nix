@@ -43,11 +43,15 @@
           (hsPkgs."exceptions" or (errorHandler.buildDepError "exceptions"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."focus" or (errorHandler.buildDepError "focus"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."js-dgtable" or (errorHandler.buildDepError "js-dgtable"))
           (hsPkgs."js-flot" or (errorHandler.buildDepError "js-flot"))
           (hsPkgs."js-jquery" or (errorHandler.buildDepError "js-jquery"))
+          (hsPkgs."list-t" or (errorHandler.buildDepError "list-t"))
           (hsPkgs."primitive" or (errorHandler.buildDepError "primitive"))
+          (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
+          (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
           (hsPkgs."time" or (errorHandler.buildDepError "time"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
@@ -65,8 +69,6 @@
           "Development/IDE/Graph/Internal/Options"
           "Development/IDE/Graph/Internal/Rules"
           "Development/IDE/Graph/Internal/Database"
-          "Development/IDE/Graph/Internal/Ids"
-          "Development/IDE/Graph/Internal/Intern"
           "Development/IDE/Graph/Internal/Paths"
           "Development/IDE/Graph/Internal/Profile"
           "Development/IDE/Graph/Internal/Types"
