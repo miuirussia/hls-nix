@@ -15,7 +15,7 @@
         "ghc-boot".revision = (((hackage."ghc-boot")."8.6.5").revisions).default;
         "svg-builder".revision = (((hackage."svg-builder")."0.1.1").revisions).default;
         "stm-hamt".revision = (((hackage."stm-hamt")."1.2.0.6").revisions).default;
-        "primitive-unlifted".revision = (((hackage."primitive-unlifted")."0.1.3.0").revisions).default;
+        "primitive-unlifted".revision = (((hackage."primitive-unlifted")."0.1.3.1").revisions).default;
         "filepattern".revision = (((hackage."filepattern")."0.1.2").revisions).default;
         "tf-random".revision = (((hackage."tf-random")."0.5").revisions).default;
         "hslogger".revision = (((hackage."hslogger")."1.3.1.0").revisions).default;
@@ -29,7 +29,7 @@
         "cpphs".revision = (((hackage."cpphs")."1.20.9.1").revisions).default;
         "cpphs".flags.old-locale = false;
         "network-bsd".revision = (((hackage."network-bsd")."2.8.1.0").revisions).default;
-        "linear".revision = (((hackage."linear")."1.21.7").revisions).default;
+        "linear".revision = (((hackage."linear")."1.21.8").revisions).default;
         "linear".flags.template-haskell = true;
         "linear".flags.herbie = false;
         "old-time".revision = (((hackage."old-time")."1.1.0.3").revisions).default;
@@ -138,7 +138,7 @@
         "th-abstraction".revision = (((hackage."th-abstraction")."0.4.3.0").revisions).default;
         "data-default-instances-containers".revision = (((hackage."data-default-instances-containers")."0.0.1").revisions).default;
         "base16-bytestring".revision = (((hackage."base16-bytestring")."1.0.2.0").revisions).default;
-        "regex-base".revision = (((hackage."regex-base")."0.94.0.1").revisions).default;
+        "regex-base".revision = (((hackage."regex-base")."0.94.0.2").revisions).default;
         "MonadRandom".revision = (((hackage."MonadRandom")."0.5.3").revisions).default;
         "conduit".revision = (((hackage."conduit")."1.3.4.2").revisions).default;
         "transformers-base".revision = (((hackage."transformers-base")."0.4.6").revisions).default;
@@ -176,7 +176,7 @@
         "unsafe".revision = (((hackage."unsafe")."0.0").revisions).default;
         "monad-memo".revision = (((hackage."monad-memo")."0.5.3").revisions).default;
         "prettyprinter-ansi-terminal".revision = (((hackage."prettyprinter-ansi-terminal")."1.1.3").revisions).default;
-        "quickcheck-instances".revision = (((hackage."quickcheck-instances")."0.3.26.1").revisions).default;
+        "quickcheck-instances".revision = (((hackage."quickcheck-instances")."0.3.27").revisions).default;
         "quickcheck-instances".flags.bytestring-builder = false;
         "hlint".revision = (((hackage."hlint")."3.2.7").revisions).default;
         "hlint".flags.hsyaml = false;
@@ -187,7 +187,7 @@
         "profunctors".revision = (((hackage."profunctors")."5.6.2").revisions).default;
         "optparse-simple".revision = (((hackage."optparse-simple")."0.1.1.4").revisions).default;
         "optparse-simple".flags.build-example = false;
-        "dependent-sum-template".revision = (((hackage."dependent-sum-template")."0.1.0.3").revisions).default;
+        "dependent-sum-template".revision = (((hackage."dependent-sum-template")."0.1.1.0").revisions).default;
         "some".revision = (((hackage."some")."1.0.2").revisions).default;
         "some".flags.newtype-unsafe = true;
         "comonad".revision = (((hackage."comonad")."5.0.8").revisions).default;
@@ -230,8 +230,8 @@
         "sorted-list".revision = (((hackage."sorted-list")."0.2.1.0").revisions).default;
         "record-hasfield".revision = (((hackage."record-hasfield")."1.0").revisions).default;
         "base-compat".revision = (((hackage."base-compat")."0.12.1").revisions).default;
-        "tasty-quickcheck".revision = (((hackage."tasty-quickcheck")."0.10.1.2").revisions).default;
-        "typed-process".revision = (((hackage."typed-process")."0.2.7.0").revisions).default;
+        "tasty-quickcheck".revision = (((hackage."tasty-quickcheck")."0.10.2").revisions).default;
+        "typed-process".revision = (((hackage."typed-process")."0.2.8.0").revisions).default;
         "mfsolve".revision = (((hackage."mfsolve")."0.3.2.0").revisions).default;
         "primitive-extras".revision = (((hackage."primitive-extras")."0.10.1").revisions).default;
         "base-compat-batteries".revision = (((hackage."base-compat-batteries")."0.12.1").revisions).default;
@@ -296,7 +296,7 @@
         "monad-control".revision = (((hackage."monad-control")."1.0.3.1").revisions).default;
         "constraints-extras".revision = (((hackage."constraints-extras")."0.3.2.0").revisions).default;
         "constraints-extras".flags.build-readme = true;
-        "tasty".revision = (((hackage."tasty")."1.4.2").revisions).default;
+        "tasty".revision = (((hackage."tasty")."1.4.2.1").revisions).default;
         "tasty".flags.unix = true;
         "tasty".flags.clock = true;
         "dual-tree".revision = (((hackage."dual-tree")."0.2.3.0").revisions).default;
@@ -323,7 +323,7 @@
         "tasty-rerun".revision = (((hackage."tasty-rerun")."1.1.18").revisions).default;
         "aeson-pretty".revision = (((hackage."aeson-pretty")."0.8.9").revisions).default;
         "aeson-pretty".flags.lib-only = false;
-        "list-t".revision = (((hackage."list-t")."1.0.5").revisions).default;
+        "list-t".revision = (((hackage."list-t")."1.0.5.1").revisions).default;
         "aeson".revision = (((hackage."aeson")."1.5.6.0").revisions).default;
         "aeson".flags.cffi = false;
         "aeson".flags.fast = false;
@@ -361,7 +361,7 @@
         "tagged".flags.transformers = true;
         "file-embed".revision = (((hackage."file-embed")."0.0.15.0").revisions).default;
         "active".revision = (((hackage."active")."0.2.0.15").revisions).default;
-        "hie-bios".revision = (((hackage."hie-bios")."0.7.6").revisions).default;
+        "hie-bios".revision = (((hackage."hie-bios")."0.8.0").revisions).default;
         "deepseq".revision = (((hackage."deepseq")."1.4.4.0").revisions).default;
         "splitmix".revision = (((hackage."splitmix")."0.1.0.4").revisions).default;
         "splitmix".flags.optimised-mixer = false;
@@ -395,7 +395,7 @@
         "Chart".revision = (((hackage."Chart")."1.9.3").revisions).default;
         "blaze-builder".revision = (((hackage."blaze-builder")."0.4.2.2").revisions).default;
         "terminal-size".revision = (((hackage."terminal-size")."0.3.2.1").revisions).default;
-        "th-extras".revision = (((hackage."th-extras")."0.0.0.4").revisions).default;
+        "th-extras".revision = (((hackage."th-extras")."0.0.0.5").revisions).default;
         "th-extras".flags.base4 = true;
         "focus".revision = (((hackage."focus")."1.0.3").revisions).default;
         "stm".revision = (((hackage."stm")."2.5.0.0").revisions).default;
@@ -449,7 +449,7 @@
         "ansi-wl-pprint".flags.example = false;
         "fourmolu".revision = (((hackage."fourmolu")."0.3.0.0").revisions).default;
         "fourmolu".flags.dev = false;
-        "monoid-extras".revision = (((hackage."monoid-extras")."0.6").revisions).default;
+        "monoid-extras".revision = (((hackage."monoid-extras")."0.6.1").revisions).default;
         "microlens".revision = (((hackage."microlens")."0.4.12.0").revisions).default;
         "scientific".revision = (((hackage."scientific")."0.3.7.0").revisions).default;
         "scientific".flags.bytestring-builder = false;
@@ -465,7 +465,7 @@
         "uuid-types".revision = (((hackage."uuid-types")."1.0.5").revisions).default;
         "safe-exceptions".revision = (((hackage."safe-exceptions")."0.1.7.2").revisions).default;
         "tasty-hspec".revision = (((hackage."tasty-hspec")."1.2").revisions).default;
-        "cryptohash-sha1".revision = (((hackage."cryptohash-sha1")."0.11.100.1").revisions).default;
+        "cryptohash-sha1".revision = (((hackage."cryptohash-sha1")."0.11.101.0").revisions).default;
         "cryptohash-md5".revision = (((hackage."cryptohash-md5")."0.11.101.0").revisions).default;
         "containers".revision = (((hackage."containers")."0.6.0.1").revisions).default;
         "indexed-profunctors".revision = (((hackage."indexed-profunctors")."0.1.1").revisions).default;
