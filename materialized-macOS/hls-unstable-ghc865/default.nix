@@ -537,6 +537,7 @@
         hls-plugin-api = ./.plan.nix/hls-plugin-api.nix;
         hls-eval-plugin = ./.plan.nix/hls-eval-plugin.nix;
         haskell-language-server = ./.plan.nix/haskell-language-server.nix;
+        hls-alternate-number-format-plugin = ./.plan.nix/hls-alternate-number-format-plugin.nix;
         hls-haddock-comments-plugin = ./.plan.nix/hls-haddock-comments-plugin.nix;
         hls-rename-plugin = ./.plan.nix/hls-rename-plugin.nix;
         hls-call-hierarchy-plugin = ./.plan.nix/hls-call-hierarchy-plugin.nix;
@@ -560,6 +561,7 @@
           "hls-retrie-plugin" = { flags = {}; };
           "hls-graph" = {
             flags = {
+              "stm-stats" = lib.mkOverride 900 false;
               "embed-files" = lib.mkOverride 900 false;
               "pedantic" = lib.mkOverride 900 false;
               };
@@ -606,6 +608,7 @@
               "pragmas" = lib.mkOverride 900 true;
               "splice" = lib.mkOverride 900 true;
               "callhierarchy" = lib.mkOverride 900 true;
+              "alternatenumberformat" = lib.mkOverride 900 true;
               "qualifyimportednames" = lib.mkOverride 900 true;
               "hlint" = lib.mkOverride 900 true;
               "modulename" = lib.mkOverride 900 true;
@@ -615,6 +618,7 @@
               "pedantic" = lib.mkOverride 900 false;
               };
             };
+          "hls-alternate-number-format-plugin" = { flags = {}; };
           "hls-haddock-comments-plugin" = { flags = {}; };
           "hls-rename-plugin" = { flags = {}; };
           "hls-call-hierarchy-plugin" = { flags = {}; };
@@ -976,6 +980,7 @@
           "hspec-expectations".components.library.planned = lib.mkOverride 900 true;
           "tasty-expected-failure".components.library.planned = lib.mkOverride 900 true;
           "mfsolve".components.library.planned = lib.mkOverride 900 true;
+          "hls-alternate-number-format-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "brittany".components.library.planned = lib.mkOverride 900 true;
           "ghc".components.library.planned = lib.mkOverride 900 true;
           "rope-utf16-splay".components.library.planned = lib.mkOverride 900 true;
@@ -1002,6 +1007,7 @@
           "refinery".components.library.planned = lib.mkOverride 900 true;
           "unix-compat".components.library.planned = lib.mkOverride 900 true;
           "bytes".components.library.planned = lib.mkOverride 900 true;
+          "hls-alternate-number-format-plugin".components.library.planned = lib.mkOverride 900 true;
           "hls-rename-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "floskell".components.library.planned = lib.mkOverride 900 true;
           "hashable".components.library.planned = lib.mkOverride 900 true;
