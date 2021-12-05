@@ -41,6 +41,7 @@
           (hsPkgs."dependent-sum" or (errorHandler.buildDepError "dependent-sum"))
           (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
           (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."hashable" or (errorHandler.buildDepError "hashable"))
           (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
@@ -52,6 +53,7 @@
           (hsPkgs."process" or (errorHandler.buildDepError "process"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ] ++ (if system.isWindows
           then [ (hsPkgs."Win32" or (errorHandler.buildDepError "Win32")) ]

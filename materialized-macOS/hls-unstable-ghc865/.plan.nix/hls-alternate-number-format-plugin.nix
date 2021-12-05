@@ -48,7 +48,6 @@
           (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
           (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
-          (hsPkgs."hls-retrie-plugin" or (errorHandler.buildDepError "hls-retrie-plugin"))
           (hsPkgs."hie-compat" or (errorHandler.buildDepError "hie-compat"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))

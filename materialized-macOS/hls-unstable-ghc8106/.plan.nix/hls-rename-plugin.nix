@@ -41,7 +41,6 @@
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hiedb" or (errorHandler.buildDepError "hiedb"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
-          (hsPkgs."hls-retrie-plugin" or (errorHandler.buildDepError "hls-retrie-plugin"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))
