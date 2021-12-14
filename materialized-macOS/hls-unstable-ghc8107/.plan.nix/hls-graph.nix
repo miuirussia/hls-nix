@@ -14,7 +14,7 @@
       identifier = { name = "hls-graph"; version = "1.5.1.1"; };
       license = "Apache-2.0";
       copyright = "The Haskell IDE Team";
-      maintainer = "alan.zimm@gmail.com";
+      maintainer = "The Haskell IDE Team";
       author = "The Haskell IDE Team";
       homepage = "https://github.com/haskell/haskell-language-server#readme";
       url = "";
