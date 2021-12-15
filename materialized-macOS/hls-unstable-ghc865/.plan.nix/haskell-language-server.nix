@@ -207,7 +207,6 @@
             "Format"
             "FunctionalBadProject"
             "FunctionalCodeAction"
-            "FunctionalLiquid"
             "HieBios"
             "Highlight"
             "Progress"
