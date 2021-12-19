@@ -609,7 +609,7 @@
               "pragmas" = lib.mkOverride 900 true;
               "splice" = lib.mkOverride 900 true;
               "callhierarchy" = lib.mkOverride 900 true;
-              "alternatenumberformat" = lib.mkOverride 900 true;
+              "alternatenumberformat" = lib.mkOverride 900 false;
               "qualifyimportednames" = lib.mkOverride 900 true;
               "hlint" = lib.mkOverride 900 true;
               "modulename" = lib.mkOverride 900 true;
