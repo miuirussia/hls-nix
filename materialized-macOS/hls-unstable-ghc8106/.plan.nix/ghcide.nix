@@ -141,6 +141,7 @@
           "Development/IDE"
           "Development/IDE/Main"
           "Development/IDE/Core/Actions"
+          "Development/IDE/Main/HeapStats"
           "Development/IDE/Core/Debouncer"
           "Development/IDE/Core/FileStore"
           "Development/IDE/Core/IdeConfiguration"
