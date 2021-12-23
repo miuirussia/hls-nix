@@ -24,7 +24,7 @@
       modulename = true;
       pragmas = true;
       splice = true;
-      alternatenumberformat = false;
+      alternatenumberformat = true;
       qualifyimportednames = true;
       floskell = true;
       fourmolu = true;
