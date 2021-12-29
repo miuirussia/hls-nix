@@ -86,6 +86,7 @@
           (hsPkgs."parallel" or (errorHandler.buildDepError "parallel"))
           (hsPkgs."prettyprinter-ansi-terminal" or (errorHandler.buildDepError "prettyprinter-ansi-terminal"))
           (hsPkgs."prettyprinter" or (errorHandler.buildDepError "prettyprinter"))
+          (hsPkgs."random" or (errorHandler.buildDepError "random"))
           (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
           (hsPkgs."retrie" or (errorHandler.buildDepError "retrie"))
           (hsPkgs."rope-utf16-splay" or (errorHandler.buildDepError "rope-utf16-splay"))
@@ -306,11 +307,13 @@
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
             (hsPkgs."QuickCheck" or (errorHandler.buildDepError "QuickCheck"))
             (hsPkgs."quickcheck-instances" or (errorHandler.buildDepError "quickcheck-instances"))
+            (hsPkgs."random" or (errorHandler.buildDepError "random"))
             (hsPkgs."rope-utf16-splay" or (errorHandler.buildDepError "rope-utf16-splay"))
             (hsPkgs."regex-tdfa" or (errorHandler.buildDepError "regex-tdfa"))
             (hsPkgs."safe" or (errorHandler.buildDepError "safe"))
             (hsPkgs."safe-exceptions" or (errorHandler.buildDepError "safe-exceptions"))
             (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
+            (hsPkgs."sqlite-simple" or (errorHandler.buildDepError "sqlite-simple"))
             (hsPkgs."stm" or (errorHandler.buildDepError "stm"))
             (hsPkgs."stm-containers" or (errorHandler.buildDepError "stm-containers"))
             (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
@@ -338,6 +341,7 @@
             "Experiments"
             "Experiments/Types"
             "Progress"
+            "HieDbRetry"
             ];
           hsSourceDirs = [ "test/cabal" "test/exe" "test/src" "bench/lib" ];
           mainPath = [ "Main.hs" ];
