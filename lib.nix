@@ -3,8 +3,8 @@
 , system
 , checkMaterialization ? false
 , disableMaterialization ? false
-, index-state ? "2021-11-30T00:00:00Z"
-, index-sha256 ? "28ab8cc230b91b79e9abbf1244d99887d310db5103e9f15c672bd1acbfd307b5"
+, index-state ? "2021-12-30T00:00:00Z"
+, index-sha256 ? "f40071128f7675fd0bdd437bf6ffcc2bb2984c2c0b6971eae78721e68d50e326"
 , ghcVersion ? "ghc865"
 , hackageVersion ? "1.2.0.0"
 }:
