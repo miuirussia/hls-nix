@@ -65,6 +65,8 @@ let
       src = inputs."${name}";
       cabalProject = if ghcVersion == "ghc901" then
         builtins.readFile "${src}/cabal-ghc901.project"
+      else if ghcVersion == "ghc921" then
+        builtins.readFile "${src}/cabal-ghc921.project"
       else
         builtins.readFile "${src}/cabal.project";
       planConfig = planConfigFor name ghcVersion defaultModules // {
@@ -112,6 +114,8 @@ let
     "ghc8106" = "8.10.6";
     "ghc8107" = "8.10.7";
     "ghc901" = "9.0.1";
+    "ghc902" = "9.0.2";
+    "ghc921" = "9.2.1";
   }."${ghcVersion}" or (throw "unsupported GHC Version: ${ghcVersion}");
 
   longDesc = suffix: ''
