@@ -62,6 +62,7 @@ let
     {
       enableSeparateDataOutput = true;
       packages.haskell-language-server.components.library.ghcOptions = [ "-dynamic" ];
+      packages.haskell-language-server.components.exes.haskell-language-server-wrapper.ghcOptions = [ "-dynamic" ];
       packages.haskell-language-server.components.exes.haskell-language-server.ghcOptions = [ "-dynamic" ];
     }
   ];
