@@ -101,8 +101,8 @@ let
         "xhtml"
         "terminfo"
       ];
-      packages.haskell-language-server.components.library.ghcOptions = [ "-Wall" "-Wredundant-constraints" "-Wno-name-shadowing" "-Wno-unticked-promoted-constructors" "-dynamic" ];
-      packages.haskell-language-server.components.exes.haskell-language-server.ghcOptions = [ "-Wall" "-Wredundant-constraints" "-Wno-name-shadowing" "-Wredundant-constraints" "-dynamic" "-rtsopts" "-with-rtsopts=-I0" "-with-rtsopts=-A128M" "-Wno-unticked-promoted-constructors" ];
+      packages.haskell-language-server.components.library.ghcOptions = [ "-dynamic" ];
+      packages.haskell-language-server.components.exes.haskell-language-server.ghcOptions = [ "-dynamic" ];
     }
   ];
 
@@ -110,10 +110,8 @@ let
     let
       src = inputs."${name}";
       cabalProject =
-        if ghcVersion == "ghc901" then
-          builtins.readFile "${src}/cabal-ghc901.project"
-        else if ghcVersion == "ghc921" then
-          builtins.readFile "${src}/cabal-ghc921.project"
+        if (builtins.pathExists "${src}/cabal-${ghcVersion}.project") then
+          builtins.readFile "${src}/cabal-${ghcVersion}.project"
         else
           builtins.readFile "${src}/cabal.project";
       planConfig = planConfigFor name ghcVersion defaultModules // {
