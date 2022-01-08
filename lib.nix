@@ -10,7 +10,7 @@
 }:
 
 let
-  ghcPatches = [];
+  ghcPatches = [ ];
 
   sourcesRepositoryPackage = {
     "https://github.com/anka-213/HieDb"."a3f7521f6c5af1b977040cce09c8f7354f8984eb" = "0caf4q87bzvc3pzcpzbf91gdj7dvzdahzwxq0ql5dm52s5jmh0in";
@@ -47,46 +47,79 @@ let
       needsNewName = name == "hls-unstable";
       newName = if needsNewName then "${name}-${ghcVersion}" else name;
     in
-      {
-        inherit name modules index-state index-sha256 compiler-nix-name
-          checkMaterialization
-          ;
-        configureArgs = "--disable-benchmarks";
-        lookupSha256 = { location, tag, ... }: sourcesRepositoryPackage."${location}"."${tag}" or null;
-        materialized = if disableMaterialization then null else ./materialized + "-${platformName}/${newName}";
-      };
+    {
+      inherit name modules index-state index-sha256 compiler-nix-name
+        checkMaterialization
+        ;
+      configureArgs = "--disable-benchmarks";
+      lookupSha256 = { location, tag, ... }: sourcesRepositoryPackage."${location}"."${tag}" or null;
+      materialized = if disableMaterialization then null else ./materialized + "-${platformName}/${newName}";
+    };
 
   allExes = pkg: pkg.components.exes;
 
   defaultModules = [
     { enableSeparateDataOutput = true; }
-    {
+    (pkgs.lib.optionalAttrs (ghcVersion == "ghc901") {
       nonReinstallablePkgs = [
-        "rts" "ghc-heap" "ghc-prim" "integer-gmp" "integer-simple" "base"
-        "deepseq" "array" "ghc-boot-th" "pretty" "template-haskell"
-        # ghcjs custom package
-        "ghcjs-prim" "ghcjs-th"
-        "ghc-bignum" "exceptions" "stm"
+        "rts"
+        "ghc-heap"
+        "ghc-prim"
+        "integer-gmp"
+        "integer-simple"
+        "base"
+        "deepseq"
+        "array"
+        "ghc-boot-th"
+        "pretty"
+        "template-haskell"
+
+        # ghcjs custom packages
+        "ghcjs-prim"
+        "ghcjs-th"
+
+        "ghc-bignum"
+        "exceptions"
+        "stm"
         "ghc-boot"
-        "ghc" "Cabal" "Win32" "array" "binary" "bytestring" "containers"
-        "directory" "filepath" "ghc-boot" "ghc-compact" "ghc-prim"
+        "ghc"
+        "Cabal"
+        "Win32"
+        "array"
+        "binary"
+        "bytestring"
+        "containers"
+        "directory"
+        "filepath"
+        "ghc-boot"
+        "ghc-compact"
+        "ghc-prim"
+
         # "ghci" "haskeline"
         "hpc"
-        "mtl" "parsec" "process" "text" "time" "transformers"
-        "unix" "xhtml" "terminfo"
+        "mtl"
+        "parsec"
+        "process"
+        "text"
+        "time"
+        "transformers"
+        "unix"
+        "xhtml"
+        "terminfo"
       ];
-    }
+    })
   ];
 
   createProject = name:
     let
       src = inputs."${name}";
-      cabalProject = if ghcVersion == "ghc901" then
-        builtins.readFile "${src}/cabal-ghc901.project"
-      else if ghcVersion == "ghc921" then
-        builtins.readFile "${src}/cabal-ghc921.project"
-      else
-        builtins.readFile "${src}/cabal.project";
+      cabalProject =
+        if ghcVersion == "ghc901" then
+          builtins.readFile "${src}/cabal-ghc901.project"
+        else if ghcVersion == "ghc921" then
+          builtins.readFile "${src}/cabal-ghc921.project"
+        else
+          builtins.readFile "${src}/cabal.project";
       planConfig = planConfigFor name ghcVersion defaultModules // {
         inherit cabalProject src;
         cabalProjectLocal = ''
@@ -94,7 +127,7 @@ let
         '';
       };
     in
-      (haskell-nix.cabalProject planConfig).haskell-language-server;
+    (haskell-nix.cabalProject planConfig).haskell-language-server;
 
   fromHackage = name:
     let
@@ -102,13 +135,13 @@ let
         version = hackageVersion;
       };
     in
-      allExes (haskell-nix.hackage-package planConfig);
+    allExes (haskell-nix.hackage-package planConfig);
 
   fromSource = name:
     let
       hls = createProject name;
     in
-      allExes hls;
+    allExes hls;
 
   hls-project = createProject "hls-unstable";
   build = fromSource "hls-unstable";
@@ -243,7 +276,7 @@ let
   stackNixPackages = stackYaml: pkgs:
     let
       lib = pkgs.lib;
-      jsonFile = pkgs.runCommand "yaml2json" {} ''
+      jsonFile = pkgs.runCommand "yaml2json" { } ''
         "${pkgs.yj}/bin/yj" < ${stackYaml} > "$out"
       '';
       json = builtins.fromJSON (builtins.readFile jsonFile);
@@ -252,7 +285,7 @@ let
       select = path:
         lib.attrByPath (lib.splitString "." path) (err path) pkgs;
     in
-      builtins.map select packageNames;
+    builtins.map select packageNames;
 
   cabal-install = pkgs.cabal-install;
   ghc = pkgs.haskell-nix.compiler."${ghcVersion}";
