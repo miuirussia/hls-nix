@@ -50,13 +50,11 @@
         "ghc8105"
         "ghc8106"
         "ghc8107"
-        "ghc921"
       ];
 
       materializableGhcVersions = [
         "ghc884"
         "ghc8107"
-        "ghc921"
       ];
 
       forAllGhcs = f: nixpkgs.lib.genAttrs supportedGhcVersions (ghc: f ghc);
