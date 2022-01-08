@@ -11,26 +11,22 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-module-name-plugin"; version = "1.0.0.3"; };
+      identifier = { name = "hls-class-plugin"; version = "1.0.1.2"; };
       license = "Apache-2.0";
-      copyright = "The Haskell IDE Team";
-      maintainer = "alan.zimm@gmail.com";
-      author = "The Haskell IDE Team";
-      homepage = "";
+      copyright = "";
+      maintainer = "jjc9310@gmail.com";
+      author = "Junyoung Clare Jang";
+      homepage = "https://github.com/haskell/haskell-language-server#readme";
       url = "";
-      synopsis = "Module name plugin for Haskell Language Server";
-      description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
+      synopsis = "Class/instance management plugin for Haskell Language Server";
+      description = "Class/instance management plugin for Haskell Language Server.\nFor usage, please see README of HLS on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
       isLocal = true;
       detailLevel = "FullDetails";
       licenseFiles = [ "LICENSE" ];
       dataDir = ".";
       dataFiles = [];
-      extraSrcFiles = [
-        "LICENSE"
-        "test/testdata/**/*.yaml"
-        "test/testdata/**/*.hs"
-        ];
+      extraSrcFiles = [ "LICENSE" "test/testdata/*.hs" ];
       extraTmpFiles = [];
       extraDocFiles = [];
       };
@@ -39,17 +35,18 @@
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
         buildable = true;
-        modules = [ "Ide/Plugin/ModuleName" ];
+        modules = [ "Ide/Plugin/Class" ];
         hsSourceDirs = [ "src" ];
         };
       tests = {
@@ -57,8 +54,10 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."hls-module-name-plugin" or (errorHandler.buildDepError "hls-module-name-plugin"))
+            (hsPkgs."hls-class-plugin" or (errorHandler.buildDepError "hls-class-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
+            (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+            (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
             ];
           buildable = true;
           hsSourceDirs = [ "test" ];
@@ -66,4 +65,4 @@
           };
         };
       };
-    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-module-name-plugin; }
+    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-class-plugin; }

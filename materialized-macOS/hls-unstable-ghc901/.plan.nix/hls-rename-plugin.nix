@@ -11,7 +11,7 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-rename-plugin"; version = "1.0.0.0"; };
+      identifier = { name = "hls-rename-plugin"; version = "1.0.0.1"; };
       license = "Apache-2.0";
       copyright = "";
       maintainer = "madine.oliver@gmail.com";
@@ -41,7 +41,6 @@
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hiedb" or (errorHandler.buildDepError "hiedb"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
-          (hsPkgs."hls-retrie-plugin" or (errorHandler.buildDepError "hls-retrie-plugin"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
           (hsPkgs."syb" or (errorHandler.buildDepError "syb"))

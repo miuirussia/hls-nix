@@ -11,14 +11,14 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-module-name-plugin"; version = "1.0.0.3"; };
-      license = "Apache-2.0";
+      identifier = { name = "hls-brittany-plugin"; version = "1.0.1.1"; };
+      license = "AGPL-3.0-only";
       copyright = "The Haskell IDE Team";
       maintainer = "alan.zimm@gmail.com";
       author = "The Haskell IDE Team";
       homepage = "";
       url = "";
-      synopsis = "Module name plugin for Haskell Language Server";
+      synopsis = "Integration with the Brittany code formatter";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
       isLocal = true;
@@ -26,30 +26,30 @@
       licenseFiles = [ "LICENSE" ];
       dataDir = ".";
       dataFiles = [];
-      extraSrcFiles = [
-        "LICENSE"
-        "test/testdata/**/*.yaml"
-        "test/testdata/**/*.hs"
-        ];
+      extraSrcFiles = [ "LICENSE" "test/testdata/**/*.hs" ];
       extraTmpFiles = [];
       extraDocFiles = [];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
+          (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
-          (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
+          (hsPkgs."ghc-exactprint" or (errorHandler.buildDepError "ghc-exactprint"))
+          (hsPkgs."czipwith" or (errorHandler.buildDepError "czipwith"))
           ];
         buildable = true;
-        modules = [ "Ide/Plugin/ModuleName" ];
+        modules = [ "Ide/Plugin/Brittany" ];
         hsSourceDirs = [ "src" ];
         };
       tests = {
@@ -57,7 +57,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."hls-module-name-plugin" or (errorHandler.buildDepError "hls-module-name-plugin"))
+            (hsPkgs."hls-brittany-plugin" or (errorHandler.buildDepError "hls-brittany-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             ];
           buildable = true;
@@ -66,4 +66,4 @@
           };
         };
       };
-    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-module-name-plugin; }
+    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-brittany-plugin; }

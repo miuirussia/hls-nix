@@ -10,15 +10,18 @@
   {
     flags = {};
     package = {
-      specVersion = "2.4";
-      identifier = { name = "hls-module-name-plugin"; version = "1.0.0.3"; };
+      specVersion = "2.2";
+      identifier = {
+        name = "hls-qualify-imported-names-plugin";
+        version = "1.0.0.0";
+        };
       license = "Apache-2.0";
-      copyright = "The Haskell IDE Team";
-      maintainer = "alan.zimm@gmail.com";
-      author = "The Haskell IDE Team";
+      copyright = "";
+      maintainer = "shenjonathan0@gmail.com";
+      author = "Jonathan Shen";
       homepage = "";
       url = "";
-      synopsis = "Module name plugin for Haskell Language Server";
+      synopsis = "A Haskell Language Server plugin that qualifies imported names";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
       isLocal = true;
@@ -28,8 +31,10 @@
       dataFiles = [];
       extraSrcFiles = [
         "LICENSE"
-        "test/testdata/**/*.yaml"
-        "test/testdata/**/*.hs"
+        "qualify-imported-names-demo.gif"
+        "README.md"
+        "test/data/*.hs"
+        "test/data/*.yaml"
         ];
       extraTmpFiles = [];
       extraDocFiles = [];
@@ -39,25 +44,29 @@
         depends = [
           (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
-          (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
-          (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
+          (hsPkgs."deepseq" or (errorHandler.buildDepError "deepseq"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
+          (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
+          (hsPkgs."dlist" or (errorHandler.buildDepError "dlist"))
+          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
           ];
         buildable = true;
-        modules = [ "Ide/Plugin/ModuleName" ];
+        modules = [ "Ide/Plugin/QualifyImportedNames" ];
         hsSourceDirs = [ "src" ];
         };
       tests = {
         "tests" = {
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."hls-module-name-plugin" or (errorHandler.buildDepError "hls-module-name-plugin"))
+            (hsPkgs."hls-qualify-imported-names-plugin" or (errorHandler.buildDepError "hls-qualify-imported-names-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             ];
           buildable = true;
@@ -66,4 +75,6 @@
           };
         };
       };
-    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-module-name-plugin; }
+    } // rec {
+    src = (pkgs.lib).mkDefault .././plugins/hls-qualify-imported-names-plugin;
+    }

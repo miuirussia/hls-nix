@@ -11,14 +11,17 @@
     flags = {};
     package = {
       specVersion = "2.4";
-      identifier = { name = "hls-module-name-plugin"; version = "1.0.0.3"; };
+      identifier = {
+        name = "hls-stylish-haskell-plugin";
+        version = "1.0.0.4";
+        };
       license = "Apache-2.0";
       copyright = "The Haskell IDE Team";
       maintainer = "alan.zimm@gmail.com";
       author = "The Haskell IDE Team";
       homepage = "";
       url = "";
-      synopsis = "Module name plugin for Haskell Language Server";
+      synopsis = "Integration with the Stylish Haskell code formatter";
       description = "Please see the README on GitHub at <https://github.com/haskell/haskell-language-server#readme>";
       buildType = "Simple";
       isLocal = true;
@@ -26,30 +29,26 @@
       licenseFiles = [ "LICENSE" ];
       dataDir = ".";
       dataFiles = [];
-      extraSrcFiles = [
-        "LICENSE"
-        "test/testdata/**/*.yaml"
-        "test/testdata/**/*.hs"
-        ];
+      extraSrcFiles = [ "LICENSE" "test/testdata/*.hs" ];
       extraTmpFiles = [];
       extraDocFiles = [];
       };
     components = {
       "library" = {
         depends = [
-          (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
+          (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
-          (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
+          (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
+          (hsPkgs."stylish-haskell" or (errorHandler.buildDepError "stylish-haskell"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
-          (hsPkgs."transformers" or (errorHandler.buildDepError "transformers"))
-          (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
           ];
         buildable = true;
-        modules = [ "Ide/Plugin/ModuleName" ];
+        modules = [ "Ide/Plugin/StylishHaskell" ];
         hsSourceDirs = [ "src" ];
         };
       tests = {
@@ -57,7 +56,7 @@
           depends = [
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-            (hsPkgs."hls-module-name-plugin" or (errorHandler.buildDepError "hls-module-name-plugin"))
+            (hsPkgs."hls-stylish-haskell-plugin" or (errorHandler.buildDepError "hls-stylish-haskell-plugin"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             ];
           buildable = true;
@@ -66,4 +65,6 @@
           };
         };
       };
-    } // rec { src = (pkgs.lib).mkDefault .././plugins/hls-module-name-plugin; }
+    } // rec {
+    src = (pkgs.lib).mkDefault .././plugins/hls-stylish-haskell-plugin;
+    }
