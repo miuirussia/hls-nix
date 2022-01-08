@@ -52,7 +52,7 @@ jobs:
   build-materialization:
     strategy:
       matrix:
-        ghc: ['884', '8107', '902', '921']
+        ghc: ['884', '8107', '921']
     name: "Build materialization on ghc${{ matrix.ghc }}"
     needs: [update-dependencies]
     runs-on: macos-latest
