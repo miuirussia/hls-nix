@@ -159,6 +159,7 @@
           "Development/IDE/GHC/Compat"
           "Development/IDE/GHC/Compat/Core"
           "Development/IDE/GHC/Compat/Env"
+          "Development/IDE/GHC/Compat/ExactPrint"
           "Development/IDE/GHC/Compat/Iface"
           "Development/IDE/GHC/Compat/Logger"
           "Development/IDE/GHC/Compat/Outputable"
@@ -167,6 +168,7 @@
           "Development/IDE/GHC/Compat/Units"
           "Development/IDE/GHC/Compat/Util"
           "Development/IDE/Core/Compile"
+          "Development/IDE/GHC/Dump"
           "Development/IDE/GHC/Error"
           "Development/IDE/GHC/ExactPrint"
           "Development/IDE/GHC/Orphans"
@@ -324,7 +326,7 @@
             (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
             (hsPkgs."text" or (errorHandler.buildDepError "text"))
             (hsPkgs."unordered-containers" or (errorHandler.buildDepError "unordered-containers"))
-            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.6") [
+            ] ++ (pkgs.lib).optionals (compiler.isGhc && (compiler.version).ge "8.6" && (compiler.isGhc && (compiler.version).lt "9.2")) [
             (hsPkgs."record-dot-preprocessor" or (errorHandler.buildDepError "record-dot-preprocessor"))
             (hsPkgs."record-hasfield" or (errorHandler.buildDepError "record-hasfield"))
             ];

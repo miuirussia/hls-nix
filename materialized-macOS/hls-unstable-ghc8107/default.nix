@@ -225,7 +225,7 @@
         "HsYAML-aeson".revision = (((hackage."HsYAML-aeson")."0.2.0.1").revisions).default;
         "HsYAML-aeson".flags.exe = false;
         "diagrams-postscript".revision = (((hackage."diagrams-postscript")."1.5.1").revisions).default;
-        "extra".revision = (((hackage."extra")."1.7.9").revisions).default;
+        "extra".revision = (((hackage."extra")."1.7.10").revisions).default;
         "ghc".revision = (((hackage."ghc")."8.10.7").revisions).default;
         "setenv".revision = (((hackage."setenv")."0.1.1.3").revisions).default;
         "hiedb".revision = (((hackage."hiedb")."0.4.1.0").revisions).default;
@@ -346,6 +346,7 @@
         "direct-sqlite".flags.json1 = true;
         "ghci".revision = (((hackage."ghci")."8.10.7").revisions).default;
         "stm-containers".revision = (((hackage."stm-containers")."1.2").revisions).default;
+        "lens-aeson".revision = (((hackage."lens-aeson")."1.1.3").revisions).default;
         "syb".revision = (((hackage."syb")."0.7.2.1").revisions).default;
         "operational".revision = (((hackage."operational")."0.2.4.1").revisions).default;
         "operational".flags.buildexamples = true;
@@ -753,6 +754,7 @@
           "blaze-markup".components.library.planned = lib.mkOverride 900 true;
           "stm".components.library.planned = lib.mkOverride 900 true;
           "aeson-pretty".components.library.planned = lib.mkOverride 900 true;
+          "lens-aeson".components.library.planned = lib.mkOverride 900 true;
           "hls-haddock-comments-plugin".components.tests."tests".planned = lib.mkOverride 900 true;
           "quickcheck-io".components.library.planned = lib.mkOverride 900 true;
           "strict".components.library.planned = lib.mkOverride 900 true;

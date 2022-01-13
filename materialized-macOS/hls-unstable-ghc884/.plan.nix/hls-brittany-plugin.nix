@@ -36,7 +36,6 @@
           (hsPkgs."base" or (errorHandler.buildDepError "base"))
           (hsPkgs."brittany" or (errorHandler.buildDepError "brittany"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
-          (hsPkgs."ghc" or (errorHandler.buildDepError "ghc"))
           (hsPkgs."ghc-boot-th" or (errorHandler.buildDepError "ghc-boot-th"))
           (hsPkgs."ghcide" or (errorHandler.buildDepError "ghcide"))
           (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))

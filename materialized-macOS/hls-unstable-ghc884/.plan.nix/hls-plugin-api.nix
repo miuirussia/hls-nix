@@ -47,6 +47,7 @@
           (hsPkgs."hls-graph" or (errorHandler.buildDepError "hls-graph"))
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
           (hsPkgs."lsp" or (errorHandler.buildDepError "lsp"))
           (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
           (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))

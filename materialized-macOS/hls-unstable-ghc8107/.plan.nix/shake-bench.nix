@@ -44,6 +44,8 @@
           (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
           (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
           (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
+          (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
+          (hsPkgs."lens-aeson" or (errorHandler.buildDepError "lens-aeson"))
           (hsPkgs."shake" or (errorHandler.buildDepError "shake"))
           (hsPkgs."text" or (errorHandler.buildDepError "text"))
           ];
