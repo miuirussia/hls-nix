@@ -6,7 +6,7 @@
         "retrie".revision = (((hackage."retrie")."1.1.0.0").revisions).default;
         "retrie".flags.buildexecutable = true;
         "statestack".revision = (((hackage."statestack")."0.3").revisions).default;
-        "implicit-hie-cradle".revision = (((hackage."implicit-hie-cradle")."0.3.0.5").revisions).default;
+        "implicit-hie-cradle".revision = (((hackage."implicit-hie-cradle")."0.5.0.0").revisions).default;
         "wcwidth".revision = (((hackage."wcwidth")."0.0.2").revisions).default;
         "wcwidth".flags.cli = false;
         "wcwidth".flags.split-base = true;
