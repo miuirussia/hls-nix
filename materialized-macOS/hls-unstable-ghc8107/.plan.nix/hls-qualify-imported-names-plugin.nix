@@ -13,7 +13,7 @@
       specVersion = "2.2";
       identifier = {
         name = "hls-qualify-imported-names-plugin";
-        version = "1.0.0.0";
+        version = "1.0.0.1";
         };
       license = "Apache-2.0";
       copyright = "";
