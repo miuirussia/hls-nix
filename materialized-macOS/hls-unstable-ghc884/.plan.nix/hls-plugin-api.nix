@@ -70,5 +70,21 @@
           ];
         hsSourceDirs = [ "src" ];
         };
+      tests = {
+        "tests" = {
+          depends = [
+            (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
+            (hsPkgs."tasty" or (errorHandler.buildDepError "tasty"))
+            (hsPkgs."tasty-hunit" or (errorHandler.buildDepError "tasty-hunit"))
+            (hsPkgs."tasty-rerun" or (errorHandler.buildDepError "tasty-rerun"))
+            (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
+            ];
+          buildable = true;
+          modules = [ "Ide/PluginUtilsTest" ];
+          hsSourceDirs = [ "test" ];
+          mainPath = [ "Main.hs" ];
+          };
+        };
       };
     } // rec { src = (pkgs.lib).mkDefault .././hls-plugin-api; }

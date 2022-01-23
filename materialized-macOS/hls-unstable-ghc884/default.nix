@@ -889,6 +889,7 @@
           "parsers".components.library.planned = lib.mkOverride 900 true;
           "random-shuffle".components.library.planned = lib.mkOverride 900 true;
           "regex-base".components.library.planned = lib.mkOverride 900 true;
+          "hls-plugin-api".components.tests."tests".planned = lib.mkOverride 900 true;
           "hls-splice-plugin".components.library.planned = lib.mkOverride 900 true;
           "adjunctions".components.library.planned = lib.mkOverride 900 true;
           "data-default-class".components.library.planned = lib.mkOverride 900 true;
