@@ -108,7 +108,6 @@
           (hsPkgs."hslogger" or (errorHandler.buildDepError "hslogger"))
           (hsPkgs."Diff" or (errorHandler.buildDepError "Diff"))
           (hsPkgs."vector" or (errorHandler.buildDepError "vector"))
-          (hsPkgs."bytestring-encoding" or (errorHandler.buildDepError "bytestring-encoding"))
           (hsPkgs."opentelemetry" or (errorHandler.buildDepError "opentelemetry"))
           (hsPkgs."heapsize" or (errorHandler.buildDepError "heapsize"))
           (hsPkgs."unliftio" or (errorHandler.buildDepError "unliftio"))

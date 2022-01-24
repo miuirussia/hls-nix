@@ -186,7 +186,6 @@
         "hlint".flags.threaded = true;
         "hlint".flags.ghc-lib = false;
         "hlint".flags.gpl = true;
-        "bytestring-encoding".revision = (((hackage."bytestring-encoding")."0.1.1.0").revisions).default;
         "profunctors".revision = (((hackage."profunctors")."5.6.2").revisions).default;
         "optparse-simple".revision = (((hackage."optparse-simple")."0.1.1.4").revisions).default;
         "optparse-simple".flags.build-example = false;
@@ -767,7 +766,6 @@
           "fourmolu".components.exes."fourmolu".planned = lib.mkOverride 900 true;
           "entropy".components.setup.planned = lib.mkOverride 900 true;
           "comonad".components.library.planned = lib.mkOverride 900 true;
-          "bytestring-encoding".components.library.planned = lib.mkOverride 900 true;
           "czipwith".components.library.planned = lib.mkOverride 900 true;
           "data-fix".components.library.planned = lib.mkOverride 900 true;
           "primes".components.library.planned = lib.mkOverride 900 true;
