@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:miuirussia/nixpkgs/nixpkgs-unstable";
 
-    hackage.url = "github:miuirussia/hackage.nix";
+    hackage.url = "github:input-output-hk/hackage.nix";
     hackage.flake = false;
 
     stackage.url = "github:input-output-hk/stackage.nix";
