@@ -32,6 +32,7 @@
       ormolu = true;
       stylishhaskell = true;
       brittany = true;
+      dynamic = true;
       };
     package = {
       specVersion = "2.4";
@@ -142,9 +143,9 @@
           buildable = true;
           modules = [ "Ide/Plugin/Example" "Ide/Plugin/Example2" "Plugins" ];
           hsSourceDirs = [ "plugins/default/src" "exe" ];
-          mainPath = (((((((((((((((((((((([
+          mainPath = ((((((((((((((((((((((([
             "Main.hs"
-            ] ++ (pkgs.lib).optional (flags.pedantic) "") ++ (pkgs.lib).optional (flags.callhierarchy) "") ++ (pkgs.lib).optional (flags.class && (compiler.isGhc && (compiler.version).lt "9.2.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.haddockcomments) "") ++ (pkgs.lib).optional (flags.eval) "") ++ (pkgs.lib).optional (flags.importlens) "") ++ (pkgs.lib).optional (flags.refineimports) "") ++ (pkgs.lib).optional (flags.rename) "") ++ (pkgs.lib).optional (flags.retrie && (compiler.isGhc && (compiler.version).lt "9.2.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.tactic && (compiler.isGhc && (compiler.version).lt "9.0.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.hlint && (compiler.isGhc && (compiler.version).lt "9.2.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.modulename) "") ++ (pkgs.lib).optional (flags.pragmas) "") ++ (pkgs.lib).optional (flags.splice && (compiler.isGhc && (compiler.version).lt "9.2.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.alternatenumberformat) "") ++ (pkgs.lib).optional (flags.qualifyimportednames) "") ++ (pkgs.lib).optional (flags.selectionrange) "") ++ (pkgs.lib).optional (flags.floskell) "") ++ (pkgs.lib).optional (flags.fourmolu) "") ++ (pkgs.lib).optional (flags.ormolu) "") ++ (pkgs.lib).optional (flags.stylishhaskell && (compiler.isGhc && (compiler.version).lt "9.0.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.brittany && (compiler.isGhc && (compiler.version).lt "9.0.2" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.pedantic) "";
+            ] ++ (pkgs.lib).optional (flags.pedantic) "") ++ (pkgs.lib).optional (flags.callhierarchy) "") ++ (pkgs.lib).optional (flags.class && (compiler.isGhc && (compiler.version).lt "9.2.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.haddockcomments) "") ++ (pkgs.lib).optional (flags.eval) "") ++ (pkgs.lib).optional (flags.importlens) "") ++ (pkgs.lib).optional (flags.refineimports) "") ++ (pkgs.lib).optional (flags.rename) "") ++ (pkgs.lib).optional (flags.retrie && (compiler.isGhc && (compiler.version).lt "9.2.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.tactic && (compiler.isGhc && (compiler.version).lt "9.0.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.hlint && (compiler.isGhc && (compiler.version).lt "9.2.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.modulename) "") ++ (pkgs.lib).optional (flags.pragmas) "") ++ (pkgs.lib).optional (flags.splice && (compiler.isGhc && (compiler.version).lt "9.2.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.alternatenumberformat) "") ++ (pkgs.lib).optional (flags.qualifyimportednames) "") ++ (pkgs.lib).optional (flags.selectionrange) "") ++ (pkgs.lib).optional (flags.floskell) "") ++ (pkgs.lib).optional (flags.fourmolu) "") ++ (pkgs.lib).optional (flags.ormolu) "") ++ (pkgs.lib).optional (flags.stylishhaskell && (compiler.isGhc && (compiler.version).lt "9.0.1" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.brittany && (compiler.isGhc && (compiler.version).lt "9.0.2" || flags.ignore-plugins-ghc-bounds)) "") ++ (pkgs.lib).optional (flags.pedantic) "") ++ (pkgs.lib).optional (!system.isWindows && flags.dynamic) "";
           };
         "haskell-language-server-wrapper" = {
           depends = [

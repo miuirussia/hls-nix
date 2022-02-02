@@ -619,6 +619,7 @@
               "modulename" = lib.mkOverride 900 true;
               "brittany" = lib.mkOverride 900 true;
               "floskell" = lib.mkOverride 900 true;
+              "dynamic" = lib.mkOverride 900 true;
               "ormolu" = lib.mkOverride 900 true;
               "pedantic" = lib.mkOverride 900 false;
               };

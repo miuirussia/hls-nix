@@ -80,6 +80,7 @@
         modules = [
           "Ide/Plugin/Eval/Code"
           "Ide/Plugin/Eval/CodeLens"
+          "Ide/Plugin/Eval/Config"
           "Ide/Plugin/Eval/GHC"
           "Ide/Plugin/Eval/Parse/Comments"
           "Ide/Plugin/Eval/Parse/Option"
@@ -95,10 +96,12 @@
           depends = [
             (hsPkgs."aeson" or (errorHandler.buildDepError "aeson"))
             (hsPkgs."base" or (errorHandler.buildDepError "base"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             (hsPkgs."directory" or (errorHandler.buildDepError "directory"))
             (hsPkgs."extra" or (errorHandler.buildDepError "extra"))
             (hsPkgs."filepath" or (errorHandler.buildDepError "filepath"))
             (hsPkgs."hls-eval-plugin" or (errorHandler.buildDepError "hls-eval-plugin"))
+            (hsPkgs."hls-plugin-api" or (errorHandler.buildDepError "hls-plugin-api"))
             (hsPkgs."hls-test-utils" or (errorHandler.buildDepError "hls-test-utils"))
             (hsPkgs."lens" or (errorHandler.buildDepError "lens"))
             (hsPkgs."lsp-types" or (errorHandler.buildDepError "lsp-types"))
