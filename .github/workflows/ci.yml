@@ -139,6 +139,7 @@ jobs:
           echo $RELEASE_ID > materialization
           git add materialization
           git commit -m "Update materialization on ${{ matrix.system }} $RELEASE_ID"
+          git pull
           git push origin HEAD:update/"$RELEASE_ID"
 
   release:
