@@ -222,11 +222,11 @@
     "hls-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1644585513,
-        "narHash": "sha256-3sgkRJw7BVb/HtLTgEFgZcMC4RamM7IgzM+Z15yln3w=",
+        "lastModified": 1644673068,
+        "narHash": "sha256-Of86tulk5/wiBBUv0FBubZ5SPydfMvLkcsoJjnN2Hsw=",
         "owner": "haskell",
         "repo": "haskell-language-server",
-        "rev": "ea1b41d0c3b363459adc732084297352afe87b58",
+        "rev": "07623e0bf39d0b4e0ab83ebfca18f3d685425aa9",
         "type": "github"
       },
       "original": {
