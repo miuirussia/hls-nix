@@ -6,7 +6,7 @@ on:
 jobs:
   update-dependencies:
     name: "Update dependencies"
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     outputs:
       release_id: ${{ steps.push.outputs.release_id }}
     steps:
@@ -53,9 +53,10 @@ jobs:
     strategy:
       matrix:
         ghc: ['884', '8107']
-    name: "Build materialization on ghc${{ matrix.ghc }}"
+        system: ['macos-latest', 'ubuntu-latest']
+    name: "Build materialization for ghc${{ matrix.ghc }} on ${{ matrix.system }}"
     needs: [update-dependencies]
-    runs-on: macos-latest
+    runs-on: ${{ matrix.system }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -75,14 +76,22 @@ jobs:
         with:
           name: kdevlab
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - name: Build materialization
+      - name: Build materialization macOS
+        if: ${{ matrix.system == 'macos-latest' }}
         run: |
           nix build --print-build-logs --no-link .#materialization.x86_64-darwin.ghc${{ matrix.ghc }}
+      - name: Build materialization Linux
+        if: ${{ matrix.system == 'ubuntu-latest' }}
+        run: |
+          nix build --print-build-logs --no-link .#materialization.x86_64-linux.ghc${{ matrix.ghc }}
 
   update-materialization:
-    name: "Update materialization"
+    strategy:
+      matrix:
+        system: ['macos-latest', 'ubuntu-latest']
+    name: "Update materialization on ${{ matrix.system }}"
     needs: [update-dependencies, build-materialization]
-    runs-on: macos-latest
+    runs-on: ${{ matrix.system }}
     steps:
       - name: Get current time
         uses: 1466587594/get-current-time@v2
@@ -111,9 +120,16 @@ jobs:
         with:
           name: kdevlab
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - name: Update materialization
+      - name: Update materialization on macOS
+        if: ${{ matrix.system == 'macos-latest' }}
         run: |
           nix --print-build-logs run .#generateMaterialization -- $(pwd)/materialized-macOS
+          git status
+          git add materialized-*
+      - name: Update materialization on Linux
+        if: ${{ matrix.system == 'ubuntu-latest' }}
+        run: |
+          nix --print-build-logs run .#generateMaterialization -- $(pwd)/materialized-linux
           git status
           git add materialized-*
       - name: Push materialization
@@ -122,7 +138,7 @@ jobs:
         run: |
           echo $RELEASE_ID > materialization
           git add materialization
-          git commit -m "Update materialization $RELEASE_ID"
+          git commit -m "Update materialization on ${{ matrix.system }} $RELEASE_ID"
           git push origin HEAD:update/"$RELEASE_ID"
 
   release:
