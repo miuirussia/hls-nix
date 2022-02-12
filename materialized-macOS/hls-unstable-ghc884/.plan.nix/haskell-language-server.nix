@@ -164,13 +164,16 @@
             (hsPkgs."optparse-applicative" or (errorHandler.buildDepError "optparse-applicative"))
             (hsPkgs."optparse-simple" or (errorHandler.buildDepError "optparse-simple"))
             (hsPkgs."process" or (errorHandler.buildDepError "process"))
+            ] ++ (pkgs.lib).optionals (!system.isWindows) [
+            (hsPkgs."unix" or (errorHandler.buildDepError "unix"))
+            (hsPkgs."containers" or (errorHandler.buildDepError "containers"))
             ];
           buildable = true;
           modules = [ "Paths_haskell_language_server" ];
           hsSourceDirs = [ "exe" ];
-          mainPath = [
+          mainPath = ([
             "Wrapper.hs"
-            ] ++ (pkgs.lib).optional (flags.pedantic) "";
+            ] ++ (pkgs.lib).optional (flags.pedantic) "") ++ (pkgs.lib).optional (!system.isWindows) "";
           };
         };
       tests = {
